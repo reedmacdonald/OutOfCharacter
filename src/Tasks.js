@@ -30,10 +30,10 @@ export const level4 = [
 ];
 export const level5 = [
   "Next time you talk, use a heavy accent with one word. Try not to be offensive and use an accent that could possibly come from someone of your race",
-  "Haha",
-  "What",
-  "LOL",
-  "What is this",
+  "Use the phrase `Let me offer you this`, before offering something that is not particularly insightful",
+  "Use the phrase 'I know a lot of people would argue about this' before saying something that no semi-intelligent person would say",
+  "Ask a question about something that has already been addressed",
+  "A ghost has entered your room, but you cannot interact with the ghost. But its in your room and you`re fucking terrified, but no one else can know why",
 ];
 export const level6 = ["Sneaze", "Haha", "What", "LOL", "What is this"];
 export const level7 = ["Sneaze", "Haha", "What", "LOL", "What is this"];

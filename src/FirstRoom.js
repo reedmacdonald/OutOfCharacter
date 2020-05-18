@@ -15,7 +15,9 @@ function FirstRoom(props) {
   const [insanityLevel, setInsanityLevel] = React.useState(null);
   return (
     <div className="App">
-      <h1>How many people? (2-10)</h1>
+      <h1>Out of Character</h1>
+      <h2>A Conversational Companion for Video Conferences</h2>
+      <h3>How many people? (2-10)</h3>
       <input
         onChange={(e) => {
           setNumPeople(e.target.value);
@@ -24,13 +26,13 @@ function FirstRoom(props) {
         min="2"
         max="10"
       ></input>
-      <h1>Rotation Speed?</h1>
+      <h3>Rotation Speed?</h3>
       <select onChange={(e) => setRotationSpeed(e.target.value)}>
         <option value="slow">Slow</option>
         <option value="medium">Medium</option>
         <option value="fast">Fast</option>
       </select>
-      <h1>Insanity Level (2-10)</h1>
+      <h3>Insanity Level (2-10)</h3>
       <input
         onChange={(e) => setInsanityLevel(e.target.value)}
         type="number"
@@ -45,8 +47,9 @@ function FirstRoom(props) {
             rotationSpeed,
             insanityLevel,
             randThing,
-            task: ["calibrating"],
+            task: ["Calibrating..."],
             turnNumber: 1,
+            gameOver: false,
           });
           sessionStorage.setItem("yourRoom", gameContext.roomNumber);
           console.log(

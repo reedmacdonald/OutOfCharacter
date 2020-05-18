@@ -1,7 +1,8 @@
 import React from "react";
 import firebase from "firebase";
+import * as SECRETS from "./secrets";
 const config = {
-  apiKey: "AIzaSyBOw9yLRxmDVMA3P--H5WiSBGqr6MygDTQ",
+  apiKey: SECRETS.API,
   authDomain: "out-of-character-reed-2.firebaseapp.com",
   databaseURL: "https://out-of-character-reed-2.firebaseio.com",
   projectId: "out-of-character-reed-2",

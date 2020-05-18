@@ -10,6 +10,7 @@ import { GameContext } from "./GameContext";
 import { getSnapshot } from "./Functions";
 import WaitingRoom from "./WaitingRoom";
 import GameRoom from "./GameRoom";
+import EndRoom from "./EndRoom";
 function App() {
   const [roomNumber, setRoomNumber] = React.useState(0);
   const [numPeople, setNumPeople] = React.useState(0);
@@ -17,8 +18,7 @@ function App() {
   const [rotationSpeed, setRotationSpeed] = React.useState("slow");
   React.useEffect(() => {
     let room = sessionStorage.getItem("yourRoom");
-    console.log(room, "<------room");
-    let randNum = Math.floor(Math.random() * 100000);
+    let randNum = Math.floor(Math.random() * 10000000);
 
     setRoomNumber(room || randNum);
     sessionStorage.setItem("roomNumber", randNum);
@@ -56,6 +56,11 @@ function App() {
           exact
           path={`${routes.GAMEROOM}/:roomNumber/:playerNumber`}
           render={() => <GameRoom />}
+        />
+        <Route
+          exact
+          path={`${routes.ENDROOM}/:roomNumber`}
+          render={() => <EndRoom />}
         />
       </Switch>
     </GameContext.Provider>

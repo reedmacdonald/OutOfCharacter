@@ -22,6 +22,9 @@ const WaitingRoom = (props) => {
           );
         }
       })}
+      <h1>
+        localhost:8060/gameroom/{gameContext.roomNumber}/{peeps.length}
+      </h1>
       <button
         onClick={() => {
           props.history.push(`/gameroom/${gameContext.roomNumber}/1`);

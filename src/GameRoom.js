@@ -15,7 +15,7 @@ import {
 } from "./Tasks";
 
 const GameRoom = (props) => {
-  const [task, setTask] = React.useState(["calibrating"]);
+  const [task, setTask] = React.useState(["Calibrating..."]);
   const [numPeople, setNumPeople] = React.useState(1);
   const [insanityLevel, setInsanityLevel] = React.useState([
     "idk",
@@ -27,20 +27,33 @@ const GameRoom = (props) => {
   ]);
   const [personTurn, setPersonTurn] = React.useState(1);
   const [insanNumber, setInsanNumber] = React.useState(1);
+  const [rotationSpeed, setRotationSpeed] = React.useState(10000);
   React.useEffect(() => {
     getSnapshot(props.match.params.roomNumber, (results) => {
       setNumPeople(results.numPeople);
       setTask(results.task);
       setPersonTurn(results.turnNumber);
+      console.log(results, "<---results");
+      if (results.rotationSpeed == "fast") {
+        setRotationSpeed(20000);
+      }
+      if (results.rotationSpeed == "medium") {
+        setRotationSpeed(40000);
+      }
+      if (results.rotationSpeed == "fast") {
+        setRotationSpeed(60000);
+      }
+      if (results.gameOver == true) {
+        props.history.push(`/endroom/${props.match.params.roomNumber}`);
+      }
     });
     let hmm;
+
     getDoc(props.match.params.roomNumber, (results) => {
       setInsanNumber(Number(results.insanityLevel));
     });
   }, []);
   React.useEffect(() => {
-    console.log("this is it");
-    console.log(insanNumber, "<---insanNumber");
     let love;
     if (insanNumber == 1) {
       love = level1;
@@ -74,19 +87,19 @@ const GameRoom = (props) => {
     }
 
     if (props.match.params.playerNumber == 1) {
-      setInterval(() => {
-        let randNum = Math.floor(Math.random() * 5);
-        let newTask = task.push(love[randNum]);
-        console.log(love, "<-----love");
-        console.log(numPeople, "<----numPeople");
-        let newRandNum = Math.floor(Math.random() * Number(numPeople) + 1);
-        let turnNumber = newRandNum;
+      insanNumber !== 1 &&
+        setInterval(() => {
+          let randNum = Math.floor(Math.random() * 5);
+          let newTask = task.push(love[randNum]);
 
-        updateRoom(props.match.params.roomNumber.toString(), {
-          task,
-          turnNumber,
-        });
-      }, 10000);
+          let newRandNum = Math.floor(Math.random() * Number(numPeople) + 1);
+          let turnNumber = newRandNum;
+
+          updateRoom(props.match.params.roomNumber.toString(), {
+            task,
+            turnNumber,
+          });
+        }, rotationSpeed);
     }
   }, [insanNumber]);
   return (
@@ -97,6 +110,17 @@ const GameRoom = (props) => {
         <h1>{task[task.length - 1]}</h1>
       ) : (
         <h1>Just act naturally</h1>
+      )}
+      {props.match.params.playerNumber == 1 && (
+        <button
+          onClick={() => {
+            updateRoom(props.match.params.roomNumber.toString(), {
+              gameOver: true,
+            });
+          }}
+        >
+          Leave Game
+        </button>
       )}
     </>
   );
