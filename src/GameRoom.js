@@ -107,8 +107,6 @@ const GameRoom = (props) => {
   }, [insanNumber]);
   return (
     <>
-      <h2>{personTurn}</h2>
-
       {props.match.params.playerNumber == personTurn ? (
         <h1>{task[task.length - 1]}</h1>
       ) : (

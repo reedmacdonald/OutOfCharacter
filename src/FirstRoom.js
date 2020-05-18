@@ -35,7 +35,7 @@ function FirstRoom(props) {
         <option value="medium">Medium</option>
         <option value="fast">Fast</option>
       </select>
-      <h3>Insanity Level (2-10)</h3>
+      <h3>Insanity Level (2-6)</h3>
       <input
         onChange={(e) => setInsanityLevel(e.target.value)}
         type="number"
