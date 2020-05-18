@@ -1,6 +1,7 @@
 import React from "react";
 import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 import { GameContext } from "./GameContext";
+import "./App.css";
 
 const WaitingRoom = (props) => {
   const gameContext = React.useContext(GameContext);
@@ -17,13 +18,15 @@ const WaitingRoom = (props) => {
         if (index !== 0 && index !== 1) {
           return (
             <h1>
-              localhost:8060/gameroom/{gameContext.roomNumber}/{index}
+              https://out-of-character.netlify.app/gameroom/
+              {gameContext.roomNumber}/{index}
             </h1>
           );
         }
       })}
       <h1>
-        localhost:8060/gameroom/{gameContext.roomNumber}/{peeps.length}
+        https://out-of-character.netlify.app/gameroom/{gameContext.roomNumber}/
+        {peeps.length}
       </h1>
       <button
         onClick={() => {

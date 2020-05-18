@@ -1,22 +1,25 @@
 import React from "react";
 import Firebase from "./Firebase";
+import "./App.css";
 import { GameContext } from "./GameContext";
 import { sayHi } from "./Functions";
 import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 import { createRoom } from "./Functions";
+import "./App.css";
 
 function FirstRoom(props) {
   let gameContext = React.useContext(GameContext);
-  React.useEffect(() => {
-    console.log(gameContext, "<-----gameContext");
-  }, [gameContext]);
-  const [numPeople, setNumPeople] = React.useState(null);
-  const [rotationSpeed, setRotationSpeed] = React.useState(null);
-  const [insanityLevel, setInsanityLevel] = React.useState(null);
+  const [numPeople, setNumPeople] = React.useState(2);
+  const [rotationSpeed, setRotationSpeed] = React.useState("slow");
+  const [insanityLevel, setInsanityLevel] = React.useState(2);
   return (
     <div className="App">
-      <h1>Out of Character</h1>
-      <h2>A Conversational Companion for Video Conferences</h2>
+      <h1 id="title" style={{ color: "red" }}>
+        Out of Character
+      </h1>
+      <h2 style={{ color: "blue" }}>
+        A Conversational Companion for Video Conferences
+      </h2>
       <h3>How many people? (2-10)</h3>
       <input
         onChange={(e) => {
@@ -37,8 +40,9 @@ function FirstRoom(props) {
         onChange={(e) => setInsanityLevel(e.target.value)}
         type="number"
         min="2"
-        max="10"
+        max="6"
       ></input>
+      <br />
       <button
         onClick={() => {
           let randThing = Math.floor(Math.random() * 11);
@@ -59,7 +63,7 @@ function FirstRoom(props) {
           props.history.push(`/waitingroom/${gameContext.roomNumber}`);
         }}
       >
-        Start
+        Start Game
       </button>
     </div>
   );

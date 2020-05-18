@@ -1,6 +1,7 @@
 import React from "react";
 import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 import { getDoc } from "./Functions";
+import "./App.css";
 
 const EndRoom = (props) => {
   const [prompts, setPrompts] = React.useState(["some", "prompts"]);
@@ -11,8 +12,10 @@ const EndRoom = (props) => {
   }, []);
   return (
     <>
-      <h1>The game has ended, but that was fun! </h1>
-      <h2>Here were your prompts</h2>
+      <div>
+        <h1>The game has ended, but that was fun! </h1>
+      </div>
+      <h2>Here were your prompts:</h2>
       {prompts.map((i) => {
         return <h3>{i}</h3>;
       })}

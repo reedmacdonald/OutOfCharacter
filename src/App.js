@@ -40,6 +40,7 @@ function App() {
     <GameContext.Provider
       value={{ roomNumber, numPeople, insanityLevel, rotationSpeed }}
     >
+      {" "}
       <Switch>
         <Route exact path={routes.HOME} render={() => <FirstRoom />} />
         <Route

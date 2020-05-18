@@ -1,4 +1,5 @@
 import React from "react";
+import "./App.css";
 import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 import { getSnapshot, updateRoom, getDoc } from "./Functions";
 import {
@@ -89,7 +90,7 @@ const GameRoom = (props) => {
     if (props.match.params.playerNumber == 1) {
       insanNumber !== 1 &&
         setInterval(() => {
-          let randNum = Math.floor(Math.random() * 5);
+          let randNum = Math.floor(Math.random() * 6) + 2;
           let newTask = task.push(love[randNum]);
 
           let newRandNum = Math.floor(Math.random() * Number(numPeople) + 1);
@@ -119,7 +120,7 @@ const GameRoom = (props) => {
             });
           }}
         >
-          Leave Game
+          End Game
         </button>
       )}
     </>
