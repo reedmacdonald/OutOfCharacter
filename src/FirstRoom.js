@@ -51,7 +51,9 @@ function FirstRoom(props) {
             rotationSpeed,
             insanityLevel,
             randThing,
-            task: ["Calibrating..."],
+            task: [
+              "Take a long sip of coffee. If you don't have coffee, get it",
+            ],
             turnNumber: 1,
             gameOver: false,
           });

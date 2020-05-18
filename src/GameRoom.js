@@ -16,7 +16,9 @@ import {
 } from "./Tasks";
 
 const GameRoom = (props) => {
-  const [task, setTask] = React.useState(["Calibrating..."]);
+  const [task, setTask] = React.useState([
+    "Take a long sip of coffee. If you don't have coffee, get it",
+  ]);
   const [numPeople, setNumPeople] = React.useState(1);
   const [insanityLevel, setInsanityLevel] = React.useState([
     "idk",
@@ -34,15 +36,15 @@ const GameRoom = (props) => {
       setNumPeople(results.numPeople);
       setTask(results.task);
       setPersonTurn(results.turnNumber);
-      console.log(results, "<---results");
+      //console.log(results, "<---results");
       if (results.rotationSpeed == "fast") {
-        setRotationSpeed(20000);
+        setRotationSpeed(50000);
       }
       if (results.rotationSpeed == "medium") {
-        setRotationSpeed(40000);
+        setRotationSpeed(100000);
       }
-      if (results.rotationSpeed == "fast") {
-        setRotationSpeed(60000);
+      if (results.rotationSpeed == "slow") {
+        setRotationSpeed(150000);
       }
       if (results.gameOver == true) {
         props.history.push(`/endroom/${props.match.params.roomNumber}`);
@@ -90,7 +92,7 @@ const GameRoom = (props) => {
     if (props.match.params.playerNumber == 1) {
       insanNumber !== 1 &&
         setInterval(() => {
-          let randNum = Math.floor(Math.random() * 6) + 2;
+          let randNum = Math.floor(Math.random() * 21);
           let newTask = task.push(love[randNum]);
 
           let newRandNum = Math.floor(Math.random() * Number(numPeople) + 1);
