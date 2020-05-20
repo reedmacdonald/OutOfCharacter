@@ -54,6 +54,33 @@ function FirstRoom(props) {
             task: [
               "Take a long sip of coffee. If you don't have coffee, get it",
             ],
+            taskPlayer2: [
+              "Take a long sip of coffee. If you don't have coffee, get it",
+            ],
+            taskPlayer3: [
+              "Take a long sip of coffee. If you don't have coffee, get it",
+            ],
+            taskPlayer4: [
+              "Take a long sip of coffee. If you don't have coffee, get it",
+            ],
+            taskPlayer5: [
+              "Take a long sip of coffee. If you don't have coffee, get it",
+            ],
+            taskPlayer6: [
+              "Take a long sip of coffee. If you don't have coffee, get it",
+            ],
+            taskPlayer7: [
+              "Take a long sip of coffee. If you don't have coffee, get it",
+            ],
+            taskPlayer8: [
+              "Take a long sip of coffee. If you don't have coffee, get it",
+            ],
+            taskPlayer9: [
+              "Take a long sip of coffee. If you don't have coffee, get it",
+            ],
+            taskPlayer10: [
+              "Take a long sip of coffee. If you don't have coffee, get it",
+            ],
             turnNumber: 1,
             gameOver: false,
           });

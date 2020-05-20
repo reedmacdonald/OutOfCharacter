@@ -20,6 +20,9 @@ export const level2 = [
   "Your roommate is leaving. Say goodbye to someone offscreen. Seem rather polite.",
   "Smile with teeth. It make the world better, really",
   "Look kinda sad. It's a sad time.",
+  "Is something burning? Sniff a little bit, as though you think something might be burning.",
+  "It's hot in here. Go open a window.",
+  "Unmute yourself, look like you're about to say something, and then don't. Go back to mute.",
 ];
 export const level3 = [
   "Nod in agreement though try to do it at a moment when nodding wouldnt normally be your natural reaction",
@@ -43,6 +46,7 @@ export const level3 = [
   "You are William Wallace, and you give homage to Scottland! Use a termn like 'wee bit', or 'lad', or some other nebulous Scottish slang. ",
   "Who has too thumbs? You do. Give some thumbs up to someone",
   "Spread the love! Next time you talk, say what you love about something.",
+  "Analytics, Ernie!",
 ];
 export const level4 = [
   "Unmute yourself to say `interesting` to something that wasn't particularly interesting",
@@ -69,6 +73,8 @@ export const level4 = [
   "Adjust your camera to a terrible angle. You actually look better this way.",
   "Be cool Honeybunny! Make a subtle reference to a Quintin Tarantino movie that only the coolest bros will get",
   "If you are in a business meeting, take a shot offscreen. If you meeting with family, take a shot onscreen but don't mention that your doing it. Else, take two shots",
+  "You're not very observant. Ask, `Is that a new *blank*?` to someone about something that is not new.",
+  "Make some friends! Give a compliment to the person who you think probably likes you least.",
 ];
 export const level5 = [
   "Bob your head a little bit like your listening to a cool song",
@@ -94,6 +100,13 @@ export const level5 = [
   "Say something in iambic pantameter, you goddamn Shakespearean poet. If you can't do it, then go thee to a nunnery, you wench!",
   "Give a backhanded compliment to someone. Speaking of which, you look better than usual today.",
   "You get your news from YouTube. Bring up a current event but get the facts completely wrong.",
+  "You are Rob Lowe's character from Parks and Rec. Use the word `literally` with emphasis. Bonus points if it's not the classical definition of `literally`.",
+  "You've been taken hostage but can't tell anyone explicitly. Say something that sounds normally but your closest friends would know is very much against your core beliefs (To show you're under durress)",
+  "Plagiarism! Say something that you didn't come up with (a joke, quote, idea), but make it seem like it's your own.",
+  "Life is a comedy for those who think! Say something super pretentious (such as that).",
+  "Get offended by something. Preferably something not offensive.",
+  "You are Hamlet! Mute yourself and then give a monologue to yourself as if you have to make an important decision",
+  "You don`t look like yourself today. Make a facial expression you`ve never made before",
 ];
 export const level6 = [
   "Next time you would laugh naturally, laugh hysterically. Be unable to calm down for an embarrassing period of time.",
@@ -120,6 +133,8 @@ export const level6 = [
   "Flick someone off offscreen. They probably deserve it.",
   "You are not a partisan hack! Say something that compliments the political party that you least affiliate yourself with. Don't do this sarcasticly. You can also quote a pundit from that political affiliation.",
   "Go offscreen to get something, but dont mute yourself. While offscreen, start barking. People should think its a dog barking, even though its just you. More bonus points if its like a high pitched yelp.",
+  "We've been invaded by aliens, and they're disguised as us! You are now an alien who is pretending to be you (and they're doing a good, but not great job)",
+  "Talk about a fond memory you have with someone in the group. This memory should be completely fabricated but realistic enough that the other person may think THEY just aren't remembering it.",
 ];
 export const level1 = ["Sneaze", "Haha", "What", "LOL", "What is this"];
 export const level7 = ["Sneaze", "Haha", "What", "LOL", "What is this"];

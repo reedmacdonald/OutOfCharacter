@@ -5,20 +5,116 @@ import "./App.css";
 
 const EndRoom = (props) => {
   const [prompts, setPrompts] = React.useState(["some", "prompts"]);
+  const [prompts2, setPrompts2] = React.useState(["some", "prompts"]);
+  const [prompts3, setPrompts3] = React.useState(["some", "prompts"]);
+  const [prompts4, setPrompts4] = React.useState(["some", "prompts"]);
+  const [prompts5, setPrompts5] = React.useState(["some", "prompts"]);
+  const [prompts6, setPrompts6] = React.useState(["some", "prompts"]);
+  const [prompts7, setPrompts7] = React.useState(["some", "prompts"]);
+  const [prompts8, setPrompts8] = React.useState(["some", "prompts"]);
+  const [prompts9, setPrompts9] = React.useState(["some", "prompts"]);
+  const [prompts10, setPrompts10] = React.useState(["some", "prompts"]);
   React.useEffect(() => {
     getDoc(props.match.params.roomNumber.toString(), (results) => {
       setPrompts(results.task);
+      setPrompts2(results.taskPlayer2);
+      setPrompts3(results.taskPlayer3);
+      setPrompts4(results.taskPlayer4);
+      setPrompts5(results.taskPlayer5);
+      setPrompts6(results.taskPlayer6);
+      setPrompts7(results.taskPlayer7);
+      setPrompts8(results.taskPlayer8);
+      setPrompts9(results.taskPlayer9);
+      setPrompts10(results.taskPlayer);
     });
   }, []);
+  console.log(props.match.params, "<------props.match.params");
   return (
     <>
       <div>
         <h1>The game has ended, but that was fun! </h1>
       </div>
       <h2>Here were your prompts:</h2>
-      {prompts.map((i) => {
-        return <h3>{i}</h3>;
-      })}
+      {props.match.params.numberPlayers > 0 && (
+        <>
+          <h1>Player 1:</h1>
+          {prompts.map((value) => {
+            return <h2>{value}</h2>;
+          })}
+        </>
+      )}
+      {props.match.params.numberPlayers > 1 && (
+        <>
+          <h1>Player 2:</h1>
+          {prompts2.map((value) => {
+            return <h2>{value}</h2>;
+          })}
+        </>
+      )}
+      {props.match.params.numberPlayers > 2 && (
+        <>
+          <h1>Player 3:</h1>
+          {prompts3.map((value) => {
+            return <h2>{value}</h2>;
+          })}
+        </>
+      )}
+      {props.match.params.numberPlayers > 3 && (
+        <>
+          <h1>Player 4:</h1>
+          {prompts4.map((value) => {
+            return <h2>{value}</h2>;
+          })}
+        </>
+      )}
+      {props.match.params.numberPlayers > 4 && (
+        <>
+          <h1>Player 5:</h1>
+          {prompts5.map((value) => {
+            return <h2>{value}</h2>;
+          })}
+        </>
+      )}
+      {props.match.params.numberPlayers > 5 && (
+        <>
+          <h1>Player 6:</h1>
+          {prompts6.map((value) => {
+            return <h2>{value}</h2>;
+          })}
+        </>
+      )}
+      {props.match.params.numberPlayers > 6 && (
+        <>
+          <h1>Player 7:</h1>
+          {prompts7.map((value) => {
+            return <h2>{value}</h2>;
+          })}
+        </>
+      )}
+      {props.match.params.numberPlayers > 7 && (
+        <>
+          <h1>Player 8:</h1>
+          {prompts8.map((value) => {
+            return <h2>{value}</h2>;
+          })}
+        </>
+      )}
+      {props.match.params.numberPlayers > 8 && (
+        <>
+          <h1>Player 9:</h1>
+          {prompts9.map((value) => {
+            return <h2>{value}</h2>;
+          })}
+        </>
+      )}
+      {props.match.params.numberPlayers > 10 && (
+        <>
+          <h1>Player 10:</h1>
+          {prompts10.map((value) => {
+            return <h2>{value}</h2>;
+          })}
+        </>
+      )}
     </>
   );
 };

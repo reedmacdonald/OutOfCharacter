@@ -60,7 +60,7 @@ function App() {
         />
         <Route
           exact
-          path={`${routes.ENDROOM}/:roomNumber`}
+          path={`${routes.ENDROOM}/:roomNumber/:numberPlayers`}
           render={() => <EndRoom />}
         />
       </Switch>

@@ -19,6 +19,33 @@ const GameRoom = (props) => {
   const [task, setTask] = React.useState([
     "Take a long sip of coffee. If you don't have coffee, get it",
   ]);
+  const [task2, setTask2] = React.useState([
+    "Take a long sip of coffee. If you don't have coffee, get it",
+  ]);
+  const [task3, setTask3] = React.useState([
+    "Take a long sip of coffee. If you don't have coffee, get it",
+  ]);
+  const [task4, setTask4] = React.useState([
+    "Take a long sip of coffee. If you don't have coffee, get it",
+  ]);
+  const [task5, setTask5] = React.useState([
+    "Take a long sip of coffee. If you don't have coffee, get it",
+  ]);
+  const [task6, setTask6] = React.useState([
+    "Take a long sip of coffee. If you don't have coffee, get it",
+  ]);
+  const [task7, setTask7] = React.useState([
+    "Take a long sip of coffee. If you don't have coffee, get it",
+  ]);
+  const [task8, setTask8] = React.useState([
+    "Take a long sip of coffee. If you don't have coffee, get it",
+  ]);
+  const [task9, setTask9] = React.useState([
+    "Take a long sip of coffee. If you don't have coffee, get it",
+  ]);
+  const [task10, setTask10] = React.useState([
+    "Take a long sip of coffee. If you don't have coffee, get it",
+  ]);
   const [numPeople, setNumPeople] = React.useState(1);
   const [insanityLevel, setInsanityLevel] = React.useState([
     "idk",
@@ -35,8 +62,18 @@ const GameRoom = (props) => {
     getSnapshot(props.match.params.roomNumber, (results) => {
       setNumPeople(results.numPeople);
       setTask(results.task);
+      setTask2(results.taskPlayer2);
+      setTask3(results.taskPlayer3);
+      setTask4(results.taskPlayer4);
+      setTask5(results.taskPlayer5);
+      setTask6(results.taskPlayer6);
+      setTask7(results.taskPlayer7);
+      setTask8(results.taskPlayer8);
+      setTask9(results.taskPlayer9);
+      setTask10(results.taskPlayer10);
       setPersonTurn(results.turnNumber);
-      //console.log(results, "<---results");
+      setNumPeople(results.numPeople);
+      console.log(results, "<---results");
       if (results.rotationSpeed == "fast") {
         setRotationSpeed(50000);
       }
@@ -47,7 +84,9 @@ const GameRoom = (props) => {
         setRotationSpeed(150000);
       }
       if (results.gameOver == true) {
-        props.history.push(`/endroom/${props.match.params.roomNumber}`);
+        props.history.push(
+          `/endroom/${props.match.params.roomNumber}/${results.numPeople}`
+        );
       }
     });
     let hmm;
@@ -94,6 +133,24 @@ const GameRoom = (props) => {
         setInterval(() => {
           let randNum = Math.floor(Math.random() * 21);
           let newTask = task.push(love[randNum]);
+          let randNum2 = Math.floor(Math.random() * 21);
+          let newTask2 = task2.push(love[randNum2]);
+          let randNum3 = Math.floor(Math.random() * 21);
+          let newTask3 = task3.push(love[randNum3]);
+          let randNum4 = Math.floor(Math.random() * 21);
+          let newTask4 = task4.push(love[randNum4]);
+          let randNum5 = Math.floor(Math.random() * 21);
+          let newTask5 = task5.push(love[randNum5]);
+          let randNum6 = Math.floor(Math.random() * 21);
+          let newTask6 = task6.push(love[randNum6]);
+          let randNum7 = Math.floor(Math.random() * 21);
+          let newTask7 = task7.push(love[randNum7]);
+          let randNum8 = Math.floor(Math.random() * 21);
+          let newTask8 = task8.push(love[randNum8]);
+          let randNum9 = Math.floor(Math.random() * 21);
+          let newTask9 = task9.push(love[randNum9]);
+          let randNum10 = Math.floor(Math.random() * 21);
+          let newTask10 = task10.push(love[randNum10]);
 
           let newRandNum = Math.floor(Math.random() * Number(numPeople) + 1);
           let turnNumber = newRandNum;
@@ -101,17 +158,50 @@ const GameRoom = (props) => {
           updateRoom(props.match.params.roomNumber.toString(), {
             task,
             turnNumber,
+            taskPlayer2: task2,
+            taskPlayer3: task3,
+            taskPlayer4: task4,
+            taskPlayer5: task5,
+            taskPlayer6: task6,
+            taskPlayer7: task7,
+            taskPlayer8: task8,
+            taskPlayer9: task9,
+            taskPlayer10: task10,
           });
         }, rotationSpeed);
     }
   }, [insanNumber]);
   return (
     <>
-      {props.match.params.playerNumber == personTurn ? (
-        <h1>{task[task.length - 1]}</h1>
-      ) : (
-        <h1>Just act naturally</h1>
+      {props.match.params.playerNumber == 1 && <h1>{task[task.length - 1]}</h1>}
+      {props.match.params.playerNumber == 2 && (
+        <h1>{task2[task2.length - 1]}</h1>
       )}
+      {props.match.params.playerNumber == 3 && (
+        <h1>{task3[task3.length - 1]}</h1>
+      )}
+      {props.match.params.playerNumber == 4 && (
+        <h1>{task4[task4.length - 1]}</h1>
+      )}
+      {props.match.params.playerNumber == 5 && (
+        <h1>{task5[task5.length - 1]}</h1>
+      )}
+      {props.match.params.playerNumber == 6 && (
+        <h1>{task6[task6.length - 1]}</h1>
+      )}
+      {props.match.params.playerNumber == 7 && (
+        <h1>{task7[task7.length - 1]}</h1>
+      )}
+      {props.match.params.playerNumber == 8 && (
+        <h1>{task8[task8.length - 1]}</h1>
+      )}
+      {props.match.params.playerNumber == 9 && (
+        <h1>{task9[task9.length - 1]}</h1>
+      )}
+      {props.match.params.playerNumber == 10 && (
+        <h1>{task10[task10.length - 1]}</h1>
+      )}
+
       {props.match.params.playerNumber == 1 && (
         <button
           onClick={() => {
