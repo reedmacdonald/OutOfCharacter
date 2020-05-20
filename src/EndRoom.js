@@ -39,7 +39,7 @@ const EndRoom = (props) => {
         <h1>The game has ended, but that was fun! </h1>
       </div>
       <h2>Here were your prompts:</h2>
-      {props.match.params.numberPlayers > 0 && (
+      {props.match.params.numberPlayers > 0 && unveil > 0 && (
         <>
           <h1>Player 1:</h1>
           {prompts.map((value, index) => {
