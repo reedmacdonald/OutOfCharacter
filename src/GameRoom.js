@@ -115,40 +115,113 @@ const GameRoom = (props) => {
           let newTask = task.push(love[randNum]);
           let randNum2 = Math.floor(Math.random() * 21);
           let newTask2 = task2.push(love[randNum2]);
-          let randNum3 = Math.floor(Math.random() * 21);
-          let newTask3 = task3.push(love[randNum3]);
-          let randNum4 = Math.floor(Math.random() * 21);
-          let newTask4 = task4.push(love[randNum4]);
-          let randNum5 = Math.floor(Math.random() * 21);
-          let newTask5 = task5.push(love[randNum5]);
-          let randNum6 = Math.floor(Math.random() * 21);
-          let newTask6 = task6.push(love[randNum6]);
-          let randNum7 = Math.floor(Math.random() * 21);
-          let newTask7 = task7.push(love[randNum7]);
-          let randNum8 = Math.floor(Math.random() * 21);
-          let newTask8 = task8.push(love[randNum8]);
-          let randNum9 = Math.floor(Math.random() * 21);
-          let newTask9 = task9.push(love[randNum9]);
-          let randNum10 = Math.floor(Math.random() * 21);
-          let newTask10 = task10.push(love[randNum10]);
 
           let newRandNum = Math.floor(Math.random() * Number(numPeople) + 1);
           let turnNumber = newRandNum;
 
           updateRoom(props.match.params.roomNumber.toString(), {
             task,
-            turnNumber,
-            taskPlayer2: task2,
-            taskPlayer3: task3,
-            taskPlayer4: task4,
-            taskPlayer5: task5,
-            taskPlayer6: task6,
-            taskPlayer7: task7,
-            taskPlayer8: task8,
-            taskPlayer9: task9,
-            taskPlayer10: task10,
           });
         }, rotationSpeed);
+    }
+    if (props.match.params.playerNumber == 1) {
+      let newNum = Math.floor(Math.random() * 90000) + 50000;
+      insanNumber !== 1 &&
+        setInterval(() => {
+          let randNum2 = Math.floor(Math.random() * 21);
+          let newTask2 = task2.push(love[randNum2]);
+          updateRoom(props.match.params.roomNumber.toString(), {
+            taskPlayer2: task2,
+          });
+        }, newNum);
+    }
+    if (props.match.params.playerNumber == 1) {
+      let newNum = Math.floor(Math.random() * 90000) + 50000;
+      insanNumber !== 1 &&
+        setInterval(() => {
+          let randNum3 = Math.floor(Math.random() * 21);
+          let newTask3 = task3.push(love[randNum3]);
+          updateRoom(props.match.params.roomNumber.toString(), {
+            taskPlayer3: task3,
+          });
+        }, newNum);
+    }
+    if (props.match.params.playerNumber == 1) {
+      let newNum = Math.floor(Math.random() * 90000) + 50000;
+      insanNumber !== 1 &&
+        setInterval(() => {
+          let randNum4 = Math.floor(Math.random() * 21);
+          let newTask4 = task4.push(love[randNum4]);
+          updateRoom(props.match.params.roomNumber.toString(), {
+            taskPlayer4: task4,
+          });
+        }, newNum);
+    }
+    if (props.match.params.playerNumber == 1) {
+      let newNum = Math.floor(Math.random() * 90000) + 50000;
+      insanNumber !== 1 &&
+        setInterval(() => {
+          let randNum5 = Math.floor(Math.random() * 21);
+          let newTask5 = task5.push(love[randNum5]);
+          updateRoom(props.match.params.roomNumber.toString(), {
+            taskPlayer5: task5,
+          });
+        }, newNum);
+    }
+    if (props.match.params.playerNumber == 1) {
+      let newNum = Math.floor(Math.random() * 90000) + 50000;
+      insanNumber !== 1 &&
+        setInterval(() => {
+          let randNum6 = Math.floor(Math.random() * 21);
+          let newTask6 = task6.push(love[randNum6]);
+          updateRoom(props.match.params.roomNumber.toString(), {
+            taskPlayer6: task6,
+          });
+        }, newNum);
+    }
+    if (props.match.params.playerNumber == 1) {
+      let newNum = Math.floor(Math.random() * 90000) + 50000;
+      insanNumber !== 1 &&
+        setInterval(() => {
+          let randNum7 = Math.floor(Math.random() * 21);
+          let newTask7 = task7.push(love[randNum7]);
+          updateRoom(props.match.params.roomNumber.toString(), {
+            taskPlayer7: task7,
+          });
+        }, newNum);
+    }
+    if (props.match.params.playerNumber == 1) {
+      let newNum = Math.floor(Math.random() * 90000) + 50000;
+      insanNumber !== 1 &&
+        setInterval(() => {
+          let randNum8 = Math.floor(Math.random() * 21);
+          let newTask8 = task8.push(love[randNum8]);
+          updateRoom(props.match.params.roomNumber.toString(), {
+            taskPlayer8: task8,
+          });
+        }, newNum);
+    }
+    if (props.match.params.playerNumber == 1) {
+      let newNum = Math.floor(Math.random() * 90000) + 50000;
+      insanNumber !== 1 &&
+        setInterval(() => {
+          let randNum9 = Math.floor(Math.random() * 21);
+          let newTask9 = task9.push(love[randNum9]);
+          updateRoom(props.match.params.roomNumber.toString(), {
+            taskPlayer9: task9,
+          });
+        }, newNum);
+    }
+    if (props.match.params.playerNumber == 1) {
+      let newNum = Math.floor(Math.random() * 90000) + 50000;
+      insanNumber !== 1 &&
+        setInterval(() => {
+          let randNum10 = Math.floor(Math.random() * 21);
+          let newTask10 = task10.push(love[randNum10]);
+          updateRoom(props.match.params.roomNumber.toString(), {
+            taskPlayer10: task10,
+          });
+        }, newNum);
     }
   }, [insanNumber]);
   return (
