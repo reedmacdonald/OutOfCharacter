@@ -1,6 +1,6 @@
 export const level2 = [
   "Next time it's your turn to talk, start talking for a few seconds while still being muted and then unmute yourself and say 'Sorry I forgot I was muted' ",
-  "Step a way from the camera for a brief moment",
+  "Step away from the camera for a brief moment",
   "Mute yourself, pretend to sneaze, and then unmute yourself",
   "Unmute yourself just to laugh at the next joke, even if it isn't particularly funny",
   "Mute yourself and pretend to talk to someone offscreen, looking rather annoyed",
@@ -78,9 +78,9 @@ export const level4 = [
   "Who wants to live in a world without Classic Coke? Drop the phrase `You're goddamn right` at some point.",
 ];
 export const level5 = [
-  "Bob your head a little bit like your listening to a cool song",
-  "Next time you talk, use the phrase 'Having said that' to completely negate what you previously said. H/t Curb Your Enthusiasm",
-  "Respond to someone with a comment that is pretty irrelevant",
+  "Bob your head a little bit like you`re listening to a cool song",
+  "Next time you talk, use the phrase 'Having said that' to completely negate what you previously said.",
+  "Respond to someone with a comment that is pretty irrelevant to what they were saying",
   "Make a dumb joke. This shouldn't be hard for you.",
   "You are Academy-Award winner Matthew McCanaughey. Say 'Alright, alright, alright' next time you talk",
   "Do some humble-bragging. You deserve some recognition without overtly seeming like a braggart",
@@ -138,7 +138,42 @@ export const level6 = [
   "Talk about a fond memory you have with someone in the group. This memory should be completely fabricated but realistic enough that the other person may think THEY just aren't remembering it.",
 ];
 export const level1 = ["Sneaze", "Haha", "What", "LOL", "What is this"];
+//American History
 export const level7 = ["Sneaze", "Haha", "What", "LOL", "What is this"];
+//Super Peronal
 export const level8 = ["Seaze", "Haha", "What", "LOL", "What is this"];
+//Office Meetings
 export const level9 = ["Sneaze", "Haha", "What", "LOL", "What is this"];
-export const level10 = ["Sneaze", "Haha", "What", "LOL", "What is this"];
+//All character-based
+export const level10 = [
+  "Ho ho ho! You are Santa Clause",
+  "Drainage Eli, draaaaaaaaaaaaaiiiiiiiiiinnnnnnagggggggeeeeee. You are Daniel Plainview, main character of `There Will be Blood`.",
+  "You are a Greek God. You always kind of have been :)",
+  "You are a fighter-pilot in the middle of a dogfight!",
+  "You are the unintelligent side-character from a Shakespeare comedy.",
+  "You are a mediocre singer-songwriter in the middle of the slow part of the song",
+  "You are the king of a great empire but have a very noticable inferiority complex",
+  "You are a philosophy professor",
+  "You are a person whose personality traits are a mix of those of the tallest and shortest person on the conference call",
+  "You are someone who hasn`t slept in a week",
+  "You are your favorite Marvel character. Bonus points if it's Thor, as it should be",
+  "Ho ho ho! You are Santa Clause",
+  "You are a President of the United States, who served between 1800-2000. Pick one in particular",
+  "You have telekenisis, but you don't want anyone to know. But you still can't fight off the urge to explore your own powers.",
+  "You are someone whose been living under a rock for the past 10 years. You can interpret this literally or figuratively",
+  "You are Petyr Baelish. Everyone on the call is your enemy. Everyone on the call is your friend.",
+  "You are an idiot-savant. Your choice as to what you're good at.",
+  "You are a carpenter. A real salt-of-the-Earth man",
+  "You are lost, and are in the wrong group chat.",
+  "You're a hipster",
+  "You're a wizard, Harry",
+  "You are yourself from 10 years ago.",
+  "You are a sportscaster",
+  "You are a feminist",
+  "You are an alien who is pretending to be you",
+  "You are obsessed with your high school Glory days",
+  "You are a DJ in the middle of an EDM set",
+  "You are Joe Exotic",
+  "You are incredibly arrogant but are trying your best to seem modest.",
+  "You are Troy Bolton. You're heads in the game but you're hearts in the song.",
+];
