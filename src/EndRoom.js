@@ -1,6 +1,6 @@
 import React from "react";
 import { Switch, Route, Redirect, withRouter } from "react-router-dom";
-import { getDoc } from "./Functions";
+import { getDoc, getSnapshot, updateRoom } from "./Functions";
 import "./App.css";
 
 const EndRoom = (props) => {
@@ -14,6 +14,7 @@ const EndRoom = (props) => {
   const [prompts8, setPrompts8] = React.useState(["some", "prompts"]);
   const [prompts9, setPrompts9] = React.useState(["some", "prompts"]);
   const [prompts10, setPrompts10] = React.useState(["some", "prompts"]);
+  const [unveil, setUnveil] = React.useState(1);
   React.useEffect(() => {
     getDoc(props.match.params.roomNumber.toString(), (results) => {
       setPrompts(results.task);
@@ -27,6 +28,9 @@ const EndRoom = (props) => {
       setPrompts9(results.taskPlayer9);
       setPrompts10(results.taskPlayer);
     });
+    getSnapshot(props.match.params.roomNumber.toString(), (results) => {
+      setUnveil(results.unveil);
+    });
   }, []);
   console.log(props.match.params, "<------props.match.params");
   return (
@@ -38,83 +42,94 @@ const EndRoom = (props) => {
       {props.match.params.numberPlayers > 0 && (
         <>
           <h1>Player 1:</h1>
-          {prompts.map((value) => {
-            return <h2>{value}</h2>;
+          {prompts.map((value, index) => {
+            return <h2>{index !== 0 ? value : ""}</h2>;
           })}
         </>
       )}
-      {props.match.params.numberPlayers > 1 && (
+      {props.match.params.numberPlayers > 1 && unveil > 1 && (
         <>
           <h1>Player 2:</h1>
-          {prompts2.map((value) => {
-            return <h2>{value}</h2>;
+          {prompts2.map((value, index) => {
+            return <h2>{index !== 0 ? value : ""}</h2>;
           })}
         </>
       )}
-      {props.match.params.numberPlayers > 2 && (
+      {props.match.params.numberPlayers > 2 && unveil > 2 && (
         <>
           <h1>Player 3:</h1>
-          {prompts3.map((value) => {
-            return <h2>{value}</h2>;
+          {prompts3.map((value, index) => {
+            return <h2>{index !== 0 ? value : ""}</h2>;
           })}
         </>
       )}
-      {props.match.params.numberPlayers > 3 && (
+      {props.match.params.numberPlayers > 3 && unveil > 3 && (
         <>
           <h1>Player 4:</h1>
-          {prompts4.map((value) => {
-            return <h2>{value}</h2>;
+          {prompts4.map((value, index) => {
+            return <h2>{index !== 0 ? value : ""}</h2>;
           })}
         </>
       )}
-      {props.match.params.numberPlayers > 4 && (
+      {props.match.params.numberPlayers > 4 && unveil > 4 && (
         <>
           <h1>Player 5:</h1>
-          {prompts5.map((value) => {
-            return <h2>{value}</h2>;
+          {prompts5.map((value, index) => {
+            return <h2>{index !== 0 ? value : ""}</h2>;
           })}
         </>
       )}
-      {props.match.params.numberPlayers > 5 && (
+      {props.match.params.numberPlayers > 5 && unveil > 5 && (
         <>
           <h1>Player 6:</h1>
-          {prompts6.map((value) => {
-            return <h2>{value}</h2>;
+          {prompts6.map((value, index) => {
+            return <h2>{index !== 0 ? value : ""}</h2>;
           })}
         </>
       )}
-      {props.match.params.numberPlayers > 6 && (
+      {props.match.params.numberPlayers > 6 && unveil > 6 && (
         <>
           <h1>Player 7:</h1>
-          {prompts7.map((value) => {
-            return <h2>{value}</h2>;
+          {prompts7.map((value, index) => {
+            return <h2>{index !== 0 ? value : ""}</h2>;
           })}
         </>
       )}
-      {props.match.params.numberPlayers > 7 && (
+      {props.match.params.numberPlayers > 7 && unveil > 7 && (
         <>
           <h1>Player 8:</h1>
-          {prompts8.map((value) => {
-            return <h2>{value}</h2>;
+          {prompts8.map((value, index) => {
+            return <h2>{index !== 0 ? value : ""}</h2>;
           })}
         </>
       )}
-      {props.match.params.numberPlayers > 8 && (
-        <>
-          <h1>Player 9:</h1>
-          {prompts9.map((value) => {
-            return <h2>{value}</h2>;
-          })}
-        </>
-      )}
-      {props.match.params.numberPlayers > 10 && (
+      {props.match.params.numberPlayers > 8 &&
+        unveil >
+          8(
+            <>
+              <h1>Player 9:</h1>
+              {prompts9.map((value, index) => {
+                return <h2>{index !== 0 ? value : ""}</h2>;
+              })}
+            </>
+          )}
+      {props.match.params.numberPlayers > 9 && unveil > 9 && (
         <>
           <h1>Player 10:</h1>
-          {prompts10.map((value) => {
-            return <h2>{value}</h2>;
+          {prompts10.map((value, index) => {
+            return <h2>{index !== 0 ? value : ""}</h2>;
           })}
         </>
       )}
+      <button
+        onClick={() => {
+          updateRoom(props.match.params.roomNumber.toString(), {
+            unveil: unveil + 1,
+          });
+        }}
+      >
+        See next person
+      </button>
     </>
   );
 };

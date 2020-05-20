@@ -51,38 +51,19 @@ function FirstRoom(props) {
             rotationSpeed,
             insanityLevel,
             randThing,
-            task: [
-              "Take a long sip of coffee. If you don't have coffee, get it",
-            ],
-            taskPlayer2: [
-              "Take a long sip of coffee. If you don't have coffee, get it",
-            ],
-            taskPlayer3: [
-              "Take a long sip of coffee. If you don't have coffee, get it",
-            ],
-            taskPlayer4: [
-              "Take a long sip of coffee. If you don't have coffee, get it",
-            ],
-            taskPlayer5: [
-              "Take a long sip of coffee. If you don't have coffee, get it",
-            ],
-            taskPlayer6: [
-              "Take a long sip of coffee. If you don't have coffee, get it",
-            ],
-            taskPlayer7: [
-              "Take a long sip of coffee. If you don't have coffee, get it",
-            ],
-            taskPlayer8: [
-              "Take a long sip of coffee. If you don't have coffee, get it",
-            ],
-            taskPlayer9: [
-              "Take a long sip of coffee. If you don't have coffee, get it",
-            ],
-            taskPlayer10: [
-              "Take a long sip of coffee. If you don't have coffee, get it",
-            ],
+            task: ["Your game will begin shortly"],
+            taskPlayer2: ["Your game will begin shortly"],
+            taskPlayer3: ["Your game will begin shortly"],
+            taskPlayer4: ["Your game will begin shortly"],
+            taskPlayer5: ["Your game will begin shortly"],
+            taskPlayer6: ["Your game will begin shortly"],
+            taskPlayer7: ["Your game will begin shortly"],
+            taskPlayer8: ["Your game will begin shortly"],
+            taskPlayer9: ["Your game will begin shortly"],
+            taskPlayer10: ["Your game will begin shortly"],
             turnNumber: 1,
             gameOver: false,
+            unveil: 1,
           });
           sessionStorage.setItem("yourRoom", gameContext.roomNumber);
           console.log(

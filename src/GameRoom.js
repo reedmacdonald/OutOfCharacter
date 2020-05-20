@@ -16,36 +16,16 @@ import {
 } from "./Tasks";
 
 const GameRoom = (props) => {
-  const [task, setTask] = React.useState([
-    "Take a long sip of coffee. If you don't have coffee, get it",
-  ]);
-  const [task2, setTask2] = React.useState([
-    "Take a long sip of coffee. If you don't have coffee, get it",
-  ]);
-  const [task3, setTask3] = React.useState([
-    "Take a long sip of coffee. If you don't have coffee, get it",
-  ]);
-  const [task4, setTask4] = React.useState([
-    "Take a long sip of coffee. If you don't have coffee, get it",
-  ]);
-  const [task5, setTask5] = React.useState([
-    "Take a long sip of coffee. If you don't have coffee, get it",
-  ]);
-  const [task6, setTask6] = React.useState([
-    "Take a long sip of coffee. If you don't have coffee, get it",
-  ]);
-  const [task7, setTask7] = React.useState([
-    "Take a long sip of coffee. If you don't have coffee, get it",
-  ]);
-  const [task8, setTask8] = React.useState([
-    "Take a long sip of coffee. If you don't have coffee, get it",
-  ]);
-  const [task9, setTask9] = React.useState([
-    "Take a long sip of coffee. If you don't have coffee, get it",
-  ]);
-  const [task10, setTask10] = React.useState([
-    "Take a long sip of coffee. If you don't have coffee, get it",
-  ]);
+  const [task, setTask] = React.useState(["Your game will begin shortly"]);
+  const [task2, setTask2] = React.useState(["Your game will begin shortly"]);
+  const [task3, setTask3] = React.useState(["Your game will begin shortly"]);
+  const [task4, setTask4] = React.useState(["Your game will begin shortly"]);
+  const [task5, setTask5] = React.useState(["Your game will begin shortly"]);
+  const [task6, setTask6] = React.useState(["Your game will begin shortly"]);
+  const [task7, setTask7] = React.useState(["Your game will begin shortly"]);
+  const [task8, setTask8] = React.useState(["Your game will begin shortly"]);
+  const [task9, setTask9] = React.useState(["Your game will begin shortly"]);
+  const [task10, setTask10] = React.useState(["Your game will begin shortly"]);
   const [numPeople, setNumPeople] = React.useState(1);
   const [insanityLevel, setInsanityLevel] = React.useState([
     "idk",
