@@ -61,7 +61,7 @@ function FirstRoom(props) {
             taskPlayer10: ["Make some small-talk to get things going"],
             turnNumber: 1,
             gameOver: false,
-            unveil: 1,
+            unveil: 0,
           });
           sessionStorage.setItem("yourRoom", gameContext.roomNumber);
           console.log(
