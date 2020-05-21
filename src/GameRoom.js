@@ -145,7 +145,7 @@ const GameRoom = (props) => {
         }, rotationSpeed);
     }
     if (props.match.params.playerNumber == 1) {
-      let newNum = Math.floor(Math.random() * 90000) + 50000;
+      let newNum = Math.floor(Math.random() * 40000) + 50000;
       insanNumber !== 1 &&
         setInterval(() => {
           let randNum2 = Math.floor(Math.random() * love.length);
@@ -156,7 +156,7 @@ const GameRoom = (props) => {
         }, newNum);
     }
     if (props.match.params.playerNumber == 1) {
-      let newNum = Math.floor(Math.random() * 90000) + 50000;
+      let newNum = Math.floor(Math.random() * 40000) + 50000;
       insanNumber !== 1 &&
         setInterval(() => {
           let randNum3 = Math.floor(Math.random() * love.length);
@@ -167,7 +167,7 @@ const GameRoom = (props) => {
         }, newNum);
     }
     if (props.match.params.playerNumber == 1) {
-      let newNum = Math.floor(Math.random() * 90000) + 50000;
+      let newNum = Math.floor(Math.random() * 40000) + 50000;
       insanNumber !== 1 &&
         setInterval(() => {
           let randNum4 = Math.floor(Math.random() * love.length);
@@ -178,7 +178,7 @@ const GameRoom = (props) => {
         }, newNum);
     }
     if (props.match.params.playerNumber == 1) {
-      let newNum = Math.floor(Math.random() * 90000) + 50000;
+      let newNum = Math.floor(Math.random() * 40000) + 50000;
       insanNumber !== 1 &&
         setInterval(() => {
           let randNum5 = Math.floor(Math.random() * love.length);
@@ -189,7 +189,7 @@ const GameRoom = (props) => {
         }, newNum);
     }
     if (props.match.params.playerNumber == 1) {
-      let newNum = Math.floor(Math.random() * 90000) + 50000;
+      let newNum = Math.floor(Math.random() * 40000) + 50000;
       insanNumber !== 1 &&
         setInterval(() => {
           let randNum6 = Math.floor(Math.random() * love.length);
@@ -200,7 +200,7 @@ const GameRoom = (props) => {
         }, newNum);
     }
     if (props.match.params.playerNumber == 1) {
-      let newNum = Math.floor(Math.random() * 90000) + 50000;
+      let newNum = Math.floor(Math.random() * 40000) + 50000;
       insanNumber !== 1 &&
         setInterval(() => {
           let randNum7 = Math.floor(Math.random() * love.length);
@@ -211,7 +211,7 @@ const GameRoom = (props) => {
         }, newNum);
     }
     if (props.match.params.playerNumber == 1) {
-      let newNum = Math.floor(Math.random() * 90000) + 50000;
+      let newNum = Math.floor(Math.random() * 40000) + 50000;
       insanNumber !== 1 &&
         setInterval(() => {
           let randNum8 = Math.floor(Math.random() * love.length);
@@ -222,7 +222,7 @@ const GameRoom = (props) => {
         }, newNum);
     }
     if (props.match.params.playerNumber == 1) {
-      let newNum = Math.floor(Math.random() * 90000) + 50000;
+      let newNum = Math.floor(Math.random() * 40000) + 50000;
       insanNumber !== 1 &&
         setInterval(() => {
           let randNum9 = Math.floor(Math.random() * love.length);
@@ -233,7 +233,7 @@ const GameRoom = (props) => {
         }, newNum);
     }
     if (props.match.params.playerNumber == 1) {
-      let newNum = Math.floor(Math.random() * 90000) + 50000;
+      let newNum = Math.floor(Math.random() * 40000) + 50000;
       insanNumber !== 1 &&
         setInterval(() => {
           let randNum10 = Math.floor(Math.random() * 21);
