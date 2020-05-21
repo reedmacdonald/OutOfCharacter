@@ -64,10 +64,7 @@ function FirstRoom(props) {
             unveil: 0,
           });
           sessionStorage.setItem("yourRoom", gameContext.roomNumber);
-          console.log(
-            gameContext.roomNumber,
-            "<---setting this as sessionStorage"
-          );
+
           props.history.push(`/waitingroom/${gameContext.roomNumber}`);
         }}
       >
