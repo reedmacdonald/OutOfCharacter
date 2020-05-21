@@ -29,19 +29,17 @@ function FirstRoom(props) {
         min="2"
         max="10"
       ></input>
-      <h3>Rotation Speed?</h3>
-      <select onChange={(e) => setRotationSpeed(e.target.value)}>
-        <option value="slow">Slow</option>
-        <option value="medium">Medium</option>
-        <option value="fast">Fast</option>
+
+      <h3>Game Type</h3>
+      <select onChange={(e) => setInsanityLevel(e.target.value)}>
+        <option value={2}>Absurdity Level 1</option>
+        <option value={3}>Absurdity Level 2</option>
+        <option value={4}>Absurdity Level 3</option>
+        <option value={5}>Absurdity Level 4</option>
+        <option value={6}>Absurdity Level 6</option>
+        <option value={7}>Character Based</option>
+        <option value={8}>Politics</option>
       </select>
-      <h3>Absurdity Level (2-6)</h3>
-      <input
-        onChange={(e) => setInsanityLevel(e.target.value)}
-        type="number"
-        min="2"
-        max="6"
-      ></input>
       <br />
       <button
         onClick={() => {
@@ -51,16 +49,16 @@ function FirstRoom(props) {
             rotationSpeed,
             insanityLevel,
             randThing,
-            task: ["Your game will begin shortly"],
-            taskPlayer2: ["Your game will begin shortly"],
-            taskPlayer3: ["Your game will begin shortly"],
-            taskPlayer4: ["Your game will begin shortly"],
-            taskPlayer5: ["Your game will begin shortly"],
-            taskPlayer6: ["Your game will begin shortly"],
-            taskPlayer7: ["Your game will begin shortly"],
-            taskPlayer8: ["Your game will begin shortly"],
-            taskPlayer9: ["Your game will begin shortly"],
-            taskPlayer10: ["Your game will begin shortly"],
+            task: ["Make some small-talk to get things going"],
+            taskPlayer2: ["Make some small-talk to get things going"],
+            taskPlayer3: ["Make some small-talk to get things going"],
+            taskPlayer4: ["Make some small-talk to get things going"],
+            taskPlayer5: ["Make some small-talk to get things going"],
+            taskPlayer6: ["Make some small-talk to get things going"],
+            taskPlayer7: ["Make some small-talk to get things going"],
+            taskPlayer8: ["Make some small-talk to get things going"],
+            taskPlayer9: ["Make some small-talk to get things going"],
+            taskPlayer10: ["Make some small-talk to get things going"],
             turnNumber: 1,
             gameOver: false,
             unveil: 1,

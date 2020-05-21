@@ -14,7 +14,7 @@ const EndRoom = (props) => {
   const [prompts8, setPrompts8] = React.useState(["some", "prompts"]);
   const [prompts9, setPrompts9] = React.useState(["some", "prompts"]);
   const [prompts10, setPrompts10] = React.useState(["some", "prompts"]);
-  const [unveil, setUnveil] = React.useState(1);
+  const [unveil, setUnveil] = React.useState(0);
   React.useEffect(() => {
     getDoc(props.match.params.roomNumber.toString(), (results) => {
       setPrompts(results.task);
@@ -32,7 +32,6 @@ const EndRoom = (props) => {
       setUnveil(results.unveil);
     });
   }, []);
-  console.log(props.match.params, "<------props.match.params");
   return (
     <>
       <div>
@@ -43,7 +42,14 @@ const EndRoom = (props) => {
         <>
           <h1>Player 1:</h1>
           {prompts.map((value, index) => {
-            return <h2>{index !== 0 ? value : ""}</h2>;
+            return (
+              <h2>
+                {index !== 0 &&
+                value !== "Just be yourself. That's good enough for me :)"
+                  ? value
+                  : ""}
+              </h2>
+            );
           })}
         </>
       )}
@@ -51,7 +57,14 @@ const EndRoom = (props) => {
         <>
           <h1>Player 2:</h1>
           {prompts2.map((value, index) => {
-            return <h2>{index !== 0 ? value : ""}</h2>;
+            return (
+              <h2>
+                {index !== 0 &&
+                value !== "Just be yourself. That's good enough for me :)"
+                  ? value
+                  : ""}
+              </h2>
+            );
           })}
         </>
       )}
@@ -59,7 +72,14 @@ const EndRoom = (props) => {
         <>
           <h1>Player 3:</h1>
           {prompts3.map((value, index) => {
-            return <h2>{index !== 0 ? value : ""}</h2>;
+            return (
+              <h2>
+                {index !== 0 &&
+                value !== "Just be yourself. That's good enough for me :)"
+                  ? value
+                  : ""}
+              </h2>
+            );
           })}
         </>
       )}
@@ -67,7 +87,14 @@ const EndRoom = (props) => {
         <>
           <h1>Player 4:</h1>
           {prompts4.map((value, index) => {
-            return <h2>{index !== 0 ? value : ""}</h2>;
+            return (
+              <h2>
+                {index !== 0 &&
+                value !== "Just be yourself. That's good enough for me :)"
+                  ? value
+                  : ""}
+              </h2>
+            );
           })}
         </>
       )}
@@ -75,7 +102,14 @@ const EndRoom = (props) => {
         <>
           <h1>Player 5:</h1>
           {prompts5.map((value, index) => {
-            return <h2>{index !== 0 ? value : ""}</h2>;
+            return (
+              <h2>
+                {index !== 0 &&
+                value !== "Just be yourself. That's good enough for me :)"
+                  ? value
+                  : ""}
+              </h2>
+            );
           })}
         </>
       )}
@@ -83,7 +117,14 @@ const EndRoom = (props) => {
         <>
           <h1>Player 6:</h1>
           {prompts6.map((value, index) => {
-            return <h2>{index !== 0 ? value : ""}</h2>;
+            return (
+              <h2>
+                {index !== 0 &&
+                value !== "Just be yourself. That's good enough for me :)"
+                  ? value
+                  : ""}
+              </h2>
+            );
           })}
         </>
       )}
@@ -91,7 +132,14 @@ const EndRoom = (props) => {
         <>
           <h1>Player 7:</h1>
           {prompts7.map((value, index) => {
-            return <h2>{index !== 0 ? value : ""}</h2>;
+            return (
+              <h2>
+                {index !== 0 &&
+                value !== "Just be yourself. That's good enough for me :)"
+                  ? value
+                  : ""}
+              </h2>
+            );
           })}
         </>
       )}
@@ -99,7 +147,14 @@ const EndRoom = (props) => {
         <>
           <h1>Player 8:</h1>
           {prompts8.map((value, index) => {
-            return <h2>{index !== 0 ? value : ""}</h2>;
+            return (
+              <h2>
+                {index !== 0 &&
+                value !== "Just be yourself. That's good enough for me :)"
+                  ? value
+                  : ""}
+              </h2>
+            );
           })}
         </>
       )}
@@ -109,7 +164,14 @@ const EndRoom = (props) => {
             <>
               <h1>Player 9:</h1>
               {prompts9.map((value, index) => {
-                return <h2>{index !== 0 ? value : ""}</h2>;
+                return (
+                  <h2>
+                    {index !== 0 &&
+                    value !== "Just be yourself. That's good enough for me :)"
+                      ? value
+                      : ""}
+                  </h2>
+                );
               })}
             </>
           )}
@@ -117,7 +179,14 @@ const EndRoom = (props) => {
         <>
           <h1>Player 10:</h1>
           {prompts10.map((value, index) => {
-            return <h2>{index !== 0 ? value : ""}</h2>;
+            return (
+              <h2>
+                {index !== 0 &&
+                value !== "Just be yourself. That's good enough for me :)"
+                  ? value
+                  : ""}
+              </h2>
+            );
           })}
         </>
       )}

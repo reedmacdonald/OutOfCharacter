@@ -23,13 +23,22 @@ export const level2 = [
   "Is something burning? Sniff a little bit, as though you think something might be burning.",
   "It's hot in here. Go open a window.",
   "Unmute yourself, look like you're about to say something, and then don't. Go back to mute.",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
 ];
 export const level3 = [
   "Nod in agreement though try to do it at a moment when nodding wouldnt normally be your natural reaction",
   "Pretend to swat a fly",
   "Small yawn, cover your mouth",
   "Take a long sip of coffee. If you don't have coffee, get it",
-  "Lick your lips, like you got some hot-cheeto power on them",
+  "Lick your lips, like you got some hot-cheeto powder on them",
   "Turn your back to the camera, just like you turned your back on your childhood friend.",
   "Next time it's your turn to talk, start talking for a few seconds while still being muted and then unmute yourself and say 'Sorry I forgot I was muted' ",
   "Step a way from the camera for a brief moment",
@@ -46,7 +55,15 @@ export const level3 = [
   "You are William Wallace, and you give homage to Scottland! Use a termn like 'wee bit', or 'lad', or some other nebulous Scottish slang. ",
   "Who has too thumbs? You do. Give some thumbs up to someone",
   "Spread the love! Next time you talk, say what you love about something.",
-  "Analytics, Ernie!",
+  "Analytics, Ernie! Drop some stats like you're Nate Silver",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
 ];
 export const level4 = [
   "Unmute yourself to say `interesting` to something that wasn't particularly interesting",
@@ -76,6 +93,13 @@ export const level4 = [
   "You're not very observant. Ask, `Is that a new *blank*?` to someone about something that is not new.",
   "Make some friends! Give a compliment to the person who you think probably likes you least.",
   "Who wants to live in a world without Classic Coke? Drop the phrase `You're goddamn right` at some point.",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
 ];
 export const level5 = [
   "Bob your head a little bit like you`re listening to a cool song",
@@ -108,6 +132,17 @@ export const level5 = [
   "Get offended by something. Preferably something not offensive.",
   "You are Hamlet! Mute yourself and then give a monologue to yourself as if you have to make an important decision",
   "You don`t look like yourself today. Make a facial expression you`ve never made before",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
 ];
 export const level6 = [
   "Next time you would laugh naturally, laugh hysterically. Be unable to calm down for an embarrassing period of time.",
@@ -136,16 +171,61 @@ export const level6 = [
   "Go offscreen to get something, but dont mute yourself. While offscreen, start barking. People should think its a dog barking, even though its just you. More bonus points if its like a high pitched yelp.",
   "We've been invaded by aliens, and they're disguised as us! You are now an alien who is pretending to be you (and they're doing a good, but not great job)",
   "Talk about a fond memory you have with someone in the group. This memory should be completely fabricated but realistic enough that the other person may think THEY just aren't remembering it.",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
 ];
 export const level1 = ["Sneaze", "Haha", "What", "LOL", "What is this"];
-//American History
-export const level7 = ["Sneaze", "Haha", "What", "LOL", "What is this"];
+//Politics
+export const level8 = [
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Someone is making a good point. Nod in agreement",
+  "You're about to make a good point, but you forgot what you were going to say. Start talking and then say either `I forgot what I was going to say` or `I don't know where I was going with that`",
+  "Make a comparison to Nazi Germany",
+  "Make a comparison to Soviet Russia",
+  "Make a comparison to Castro's Cuba",
+  "Mention something that could've been said by Andrew Yang",
+  "Namedrop someone who you think may be President in the future, excluding Trump and Biden",
+  "Someone is making a great point. Nod FURIOUSLY in agreement",
+  "Someone is making a TERRIBLE point. Nod furiously in disagreement",
+  "Ask a question to someone who has been quite",
+  "Next time someone gets cut off, say 'Hey, let them finish their thought'",
+  "You are a President in the 1800s",
+  "Say what you would do if you were president",
+  "'How are we going to pay for it?' Say something that Amy Klobuchar might say",
+  "You are a comedian who is doing the same dry anti-SJW shit. Complain about hyper-sensitivity in comedy or America",
+  "You are one of the dumbass hosts of Pod Save America. Say something factually incorrect and say it in a really smug way, and then laugh at your own unfunny observation",
+  "Say 'going back to what you said earlier' and then mention what someone said earlier",
+  "Go to the bathroom",
+  "Mention one of the Lesson We Learned from 2016",
+  "Mention one of the accomplishments of the Obama administration",
+  "Mention one of the failings of the Obama administration",
+  "Grab some water and take a sip",
+  "Nod in agreement though try to do it at a moment when nodding wouldnt normally be your natural reaction",
+  "Pretend to swat a fly",
+  "Small yawn, cover your mouth",
+  "Take a long sip of coffee. If you don't have coffee, get it",
+  "Mention the #MeToo Movement and its effects on our political landscape",
+];
 //Super Peronal
-export const level8 = ["Seaze", "Haha", "What", "LOL", "What is this"];
+export const level10 = ["Seaze", "Haha", "What", "LOL", "What is this"];
 //Office Meetings
 export const level9 = ["Sneaze", "Haha", "What", "LOL", "What is this"];
 //All character-based
-export const level10 = [
+export const level7 = [
   "Ho ho ho! You are Santa Clause",
   "Drainage Eli, draaaaaaaaaaaaaiiiiiiiiiinnnnnnagggggggeeeeee. You are Daniel Plainview, main character of `There Will be Blood`.",
   "You are a Greek God. You always kind of have been :)",
@@ -176,4 +256,14 @@ export const level10 = [
   "You are Joe Exotic",
   "You are incredibly arrogant but are trying your best to seem modest.",
   "You are Troy Bolton. You're heads in the game but you're hearts in the song.",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
 ];

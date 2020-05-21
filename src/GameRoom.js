@@ -16,16 +16,36 @@ import {
 } from "./Tasks";
 
 const GameRoom = (props) => {
-  const [task, setTask] = React.useState(["Your game will begin shortly"]);
-  const [task2, setTask2] = React.useState(["Your game will begin shortly"]);
-  const [task3, setTask3] = React.useState(["Your game will begin shortly"]);
-  const [task4, setTask4] = React.useState(["Your game will begin shortly"]);
-  const [task5, setTask5] = React.useState(["Your game will begin shortly"]);
-  const [task6, setTask6] = React.useState(["Your game will begin shortly"]);
-  const [task7, setTask7] = React.useState(["Your game will begin shortly"]);
-  const [task8, setTask8] = React.useState(["Your game will begin shortly"]);
-  const [task9, setTask9] = React.useState(["Your game will begin shortly"]);
-  const [task10, setTask10] = React.useState(["Your game will begin shortly"]);
+  const [task, setTask] = React.useState([
+    "Make some small-talk to get things going",
+  ]);
+  const [task2, setTask2] = React.useState([
+    "Make some small-talk to get things going",
+  ]);
+  const [task3, setTask3] = React.useState([
+    "Make some small-talk to get things going",
+  ]);
+  const [task4, setTask4] = React.useState([
+    "Make some small-talk to get things going",
+  ]);
+  const [task5, setTask5] = React.useState([
+    "Make some small-talk to get things going",
+  ]);
+  const [task6, setTask6] = React.useState([
+    "Make some small-talk to get things going",
+  ]);
+  const [task7, setTask7] = React.useState([
+    "Make some small-talk to get things going",
+  ]);
+  const [task8, setTask8] = React.useState([
+    "Make some small-talk to get things going",
+  ]);
+  const [task9, setTask9] = React.useState([
+    "Make some small-talk to get things going",
+  ]);
+  const [task10, setTask10] = React.useState([
+    "Make some small-talk to get things going",
+  ]);
   const [numPeople, setNumPeople] = React.useState(1);
   const [insanityLevel, setInsanityLevel] = React.useState([
     "idk",
@@ -111,9 +131,9 @@ const GameRoom = (props) => {
     if (props.match.params.playerNumber == 1) {
       insanNumber !== 1 &&
         setInterval(() => {
-          let randNum = Math.floor(Math.random() * 21);
+          let randNum = Math.floor(Math.random() * love.length);
           let newTask = task.push(love[randNum]);
-          let randNum2 = Math.floor(Math.random() * 21);
+          let randNum2 = Math.floor(Math.random() * love.length);
           let newTask2 = task2.push(love[randNum2]);
 
           let newRandNum = Math.floor(Math.random() * Number(numPeople) + 1);
@@ -128,7 +148,7 @@ const GameRoom = (props) => {
       let newNum = Math.floor(Math.random() * 90000) + 50000;
       insanNumber !== 1 &&
         setInterval(() => {
-          let randNum2 = Math.floor(Math.random() * 21);
+          let randNum2 = Math.floor(Math.random() * love.length);
           let newTask2 = task2.push(love[randNum2]);
           updateRoom(props.match.params.roomNumber.toString(), {
             taskPlayer2: task2,
@@ -139,7 +159,7 @@ const GameRoom = (props) => {
       let newNum = Math.floor(Math.random() * 90000) + 50000;
       insanNumber !== 1 &&
         setInterval(() => {
-          let randNum3 = Math.floor(Math.random() * 21);
+          let randNum3 = Math.floor(Math.random() * love.length);
           let newTask3 = task3.push(love[randNum3]);
           updateRoom(props.match.params.roomNumber.toString(), {
             taskPlayer3: task3,
@@ -150,7 +170,7 @@ const GameRoom = (props) => {
       let newNum = Math.floor(Math.random() * 90000) + 50000;
       insanNumber !== 1 &&
         setInterval(() => {
-          let randNum4 = Math.floor(Math.random() * 21);
+          let randNum4 = Math.floor(Math.random() * love.length);
           let newTask4 = task4.push(love[randNum4]);
           updateRoom(props.match.params.roomNumber.toString(), {
             taskPlayer4: task4,
@@ -161,7 +181,7 @@ const GameRoom = (props) => {
       let newNum = Math.floor(Math.random() * 90000) + 50000;
       insanNumber !== 1 &&
         setInterval(() => {
-          let randNum5 = Math.floor(Math.random() * 21);
+          let randNum5 = Math.floor(Math.random() * love.length);
           let newTask5 = task5.push(love[randNum5]);
           updateRoom(props.match.params.roomNumber.toString(), {
             taskPlayer5: task5,
@@ -172,7 +192,7 @@ const GameRoom = (props) => {
       let newNum = Math.floor(Math.random() * 90000) + 50000;
       insanNumber !== 1 &&
         setInterval(() => {
-          let randNum6 = Math.floor(Math.random() * 21);
+          let randNum6 = Math.floor(Math.random() * love.length);
           let newTask6 = task6.push(love[randNum6]);
           updateRoom(props.match.params.roomNumber.toString(), {
             taskPlayer6: task6,
@@ -183,7 +203,7 @@ const GameRoom = (props) => {
       let newNum = Math.floor(Math.random() * 90000) + 50000;
       insanNumber !== 1 &&
         setInterval(() => {
-          let randNum7 = Math.floor(Math.random() * 21);
+          let randNum7 = Math.floor(Math.random() * love.length);
           let newTask7 = task7.push(love[randNum7]);
           updateRoom(props.match.params.roomNumber.toString(), {
             taskPlayer7: task7,
@@ -194,7 +214,7 @@ const GameRoom = (props) => {
       let newNum = Math.floor(Math.random() * 90000) + 50000;
       insanNumber !== 1 &&
         setInterval(() => {
-          let randNum8 = Math.floor(Math.random() * 21);
+          let randNum8 = Math.floor(Math.random() * love.length);
           let newTask8 = task8.push(love[randNum8]);
           updateRoom(props.match.params.roomNumber.toString(), {
             taskPlayer8: task8,
@@ -205,7 +225,7 @@ const GameRoom = (props) => {
       let newNum = Math.floor(Math.random() * 90000) + 50000;
       insanNumber !== 1 &&
         setInterval(() => {
-          let randNum9 = Math.floor(Math.random() * 21);
+          let randNum9 = Math.floor(Math.random() * love.length);
           let newTask9 = task9.push(love[randNum9]);
           updateRoom(props.match.params.roomNumber.toString(), {
             taskPlayer9: task9,
