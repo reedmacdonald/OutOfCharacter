@@ -43,12 +43,24 @@ const EndRoom = (props) => {
           <h1>Player 1:</h1>
           {prompts.map((value, index) => {
             return (
-              <h2>
+              <div>
                 {index !== 0 &&
-                value !== "Just be yourself. That's good enough for me :)"
-                  ? value
-                  : ""}
-              </h2>
+                value !== "Just be yourself. That's good enough for me :)" ? (
+                  <>
+                    <h2
+                      style={{
+                        textDecoration: value.completed
+                          ? "line-through"
+                          : undefined,
+                      }}
+                    >
+                      {value.word}
+                    </h2>
+                  </>
+                ) : (
+                  ""
+                )}
+              </div>
             );
           })}
         </>

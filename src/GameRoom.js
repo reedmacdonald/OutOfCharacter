@@ -6,7 +6,7 @@ import { level1, level2, level3, Politics, Character } from "./Tasks";
 import { Topics } from "./Topics";
 
 const GameRoom = (props) => {
-  const [task, setTask] = React.useState(["Make "]);
+  const [task, setTask] = React.useState([{ word: "Make ", completed: false }]);
   const [task2, setTask2] = React.useState(["Make"]);
   const [task3, setTask3] = React.useState(["Make"]);
   const [task4, setTask4] = React.useState(["Make"]);
@@ -55,7 +55,7 @@ const GameRoom = (props) => {
     if (props.match.params.playerNumber == 1) {
       let newNum = Math.floor(Math.random() * 40000) + 55000;
       let randNum = Math.floor(Math.random() * category.length);
-      let newTask = task.push(category[randNum]);
+      let newTask = task.push({ word: category[randNum], completed: false });
       updateRoom(props.match.params.roomNumber.toString(), {
         task,
       });
@@ -169,7 +169,10 @@ const GameRoom = (props) => {
     let newNum = Math.floor(Math.random() * 40000) + 55000;
     setTimeout(() => {
       let randNum2 = Math.floor(Math.random() * categoryParam.length);
-      let newTask2 = task.push(categoryParam[randNum2]);
+      let newTask2 = task.push({
+        word: categoryParam[randNum2],
+        completed: false,
+      });
       updateRoom(props.match.params.roomNumber.toString(), {
         task: task,
       });
@@ -180,7 +183,10 @@ const GameRoom = (props) => {
     let newNum = Math.floor(Math.random() * 40000) + 55000;
     setTimeout(() => {
       let randNum2 = Math.floor(Math.random() * categoryParam.length);
-      let newTask2 = task.push(categoryParam[randNum2]);
+      let newTask2 = task.push({
+        word: categoryParam[randNum2],
+        completed: false,
+      });
       updateRoom(props.match.params.roomNumber.toString(), {
         task: task,
       });
@@ -366,33 +372,75 @@ const GameRoom = (props) => {
 
   return (
     <>
-      {props.match.params.playerNumber == 1 && <h1>{task[task.length - 1]}</h1>}
+      {props.match.params.playerNumber == 1 && (
+        <>
+          <h1>{task[task.length - 1].word}</h1>
+          <button>Pass</button>
+          <input
+            type="checkbox"
+            checked={task[task.length - 1].completed}
+            onClick={() => {
+              task[task.length - 1].completed = true;
+              updateRoom(props.match.params.roomNumber.toString(), {
+                task,
+              });
+            }}
+          ></input>
+        </>
+      )}
       {props.match.params.playerNumber == 2 && (
-        <h1>{task2[task2.length - 1]}</h1>
+        <>
+          <h1>{task2[task2.length - 1]}</h1>
+          <button>Pass</button>
+        </>
       )}
       {props.match.params.playerNumber == 3 && (
-        <h1>{task3[task3.length - 1]}</h1>
+        <>
+          <h1>{task3[task3.length - 1]}</h1>
+          <button>Pass</button>
+        </>
       )}
       {props.match.params.playerNumber == 4 && (
-        <h1>{task4[task4.length - 1]}</h1>
+        <>
+          <h1>{task4[task4.length - 1]}</h1>
+          <button>Pass</button>
+        </>
       )}
       {props.match.params.playerNumber == 5 && (
-        <h1>{task5[task5.length - 1]}</h1>
+        <>
+          <h1>{task5[task5.length - 1]}</h1>
+          <button>Pass</button>
+        </>
       )}
       {props.match.params.playerNumber == 6 && (
-        <h1>{task6[task6.length - 1]}</h1>
+        <>
+          <h1>{task6[task6.length - 1]}</h1>
+          <button>Pass</button>
+        </>
       )}
       {props.match.params.playerNumber == 7 && (
-        <h1>{task7[task7.length - 1]}</h1>
+        <>
+          <h1>{task7[task7.length - 1]}</h1>
+          <button>Pass</button>
+        </>
       )}
       {props.match.params.playerNumber == 8 && (
-        <h1>{task8[task8.length - 1]}</h1>
+        <>
+          <h1>{task8[task8.length - 1]}</h1>
+          <button>Pass</button>
+        </>
       )}
       {props.match.params.playerNumber == 9 && (
-        <h1>{task9[task9.length - 1]}</h1>
+        <>
+          <h1>{task9[task9.length - 1]}</h1>
+          <button>Pass</button>
+        </>
       )}
       {props.match.params.playerNumber == 10 && (
-        <h1>{task10[task10.length - 1]}</h1>
+        <>
+          <h1>{task10[task10.length - 1]}</h1>
+          <button>Pass</button>
+        </>
       )}
 
       {props.match.params.playerNumber == 1 && (
