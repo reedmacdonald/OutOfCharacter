@@ -8,4 +8,8 @@ export const Topics = [
   "You are all competing in a cooking contest",
   "Player 2 got an awful hair cut. Roast him for it",
   "You are filming a movie. Player 2 is the director, player 3 is the lead actor",
+  "You are on a boat in the midle of the ocean with these people",
+  "You are on the Titanic. It is starting to sink, but no one has realized it yet. You hear some commotion, but are just kind of annoyed by it. You don't really care what's causing it",
+  "You are on a roadtrip. Player 2 is a hostage",
+  "Children in the town you live in keep mysteriously disappearing?",
 ];

@@ -19,18 +19,20 @@ const WaitingRoom = (props) => {
           return (
             <h1>
               https://out-of-character.netlify.app/gameroom/
-              {gameContext.roomNumber}/{index}
+              {gameContext.roomNumber}/{index}/{props.match.params.gameType}
             </h1>
           );
         }
       })}
       <h1>
         https://out-of-character.netlify.app/gameroom/{gameContext.roomNumber}/
-        {peeps.length}
+        {peeps.length}/{props.match.params.gameType}
       </h1>
       <button
         onClick={() => {
-          props.history.push(`/gameroom/${gameContext.roomNumber}/1`);
+          props.history.push(
+            `/gameroom/${gameContext.roomNumber}/1/${props.match.params.gameType}`
+          );
         }}
       >
         Start Game

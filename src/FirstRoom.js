@@ -11,7 +11,7 @@ function FirstRoom(props) {
   let gameContext = React.useContext(GameContext);
   const [numPeople, setNumPeople] = React.useState(2);
   const [rotationSpeed, setRotationSpeed] = React.useState("slow");
-  const [insanityLevel, setInsanityLevel] = React.useState(2);
+  const [insanityLevel, setInsanityLevel] = React.useState(1);
   return (
     <div className="App">
       <h1 id="title" style={{ color: "red" }}>
@@ -32,13 +32,11 @@ function FirstRoom(props) {
 
       <h3>Game Type</h3>
       <select onChange={(e) => setInsanityLevel(e.target.value)}>
-        <option value={2}>Absurdity Level 1</option>
-        <option value={3}>Absurdity Level 2</option>
-        <option value={4}>Absurdity Level 3</option>
-        <option value={5}>Absurdity Level 4</option>
-        <option value={6}>Absurdity Level 6</option>
-        <option value={7}>Character Based</option>
-        <option value={8}>Politics</option>
+        <option value={1}>Absurdity Level 1</option>
+        <option value={2}>Absurdity Level 2</option>
+        <option value={3}>Absurdity Level 3</option>
+        <option value={"characterBased"}>Character Based</option>
+        <option value={"politics"}>Politics</option>
       </select>
       <br />
       <button
@@ -65,8 +63,9 @@ function FirstRoom(props) {
             topic: "Calibrating",
           });
           sessionStorage.setItem("yourRoom", gameContext.roomNumber);
-
-          props.history.push(`/waitingroom/${gameContext.roomNumber}`);
+          props.history.push(
+            `/waitingroom/${gameContext.roomNumber}/${insanityLevel}`
+          );
         }}
       >
         Start Game

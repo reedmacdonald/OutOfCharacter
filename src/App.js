@@ -50,12 +50,12 @@ function App() {
         />
         <Route
           exact
-          path={`${routes.WAIT}/:roomNumber`}
+          path={`${routes.WAIT}/:roomNumber/:gameType`}
           render={() => <WaitingRoom />}
         />
         <Route
           exact
-          path={`${routes.GAMEROOM}/:roomNumber/:playerNumber`}
+          path={`${routes.GAMEROOM}/:roomNumber/:playerNumber/:gameType`}
           render={() => <GameRoom />}
         />
         <Route
