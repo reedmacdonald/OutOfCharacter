@@ -73,10 +73,7 @@ const GameRoom = (props) => {
       }
     });
     setInsanNumber(props.match.params.gameType);
-    console.log(
-      props.match.params.gameType,
-      "<----props.match.parapms.gameType"
-    );
+    setOne();
   }, []);
 
   React.useEffect(() => {
@@ -249,6 +246,18 @@ const GameRoom = (props) => {
       }, newNum);
     }
   }, []);
+  const setOne = () => {
+    setTimeout(() => {
+      console.log("setOne");
+      setTwo();
+    }, 3000);
+  };
+  const setTwo = () => {
+    setTimeout(() => {
+      console.log("setTwo");
+      setOne();
+    }, 3000);
+  };
   React.useEffect(() => {
     console.log("here task 3");
   }, [task3]);
