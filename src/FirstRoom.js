@@ -62,6 +62,7 @@ function FirstRoom(props) {
             turnNumber: 1,
             gameOver: false,
             unveil: 0,
+            topic: "Calibrating",
           });
           sessionStorage.setItem("yourRoom", gameContext.roomNumber);
 
