@@ -158,23 +158,21 @@ const EndRoom = (props) => {
           })}
         </>
       )}
-      {props.match.params.numberPlayers > 8 &&
-        unveil >
-          8(
-            <>
-              <h1>Player 9:</h1>
-              {prompts9.map((value, index) => {
-                return (
-                  <h2>
-                    {index !== 0 &&
-                    value !== "Just be yourself. That's good enough for me :)"
-                      ? value
-                      : ""}
-                  </h2>
-                );
-              })}
-            </>
-          )}
+      {props.match.params.numberPlayers > 8 && unveil > 8 && (
+        <>
+          <h1>Player 9:</h1>
+          {prompts9.map((value, index) => {
+            return (
+              <h2>
+                {index !== 0 &&
+                value !== "Just be yourself. That's good enough for me :)"
+                  ? value
+                  : ""}
+              </h2>
+            );
+          })}
+        </>
+      )}
       {props.match.params.numberPlayers > 9 && unveil > 9 && (
         <>
           <h1>Player 10:</h1>
