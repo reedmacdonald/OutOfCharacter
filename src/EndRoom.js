@@ -32,6 +32,8 @@ const EndRoom = (props) => {
       setUnveil(results.unveil);
     });
   }, []);
+  console.log(unveil, "<---unveil");
+  console.log(props.match.params.numberPlayers, "<----numberPlayers");
   return (
     <>
       <div>
@@ -42,10 +44,12 @@ const EndRoom = (props) => {
         <>
           <h1>Player 1:</h1>
           {prompts.map((value, index) => {
+            console.log(value, "<---value");
             return (
               <div>
                 {index !== 0 &&
-                value !== "Just be yourself. That's good enough for me :)" ? (
+                value.word !==
+                  "Just be yourself. That's good enough for me :)" ? (
                   <>
                     <h2
                       style={{
@@ -70,12 +74,25 @@ const EndRoom = (props) => {
           <h1>Player 2:</h1>
           {prompts2.map((value, index) => {
             return (
-              <h2>
+              <div>
                 {index !== 0 &&
-                value !== "Just be yourself. That's good enough for me :)"
-                  ? value
-                  : ""}
-              </h2>
+                value.word !==
+                  "Just be yourself. That's good enough for me :)" ? (
+                  <>
+                    <h2
+                      style={{
+                        textDecoration: value.completed
+                          ? "line-through"
+                          : undefined,
+                      }}
+                    >
+                      {value.word}
+                    </h2>
+                  </>
+                ) : (
+                  ""
+                )}
+              </div>
             );
           })}
         </>
@@ -85,12 +102,25 @@ const EndRoom = (props) => {
           <h1>Player 3:</h1>
           {prompts3.map((value, index) => {
             return (
-              <h2>
+              <div>
                 {index !== 0 &&
-                value !== "Just be yourself. That's good enough for me :)"
-                  ? value
-                  : ""}
-              </h2>
+                value.word !==
+                  "Just be yourself. That's good enough for me :)" ? (
+                  <>
+                    <h2
+                      style={{
+                        textDecoration: value.completed
+                          ? "line-through"
+                          : undefined,
+                      }}
+                    >
+                      {value.word}
+                    </h2>
+                  </>
+                ) : (
+                  ""
+                )}
+              </div>
             );
           })}
         </>
@@ -100,12 +130,25 @@ const EndRoom = (props) => {
           <h1>Player 4:</h1>
           {prompts4.map((value, index) => {
             return (
-              <h2>
+              <div>
                 {index !== 0 &&
-                value !== "Just be yourself. That's good enough for me :)"
-                  ? value
-                  : ""}
-              </h2>
+                value.word !==
+                  "Just be yourself. That's good enough for me :)" ? (
+                  <>
+                    <h2
+                      style={{
+                        textDecoration: value.completed
+                          ? "line-through"
+                          : undefined,
+                      }}
+                    >
+                      {value.word}
+                    </h2>
+                  </>
+                ) : (
+                  ""
+                )}
+              </div>
             );
           })}
         </>
@@ -115,12 +158,25 @@ const EndRoom = (props) => {
           <h1>Player 5:</h1>
           {prompts5.map((value, index) => {
             return (
-              <h2>
+              <div>
                 {index !== 0 &&
-                value !== "Just be yourself. That's good enough for me :)"
-                  ? value
-                  : ""}
-              </h2>
+                value.word !==
+                  "Just be yourself. That's good enough for me :)" ? (
+                  <>
+                    <h2
+                      style={{
+                        textDecoration: value.completed
+                          ? "line-through"
+                          : undefined,
+                      }}
+                    >
+                      {value.word}
+                    </h2>
+                  </>
+                ) : (
+                  ""
+                )}
+              </div>
             );
           })}
         </>
@@ -130,12 +186,25 @@ const EndRoom = (props) => {
           <h1>Player 6:</h1>
           {prompts6.map((value, index) => {
             return (
-              <h2>
+              <div>
                 {index !== 0 &&
-                value !== "Just be yourself. That's good enough for me :)"
-                  ? value
-                  : ""}
-              </h2>
+                value.word !==
+                  "Just be yourself. That's good enough for me :)" ? (
+                  <>
+                    <h2
+                      style={{
+                        textDecoration: value.completed
+                          ? "line-through"
+                          : undefined,
+                      }}
+                    >
+                      {value.word}
+                    </h2>
+                  </>
+                ) : (
+                  ""
+                )}
+              </div>
             );
           })}
         </>
@@ -145,12 +214,25 @@ const EndRoom = (props) => {
           <h1>Player 7:</h1>
           {prompts7.map((value, index) => {
             return (
-              <h2>
+              <div>
                 {index !== 0 &&
-                value !== "Just be yourself. That's good enough for me :)"
-                  ? value
-                  : ""}
-              </h2>
+                value.word !==
+                  "Just be yourself. That's good enough for me :)" ? (
+                  <>
+                    <h2
+                      style={{
+                        textDecoration: value.completed
+                          ? "line-through"
+                          : undefined,
+                      }}
+                    >
+                      {value.word}
+                    </h2>
+                  </>
+                ) : (
+                  ""
+                )}
+              </div>
             );
           })}
         </>
@@ -160,12 +242,25 @@ const EndRoom = (props) => {
           <h1>Player 8:</h1>
           {prompts8.map((value, index) => {
             return (
-              <h2>
+              <div>
                 {index !== 0 &&
-                value !== "Just be yourself. That's good enough for me :)"
-                  ? value
-                  : ""}
-              </h2>
+                value.word !==
+                  "Just be yourself. That's good enough for me :)" ? (
+                  <>
+                    <h2
+                      style={{
+                        textDecoration: value.completed
+                          ? "line-through"
+                          : undefined,
+                      }}
+                    >
+                      {value.word}
+                    </h2>
+                  </>
+                ) : (
+                  ""
+                )}
+              </div>
             );
           })}
         </>
@@ -175,12 +270,25 @@ const EndRoom = (props) => {
           <h1>Player 9:</h1>
           {prompts9.map((value, index) => {
             return (
-              <h2>
+              <div>
                 {index !== 0 &&
-                value !== "Just be yourself. That's good enough for me :)"
-                  ? value
-                  : ""}
-              </h2>
+                value.word !==
+                  "Just be yourself. That's good enough for me :)" ? (
+                  <>
+                    <h2
+                      style={{
+                        textDecoration: value.completed
+                          ? "line-through"
+                          : undefined,
+                      }}
+                    >
+                      {value.word}
+                    </h2>
+                  </>
+                ) : (
+                  ""
+                )}
+              </div>
             );
           })}
         </>
@@ -190,25 +298,46 @@ const EndRoom = (props) => {
           <h1>Player 10:</h1>
           {prompts10.map((value, index) => {
             return (
-              <h2>
+              <div>
                 {index !== 0 &&
-                value !== "Just be yourself. That's good enough for me :)"
-                  ? value
-                  : ""}
-              </h2>
+                value.word !==
+                  "Just be yourself. That's good enough for me :)" ? (
+                  <>
+                    <h2
+                      style={{
+                        textDecoration: value.completed
+                          ? "line-through"
+                          : undefined,
+                      }}
+                    >
+                      {value.word}
+                    </h2>
+                  </>
+                ) : (
+                  ""
+                )}
+              </div>
             );
           })}
         </>
       )}
-      <button
-        onClick={() => {
-          updateRoom(props.match.params.roomNumber.toString(), {
-            unveil: unveil + 1,
-          });
-        }}
-      >
-        See next person
-      </button>
+      {unveil !== props.match.params.numberPlayers && (
+        <button
+          onClick={() => {
+            updateRoom(props.match.params.roomNumber.toString(), {
+              unveil: unveil + 1,
+            });
+          }}
+        >
+          See next person
+        </button>
+      )}
+      {props.match.params.numberPlayers == unveil && (
+        <>
+          <button>End Game</button>
+          <button>New Game</button>
+        </>
+      )}
     </>
   );
 };
