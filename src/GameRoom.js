@@ -163,7 +163,6 @@ const GameRoom = (props) => {
       let randNum10 = Math.floor(Math.random() * category.length);
       let newTask10 = task10.push({
         word: category[randNum10],
-        completed: false,
       });
       updateRoom(props.match.params.roomNumber.toString(), {
         taskPlayer10: task10,
@@ -173,92 +172,66 @@ const GameRoom = (props) => {
   }, []);
   const setOnePlayerTwo = (categoryParam) => {
     let newNum = Math.floor(Math.random() * 40000) + 55000;
-    console.log("setOnePlayerOne");
     setTimeout(() => {
-      let randNum2 = Math.floor(Math.random() * categoryParam.length);
-      let newTask2 = task2.push({
-        word: categoryParam[randNum2],
-        //completed: false,
-      });
-      updateRoom(props.match.params.roomNumber.toString(), {
-        taskPlayer2: task2,
-      });
-      console.log(
-        {
+      getDoc(props.match.params.roomNumber.toString(), (results) => {
+        let idk = results.taskPlayer2;
+        let randNum2 = Math.floor(Math.random() * categoryParam.length);
+        let newTask2 = idk.push({
           word: categoryParam[randNum2],
-          completed: false,
-        },
-        "Pushing this for Player 2 in SetOnePlayer 2"
-      );
-      setTwoPlayerTwo(categoryParam);
+        });
+        updateRoom(props.match.params.roomNumber.toString(), {
+          taskPlayer2: idk,
+        });
+        setTwoPlayerTwo(categoryParam);
+      });
     }, newNum);
   };
   const setTwoPlayerTwo = (categoryParam) => {
     let newNum = Math.floor(Math.random() * 40000) + 55000;
-    console.log("settingTwoPlayer 2");
-
     setTimeout(() => {
-      let randNum2 = Math.floor(Math.random() * categoryParam.length);
-
-      let newTask2 = task2.push({
-        word: categoryParam[randNum2],
-        completed: false,
-      });
-      console.log(
-        {
+      getDoc(props.match.params.roomNumber.toString(), (results) => {
+        let idk = results.taskPlayer2;
+        let randNum2 = Math.floor(Math.random() * categoryParam.length);
+        let newTask2 = idk.push({
           word: categoryParam[randNum2],
-          //completed: false,
-        },
-        "Pushing this for Player 2 in SetTwoPlayer 2"
-      );
-      updateRoom(props.match.params.roomNumber.toString(), {
-        taskPlayer2: task2,
+        });
+        updateRoom(props.match.params.roomNumber.toString(), {
+          taskPlayer3: idk,
+        });
+        setOnePlayerOne(categoryParam);
       });
-      setOnePlayerTwo(categoryParam);
     }, newNum);
   };
   const setOnePlayerOne = (categoryParam) => {
     let newNum = Math.floor(Math.random() * 40000) + 55000;
-    console.log("set one Player One");
     setTimeout(() => {
-      let randNum2 = Math.floor(Math.random() * categoryParam.length);
-      let newTask2 = task.push({
-        word: categoryParam[randNum2],
-        completed: false,
-      });
-      console.log(
-        {
+      getDoc(props.match.params.roomNumber.toString(), (results) => {
+        let idk = results.task;
+        let randNum2 = Math.floor(Math.random() * categoryParam.length);
+        let newTask2 = idk.push({
           word: categoryParam[randNum2],
-          completed: false,
-        },
-        "<----pushing this"
-      );
-      updateRoom(props.match.params.roomNumber.toString(), {
-        task: task,
+        });
+        updateRoom(props.match.params.roomNumber.toString(), {
+          task: idk,
+        });
+        setTwoPlayerOne(categoryParam);
       });
-      setTwoPlayerOne(categoryParam);
     }, newNum);
   };
   const setTwoPlayerOne = (categoryParam) => {
     let newNum = Math.floor(Math.random() * 40000) + 55000;
-    console.log("set Two Player One");
     setTimeout(() => {
-      let randNum2 = Math.floor(Math.random() * categoryParam.length);
-      let newTask2 = task.push({
-        word: categoryParam[randNum2],
-        completed: false,
-      });
-      console.log(
-        {
+      getDoc(props.match.params.roomNumber.toString(), (results) => {
+        let idk = results.task;
+        let randNum2 = Math.floor(Math.random() * categoryParam.length);
+        let newTask2 = idk.push({
           word: categoryParam[randNum2],
-          completed: false,
-        },
-        "<----pushing this"
-      );
-      updateRoom(props.match.params.roomNumber.toString(), {
-        task: task,
+        });
+        updateRoom(props.match.params.roomNumber.toString(), {
+          task: idk,
+        });
+        setOnePlayerOne(categoryParam);
       });
-      setOnePlayerOne(categoryParam);
     }, newNum);
   };
   const setOnePlayerThree = (categoryParam) => {
@@ -269,7 +242,6 @@ const GameRoom = (props) => {
         let randNum2 = Math.floor(Math.random() * categoryParam.length);
         let newTask2 = idk.push({
           word: categoryParam[randNum2],
-          completed: false,
         });
         updateRoom(props.match.params.roomNumber.toString(), {
           taskPlayer3: idk,
@@ -286,7 +258,6 @@ const GameRoom = (props) => {
         let randNum2 = Math.floor(Math.random() * categoryParam.length);
         let newTask2 = idk.push({
           word: categoryParam[randNum2],
-          completed: false,
         });
         updateRoom(props.match.params.roomNumber.toString(), {
           taskPlayer3: idk,
@@ -298,197 +269,225 @@ const GameRoom = (props) => {
   const setOnePlayerFour = (categoryParam) => {
     let newNum = Math.floor(Math.random() * 40000) + 55000;
     setTimeout(() => {
-      let randNum2 = Math.floor(Math.random() * categoryParam.length);
-      let newTask2 = task4.push({
-        word: categoryParam[randNum2],
-        completed: false,
+      getDoc(props.match.params.roomNumber.toString(), (results) => {
+        let idk = results.taskPlayer4;
+        let randNum2 = Math.floor(Math.random() * categoryParam.length);
+        let newTask2 = idk.push({
+          word: categoryParam[randNum2],
+        });
+        updateRoom(props.match.params.roomNumber.toString(), {
+          taskPlayer4: idk,
+        });
+        setTwoPlayerFour(categoryParam);
       });
-      updateRoom(props.match.params.roomNumber.toString(), {
-        taskPlayer4: task4,
-      });
-      setTwoPlayerFour(categoryParam);
     }, newNum);
   };
   const setTwoPlayerFour = (categoryParam) => {
     let newNum = Math.floor(Math.random() * 40000) + 55000;
     setTimeout(() => {
-      let randNum2 = Math.floor(Math.random() * categoryParam.length);
-      let newTask2 = task4.push({
-        word: categoryParam[randNum2],
-        completed: false,
+      getDoc(props.match.params.roomNumber.toString(), (results) => {
+        let idk = results.taskPlayer4;
+        let randNum2 = Math.floor(Math.random() * categoryParam.length);
+        let newTask2 = idk.push({
+          word: categoryParam[randNum2],
+        });
+        updateRoom(props.match.params.roomNumber.toString(), {
+          taskPlayer4: idk,
+        });
+        setOnePlayerFour(categoryParam);
       });
-      updateRoom(props.match.params.roomNumber.toString(), {
-        taskPlayer4: task4,
-      });
-      setOnePlayerFour(categoryParam);
     }, newNum);
   };
   const setOnePlayerSix = (categoryParam) => {
     let newNum = Math.floor(Math.random() * 40000) + 55000;
     setTimeout(() => {
-      let randNum2 = Math.floor(Math.random() * categoryParam.length);
-      let newTask2 = task6.push({
-        word: categoryParam[randNum2],
-        completed: false,
+      getDoc(props.match.params.roomNumber.toString(), (results) => {
+        let idk = results.taskPlayer6;
+        let randNum2 = Math.floor(Math.random() * categoryParam.length);
+        let newTask2 = idk.push({
+          word: categoryParam[randNum2],
+        });
+        updateRoom(props.match.params.roomNumber.toString(), {
+          taskPlayer6: idk,
+        });
+        setTwoPlayerSix(categoryParam);
       });
-      updateRoom(props.match.params.roomNumber.toString(), {
-        taskPlayer6: task6,
-      });
-      setTwoPlayerSix(categoryParam);
     }, newNum);
   };
   const setTwoPlayerSix = (categoryParam) => {
     let newNum = Math.floor(Math.random() * 40000) + 55000;
     setTimeout(() => {
-      let randNum2 = Math.floor(Math.random() * categoryParam.length);
-      let newTask2 = task6.push({
-        word: categoryParam[randNum2],
-        completed: false,
+      getDoc(props.match.params.roomNumber.toString(), (results) => {
+        let idk = results.taskPlayer6;
+        let randNum2 = Math.floor(Math.random() * categoryParam.length);
+        let newTask2 = idk.push({
+          word: categoryParam[randNum2],
+        });
+        updateRoom(props.match.params.roomNumber.toString(), {
+          taskPlayer6: idk,
+        });
+        setOnePlayerSix(categoryParam);
       });
-      updateRoom(props.match.params.roomNumber.toString(), {
-        taskPlayer6: task6,
-      });
-      setOnePlayerSix(categoryParam);
     }, newNum);
   };
   const setOnePlayerFive = (categoryParam) => {
     let newNum = Math.floor(Math.random() * 40000) + 55000;
     setTimeout(() => {
-      let randNum2 = Math.floor(Math.random() * categoryParam.length);
-      let newTask2 = task5.push({
-        word: categoryParam[randNum2],
-        completed: false,
+      getDoc(props.match.params.roomNumber.toString(), (results) => {
+        let idk = results.taskPlayer5;
+        let randNum2 = Math.floor(Math.random() * categoryParam.length);
+        let newTask2 = idk.push({
+          word: categoryParam[randNum2],
+        });
+        updateRoom(props.match.params.roomNumber.toString(), {
+          taskPlayer5: idk,
+        });
+        setTwoPlayerFive(categoryParam);
       });
-      updateRoom(props.match.params.roomNumber.toString(), {
-        taskPlayer5: task5,
-      });
-      setTwoPlayerFive(categoryParam);
     }, newNum);
   };
   const setTwoPlayerFive = (categoryParam) => {
     let newNum = Math.floor(Math.random() * 40000) + 55000;
     setTimeout(() => {
-      let randNum2 = Math.floor(Math.random() * categoryParam.length);
-      let newTask2 = task5.push({
-        word: categoryParam[randNum2],
-        completed: false,
+      getDoc(props.match.params.roomNumber.toString(), (results) => {
+        let idk = results.taskPlayer5;
+        let randNum2 = Math.floor(Math.random() * categoryParam.length);
+        let newTask2 = idk.push({
+          word: categoryParam[randNum2],
+        });
+        updateRoom(props.match.params.roomNumber.toString(), {
+          taskPlayer5: idk,
+        });
+        setOnePlayerFive(categoryParam);
       });
-      updateRoom(props.match.params.roomNumber.toString(), {
-        taskPlayer5: task5,
-      });
-      setOnePlayerFive(categoryParam);
     }, newNum);
   };
   const setOnePlayerSeven = (categoryParam) => {
     let newNum = Math.floor(Math.random() * 40000) + 55000;
     setTimeout(() => {
-      let randNum2 = Math.floor(Math.random() * categoryParam.length);
-      let newTask2 = task7.push({
-        word: categoryParam[randNum2],
-        completed: false,
+      getDoc(props.match.params.roomNumber.toString(), (results) => {
+        let idk = results.taskPlayer7;
+        let randNum2 = Math.floor(Math.random() * categoryParam.length);
+        let newTask2 = idk.push({
+          word: categoryParam[randNum2],
+        });
+        updateRoom(props.match.params.roomNumber.toString(), {
+          taskPlayer7: idk,
+        });
+        setTwoPlayerThree(categoryParam);
       });
-      updateRoom(props.match.params.roomNumber.toString(), {
-        taskPlayer7: task7,
-      });
-      setTwoPlayerSeven(categoryParam);
     }, newNum);
   };
   const setTwoPlayerSeven = (categoryParam) => {
     let newNum = Math.floor(Math.random() * 40000) + 55000;
     setTimeout(() => {
-      let randNum2 = Math.floor(Math.random() * categoryParam.length);
-      let newTask2 = task7.push({
-        word: categoryParam[randNum2],
-        completed: false,
+      getDoc(props.match.params.roomNumber.toString(), (results) => {
+        let idk = results.taskPlayer7;
+        let randNum2 = Math.floor(Math.random() * categoryParam.length);
+        let newTask2 = idk.push({
+          word: categoryParam[randNum2],
+        });
+        updateRoom(props.match.params.roomNumber.toString(), {
+          taskPlayer7: idk,
+        });
+        setOnePlayerSeven(categoryParam);
       });
-      updateRoom(props.match.params.roomNumber.toString(), {
-        taskPlayer7: task7,
-      });
-      setOnePlayerSeven(categoryParam);
     }, newNum);
   };
   const setOnePlayerEight = (categoryParam) => {
     let newNum = Math.floor(Math.random() * 40000) + 55000;
     setTimeout(() => {
-      let randNum2 = Math.floor(Math.random() * categoryParam.length);
-      let newTask2 = task8.push({
-        word: categoryParam[randNum2],
-        completed: false,
+      getDoc(props.match.params.roomNumber.toString(), (results) => {
+        let idk = results.taskPlayer8;
+        let randNum2 = Math.floor(Math.random() * categoryParam.length);
+        let newTask2 = idk.push({
+          word: categoryParam[randNum2],
+        });
+        updateRoom(props.match.params.roomNumber.toString(), {
+          taskPlayer8: idk,
+        });
+        setTwoPlayerEight(categoryParam);
       });
-      updateRoom(props.match.params.roomNumber.toString(), {
-        taskPlayer8: task8,
-      });
-      setTwoPlayerEight(categoryParam);
     }, newNum);
   };
   const setTwoPlayerEight = (categoryParam) => {
     let newNum = Math.floor(Math.random() * 40000) + 55000;
     setTimeout(() => {
-      let randNum2 = Math.floor(Math.random() * categoryParam.length);
-      let newTask2 = task8.push({
-        word: categoryParam[randNum2],
-        completed: false,
+      getDoc(props.match.params.roomNumber.toString(), (results) => {
+        let idk = results.taskPlayer8;
+        let randNum2 = Math.floor(Math.random() * categoryParam.length);
+        let newTask2 = idk.push({
+          word: categoryParam[randNum2],
+        });
+        updateRoom(props.match.params.roomNumber.toString(), {
+          taskPlayer8: idk,
+        });
+        setOnePlayerEight(categoryParam);
       });
-      updateRoom(props.match.params.roomNumber.toString(), {
-        taskPlayer8: task8,
-      });
-      setOnePlayerEight(categoryParam);
     }, newNum);
   };
   const setOnePlayerNine = (categoryParam) => {
     let newNum = Math.floor(Math.random() * 40000) + 55000;
     setTimeout(() => {
-      let randNum2 = Math.floor(Math.random() * categoryParam.length);
-      let newTask2 = task9.push({
-        word: categoryParam[randNum2],
-        completed: false,
+      getDoc(props.match.params.roomNumber.toString(), (results) => {
+        let idk = results.taskPlayer9;
+        let randNum2 = Math.floor(Math.random() * categoryParam.length);
+        let newTask2 = idk.push({
+          word: categoryParam[randNum2],
+        });
+        updateRoom(props.match.params.roomNumber.toString(), {
+          taskPlayer9: idk,
+        });
+        setTwoPlayerNine(categoryParam);
       });
-      updateRoom(props.match.params.roomNumber.toString(), {
-        taskPlayer9: task9,
-      });
-      setTwoPlayerNine(categoryParam);
     }, newNum);
   };
   const setTwoPlayerNine = (categoryParam) => {
     let newNum = Math.floor(Math.random() * 40000) + 55000;
     setTimeout(() => {
-      let randNum2 = Math.floor(Math.random() * categoryParam.length);
-      let newTask2 = task9.push({
-        word: categoryParam[randNum2],
-        completed: false,
+      getDoc(props.match.params.roomNumber.toString(), (results) => {
+        let idk = results.taskPlayer9;
+        let randNum2 = Math.floor(Math.random() * categoryParam.length);
+        let newTask2 = idk.push({
+          word: categoryParam[randNum2],
+        });
+        updateRoom(props.match.params.roomNumber.toString(), {
+          taskPlayer9: idk,
+        });
+        setOnePlayerNine(categoryParam);
       });
-      updateRoom(props.match.params.roomNumber.toString(), {
-        taskPlayer9: task9,
-      });
-      setOnePlayerNine(categoryParam);
     }, newNum);
   };
   const setOnePlayerTen = (categoryParam) => {
     let newNum = Math.floor(Math.random() * 40000) + 55000;
     setTimeout(() => {
-      let randNum2 = Math.floor(Math.random() * categoryParam.length);
-      let newTask2 = task10.push({
-        word: categoryParam[randNum2],
-        completed: false,
+      getDoc(props.match.params.roomNumber.toString(), (results) => {
+        let idk = results.taskPlayer10;
+        let randNum2 = Math.floor(Math.random() * categoryParam.length);
+        let newTask2 = idk.push({
+          word: categoryParam[randNum2],
+        });
+        updateRoom(props.match.params.roomNumber.toString(), {
+          taskPlayer10: idk,
+        });
+        setTwoPlayerTen(categoryParam);
       });
-      updateRoom(props.match.params.roomNumber.toString(), {
-        taskPlayer10: task10,
-      });
-      setTwoPlayerNine(categoryParam);
     }, newNum);
   };
   const setTwoPlayerTen = (categoryParam) => {
     let newNum = Math.floor(Math.random() * 40000) + 55000;
     setTimeout(() => {
-      let randNum2 = Math.floor(Math.random() * categoryParam.length);
-      let newTask2 = task10.push({
-        word: categoryParam[randNum2],
-        completed: false,
+      getDoc(props.match.params.roomNumber.toString(), (results) => {
+        let idk = results.taskPlayer10;
+        let randNum2 = Math.floor(Math.random() * categoryParam.length);
+        let newTask2 = idk.push({
+          word: categoryParam[randNum2],
+        });
+        updateRoom(props.match.params.roomNumber.toString(), {
+          taskPlayer10: idk,
+        });
+        setOnePlayerTen(categoryParam);
       });
-      updateRoom(props.match.params.roomNumber.toString(), {
-        taskPlayer10: task10,
-      });
-      setOnePlayerNine(categoryParam);
     }, newNum);
   };
 
