@@ -23,15 +23,15 @@ const WaitingRoom = (props) => {
           if (index !== 0 && index !== 1) {
             return (
               <h3>
-                https://out-of-character.netlify.app/gameroom/
+                https://www.outofcharacter.io/gameroom/
                 {gameContext.roomNumber}/{index}/{props.match.params.gameType}
               </h3>
             );
           }
         })}
         <h3>
-          https://out-of-character.netlify.app/gameroom/{gameContext.roomNumber}
-          /{peeps.length}/{props.match.params.gameType}
+          https://www.outofcharacter.io/gameroom/{gameContext.roomNumber}/
+          {peeps.length}/{props.match.params.gameType}
         </h3>
         <button
           onClick={() => {

@@ -6,7 +6,7 @@ const SecondRoom = (props) => {
       <h1>Your host has ended the game. Hope you had fun!</h1>
       <h2>
         To start a new game click{" "}
-        <a href="https://out-of-character.netlify.app">here</a>
+        <a href="https://www.outofcharacter.io">here</a>
       </h2>
     </div>
   );
