@@ -34,14 +34,26 @@ const GameRoom = (props) => {
   const [task10, setTask10] = React.useState([
     { word: "Make ", completed: false },
   ]);
+  const [player1Passes, setPlayer1Passes] = React.useState(2);
+  const [player2Passes, setPlayer2Passes] = React.useState(2);
+  const [player3Passes, setPlayer3Passes] = React.useState(2);
+  const [player4Passes, setPlayer4Passes] = React.useState(2);
+  const [player5Passes, setPlayer5Passes] = React.useState(2);
+  const [player6Passes, setPlayer6Passes] = React.useState(2);
+  const [player7Passes, setPlayer7Passes] = React.useState(2);
+  const [player8Passes, setPlayer8Passes] = React.useState(2);
+  const [player9Passes, setPlayer9Passes] = React.useState(2);
+  const [player10Passes, setPlayer10Passes] = React.useState(2);
   const [numPeople, setNumPeople] = React.useState(1);
   const [insanityLevel, setInsanityLevel] = React.useState(["idk"]);
   const [personTurn, setPersonTurn] = React.useState(1);
   const [insanNumber, setInsanNumber] = React.useState(1);
   const [rotationSpeed, setRotationSpeed] = React.useState(10000);
-  const [topic, setTopic] = React.useState("Topic pending");
+  const [topic, setTopic] = React.useState(["Topic pending"]);
+
   React.useEffect(() => {
     getSnapshot(props.match.params.roomNumber, (results) => {
+      console.log(results, "<---results");
       setNumPeople(results.numPeople);
       task !== results.task && setTask(results.task);
       task2 !== results.taskPlayer2 && setTask2(results.taskPlayer2);
@@ -53,10 +65,20 @@ const GameRoom = (props) => {
       task8 !== results.taskPlayer8 && setTask8(results.taskPlayer8);
       task9 !== results.taskPlayer9 && setTask9(results.taskPlayer9);
       task10 !== results.taskPlayer10 && setTask10(results.taskPlayer10);
+      setPlayer1Passes(results.player1Passes);
+      setPlayer2Passes(results.player2Passes);
+      setPlayer3Passes(results.player3Passes);
+      setPlayer4Passes(results.player4Passes);
+      setPlayer5Passes(results.player5Passes);
+      setPlayer6Passes(results.player6Passes);
+      setPlayer7Passes(results.player7Passes);
+      setPlayer8Passes(results.player8Passes);
+      setPlayer9Passes(results.player9Passes);
+      setPlayer10Passes(results.player10Passes);
       setNumPeople(results.numPeople);
       if (results.gameOver == true) {
         props.history.push(
-          `/endroom/${props.match.params.roomNumber}/${results.numPeople}`
+          `/endroom/${props.match.params.roomNumber}/${results.numPeople}/${props.match.params.playerNumber}`
         );
       }
     });
@@ -70,15 +92,11 @@ const GameRoom = (props) => {
     if (Number(props.match.params.gameType) == 3) category = level3;
     if (props.match.params.gameType == "characterBased") category = Character;
     if (props.match.params.gameType == "politics") category = Politics;
+    setTopic(category);
     if (props.match.params.playerNumber == 1) {
       let newNum = Math.floor(Math.random() * 40000) + 55000;
       let randNum = Math.floor(Math.random() * category.length);
       let newTask = task.push({ word: category[randNum], completed: false });
-      console.log("beginning Push");
-      console.log(
-        { word: category[randNum], completed: false },
-        "<---pushing this to beigin"
-      );
       updateRoom(props.match.params.roomNumber.toString(), {
         task,
       });
@@ -88,8 +106,6 @@ const GameRoom = (props) => {
       let newNum = Math.floor(Math.random() * 40000) + 55000;
       let randNum2 = Math.floor(Math.random() * category.length);
       let newTask2 = task2.push({ word: category[randNum2], completed: false });
-      console.log("beiginning push player 2");
-
       updateRoom(props.match.params.roomNumber.toString(), {
         taskPlayer2: task2,
       });
@@ -495,8 +511,27 @@ const GameRoom = (props) => {
     <>
       {props.match.params.playerNumber == 1 && (
         <>
-          <h1>{task[task.length - 1].word}</h1>
-          <button>Pass</button>
+          <h1>{task[task.length - 1].word || "error"}</h1>
+          {player1Passes > 0 && (
+            <button
+              onClick={() => {
+                getDoc(props.match.params.roomNumber.toString(), (results) => {
+                  console.log("here5");
+                  let idk = results.task;
+                  let randNum2 = Math.floor(Math.random() * topic.length);
+                  let newTask2 = idk.push({
+                    word: topic[randNum2],
+                  });
+                  updateRoom(props.match.params.roomNumber.toString(), {
+                    task: idk,
+                    player1Passes: player1Passes - 1,
+                  });
+                });
+              }}
+            >
+              Pass
+            </button>
+          )}
           <input
             type="checkbox"
             checked={task[task.length - 1].completed}
@@ -512,7 +547,25 @@ const GameRoom = (props) => {
       {props.match.params.playerNumber == 2 && (
         <>
           <h1>{task2[task2.length - 1].word}</h1>
-          <button>Pass</button>
+          {player2Passes > 0 && (
+            <button
+              onClick={() => {
+                getDoc(props.match.params.roomNumber.toString(), (results) => {
+                  let idk = results.taskPlayer2;
+                  let randNum2 = Math.floor(Math.random() * topic.length);
+                  let newTask2 = idk.push({
+                    word: topic[randNum2],
+                  });
+                  updateRoom(props.match.params.roomNumber.toString(), {
+                    taskPlayer2: idk,
+                    player2Passes: player2Passes - 1,
+                  });
+                });
+              }}
+            >
+              Pass
+            </button>
+          )}
           <input
             type="checkbox"
             checked={task2[task2.length - 1].completed}
@@ -529,7 +582,25 @@ const GameRoom = (props) => {
       {props.match.params.playerNumber == 3 && (
         <>
           <h1>{task3[task3.length - 1].word}</h1>
-          <button>Pass</button>
+          {player3Passes > 0 && (
+            <button
+              onClick={() => {
+                getDoc(props.match.params.roomNumber.toString(), (results) => {
+                  let idk = results.taskPlayer3;
+                  let randNum2 = Math.floor(Math.random() * topic.length);
+                  let newTask2 = idk.push({
+                    word: topic[randNum2],
+                  });
+                  updateRoom(props.match.params.roomNumber.toString(), {
+                    taskPlayer3: idk,
+                    player3Passes: player3Passes - 1,
+                  });
+                });
+              }}
+            >
+              Pass
+            </button>
+          )}
           <input
             type="checkbox"
             checked={task3[task3.length - 1].completed}
@@ -545,7 +616,25 @@ const GameRoom = (props) => {
       {props.match.params.playerNumber == 4 && (
         <>
           <h1>{task4[task4.length - 1].word}</h1>
-          <button>Pass</button>
+          {player4Passes > 0 && (
+            <button
+              onClick={() => {
+                getDoc(props.match.params.roomNumber.toString(), (results) => {
+                  let idk = results.taskPlayer4;
+                  let randNum2 = Math.floor(Math.random() * topic.length);
+                  let newTask2 = idk.push({
+                    word: topic[randNum2],
+                  });
+                  updateRoom(props.match.params.roomNumber.toString(), {
+                    taskPlayer4: idk,
+                    player4Passes: player1Passes - 1,
+                  });
+                });
+              }}
+            >
+              Pass
+            </button>
+          )}
           <input
             type="checkbox"
             checked={task4[task4.length - 1].completed}
@@ -561,7 +650,25 @@ const GameRoom = (props) => {
       {props.match.params.playerNumber == 5 && (
         <>
           <h1>{task5[task5.length - 1].word}</h1>
-          <button>Pass</button>
+          {player5Passes > 0 && (
+            <button
+              onClick={() => {
+                getDoc(props.match.params.roomNumber.toString(), (results) => {
+                  let idk = results.taskPlayer5;
+                  let randNum2 = Math.floor(Math.random() * topic.length);
+                  let newTask2 = idk.push({
+                    word: topic[randNum2],
+                  });
+                  updateRoom(props.match.params.roomNumber.toString(), {
+                    taskPlayer5: idk,
+                    player5Passes: player5Passes - 1,
+                  });
+                });
+              }}
+            >
+              Pass
+            </button>
+          )}
           <input
             type="checkbox"
             checked={task5[task5.length - 1].completed}
@@ -577,7 +684,25 @@ const GameRoom = (props) => {
       {props.match.params.playerNumber == 6 && (
         <>
           <h1>{task6[task6.length - 1].word}</h1>
-          <button>Pass</button>
+          {player6Passes > 0 && (
+            <button
+              onClick={() => {
+                getDoc(props.match.params.roomNumber.toString(), (results) => {
+                  let idk = results.taskPlayer6;
+                  let randNum2 = Math.floor(Math.random() * topic.length);
+                  let newTask2 = idk.push({
+                    word: topic[randNum2],
+                  });
+                  updateRoom(props.match.params.roomNumber.toString(), {
+                    taskPlayer1: idk,
+                    player6Passes: player6Passes - 1,
+                  });
+                });
+              }}
+            >
+              Pass
+            </button>
+          )}
           <input
             type="checkbox"
             checked={task6[task6.length - 1].completed}
@@ -593,7 +718,25 @@ const GameRoom = (props) => {
       {props.match.params.playerNumber == 7 && (
         <>
           <h1>{task7[task7.length - 1].word}</h1>
-          <button>Pass</button>
+          {player7Passes > 0 && (
+            <button
+              onClick={() => {
+                getDoc(props.match.params.roomNumber.toString(), (results) => {
+                  let idk = results.taskPlayer7;
+                  let randNum2 = Math.floor(Math.random() * topic.length);
+                  let newTask2 = idk.push({
+                    word: topic[randNum2],
+                  });
+                  updateRoom(props.match.params.roomNumber.toString(), {
+                    taskPlayer7: idk,
+                    player7Passes: player7Passes - 1,
+                  });
+                });
+              }}
+            >
+              Pass
+            </button>
+          )}
           <input
             type="checkbox"
             checked={task7[task7.length - 1].completed}
@@ -609,7 +752,25 @@ const GameRoom = (props) => {
       {props.match.params.playerNumber == 8 && (
         <>
           <h1>{task8[task8.length - 1].word}</h1>
-          <button>Pass</button>
+          {player8Passes > 0 && (
+            <button
+              onClick={() => {
+                getDoc(props.match.params.roomNumber.toString(), (results) => {
+                  let idk = results.taskPlayer8;
+                  let randNum2 = Math.floor(Math.random() * topic.length);
+                  let newTask2 = idk.push({
+                    word: topic[randNum2],
+                  });
+                  updateRoom(props.match.params.roomNumber.toString(), {
+                    taskPlayer8: idk,
+                    player8Passes: player8Passes - 1,
+                  });
+                });
+              }}
+            >
+              Pass
+            </button>
+          )}
           <input
             type="checkbox"
             checked={task8[task8.length - 1].completed}
@@ -625,7 +786,25 @@ const GameRoom = (props) => {
       {props.match.params.playerNumber == 9 && (
         <>
           <h1>{task9[task9.length - 1].word}</h1>
-          <button>Pass</button>
+          {player9Passes > 0 && (
+            <button
+              onClick={() => {
+                getDoc(props.match.params.roomNumber.toString(), (results) => {
+                  let idk = results.taskPlayer9;
+                  let randNum2 = Math.floor(Math.random() * topic.length);
+                  let newTask2 = idk.push({
+                    word: topic[randNum2],
+                  });
+                  updateRoom(props.match.params.roomNumber.toString(), {
+                    taskPlayer9: idk,
+                    player9Passes: player1Passes - 1,
+                  });
+                });
+              }}
+            >
+              Pass
+            </button>
+          )}
           <input
             type="checkbox"
             checked={task9[task9.length - 1].completed}
@@ -641,7 +820,25 @@ const GameRoom = (props) => {
       {props.match.params.playerNumber == 10 && (
         <>
           <h1>{task10[task10.length - 1].word}</h1>
-          <button>Pass</button>
+          {player10Passes > 0 && (
+            <button
+              onClick={() => {
+                getDoc(props.match.params.roomNumber.toString(), (results) => {
+                  let idk = results.taskPlayer10;
+                  let randNum2 = Math.floor(Math.random() * topic.length);
+                  let newTask2 = idk.push({
+                    word: topic[randNum2],
+                  });
+                  updateRoom(props.match.params.roomNumber.toString(), {
+                    taskPlayer10: idk,
+                    player10Passes: player10Passes - 1,
+                  });
+                });
+              }}
+            >
+              Pass
+            </button>
+          )}
           <input
             type="checkbox"
             checked={task10[task10.length - 1].completed}

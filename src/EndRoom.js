@@ -14,7 +14,9 @@ const EndRoom = (props) => {
   const [prompts8, setPrompts8] = React.useState(["some", "prompts"]);
   const [prompts9, setPrompts9] = React.useState(["some", "prompts"]);
   const [prompts10, setPrompts10] = React.useState(["some", "prompts"]);
+  const [showModal, setShowModal] = React.useState(false);
   const [unveil, setUnveil] = React.useState(0);
+  const [insanityLevel, setInsanityLevel] = React.useState(1);
   React.useEffect(() => {
     getDoc(props.match.params.roomNumber.toString(), (results) => {
       setPrompts(results.task);
@@ -334,9 +336,38 @@ const EndRoom = (props) => {
       )}
       {props.match.params.numberPlayers == unveil && (
         <>
-          <button>End Game</button>
-          <button>New Game</button>
+          {props.match.params.playerNumber == 1 && <button>End Game</button>}
+          {props.match.params.playerNumber == 1 && (
+            <button
+              onClick={() => {
+                setShowModal(true);
+              }}
+            >
+              New Game
+            </button>
+          )}
         </>
+      )}
+      {showModal && (
+        <div
+          style={{
+            position: "absolute",
+            width: "90%",
+            height: "90%",
+            backgroundColor: "red",
+            top: 0,
+          }}
+        >
+          <h1>Game Type:</h1>{" "}
+          <select onChange={(e) => setInsanityLevel(e.target.value)}>
+            <option value={1}>Absurdity Level 1</option>
+            <option value={2}>Absurdity Level 2</option>
+            <option value={3}>Absurdity Level 3</option>
+            <option value={"characterBased"}>Character Based</option>
+            <option value={"politics"}>Politics</option>
+          </select>
+          <button onClick={() => {}}>Start</button>
+        </div>
       )}
     </>
   );
