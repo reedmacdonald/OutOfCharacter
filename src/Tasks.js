@@ -96,7 +96,7 @@ export const level2 = [
   "If you are in a business meeting, take a shot offscreen. If you meeting with family, take a shot onscreen but don't mention that your doing it. Else, take two shots",
   "You're not very observant. Ask, `Is that a new *blank*?` to someone about something that is not new.",
   "Make some friends! Give a compliment to the person who you think probably likes you least.",
-  "Who wants to live in a world without Classic Coke? Drop the phrase `You're goddamn right` at some point.",
+  "Who wants to live in a world without Classic Coke? Drop the phrase 'You`re goddamn right' at some point.",
   "Offer your help to someone",
   "Be in really deep thought about something that someone said. Preferably if someone said something not particularly thought provoking",
   "Just be yourself. That's good enough for me :)",
