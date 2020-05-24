@@ -5,6 +5,11 @@
   animation-duration: 4s;
   position: relative;
   margin: 0 auto;
+  font-family: Marker Felt, fantasy;
+  color: red;
+}
+.subTitle {
+  font-family: Marker Felt;
 }
 @keyframes changeColor {
   from {
@@ -63,6 +68,8 @@ button {
   box-shadow: 2px 4px lightgray;
   outline: none;
   margin: 0 15px;
+  font-family: Lato;
+  font-weight: bold;
 }
 .whatIsThis {
   bottom: 10%;

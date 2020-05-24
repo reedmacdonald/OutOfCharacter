@@ -14,10 +14,10 @@ function FirstRoom(props) {
   const [insanityLevel, setInsanityLevel] = React.useState(1);
   return (
     <div className="App">
-      <h1 id="title" style={{ color: "red" }}>
-        Out of Character
-      </h1>
-      <h2 style={{ color: "blue" }}>Giving Video-Call Conversations a Kick</h2>
+      <h1 id="title">Out of Character</h1>
+      <h2 className="subTitle" style={{ color: "blue" }}>
+        Giving Video-Call Conversations a Kick
+      </h2>
       <h3>How many people? (2-10)</h3>
       <input
         onChange={(e) => {

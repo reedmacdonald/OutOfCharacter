@@ -14,21 +14,25 @@ const WaitingRoom = (props) => {
   return (
     <>
       <div className="App">
-        <h1>Send this link to your friends:</h1>
+        <h1>Send these links to your friends</h1>
+        <h2>
+          These are all slightly different so be careful to send a different one
+          to each person
+        </h2>
         {peeps.map((val, index) => {
           if (index !== 0 && index !== 1) {
             return (
-              <h1>
+              <h3>
                 https://out-of-character.netlify.app/gameroom/
                 {gameContext.roomNumber}/{index}/{props.match.params.gameType}
-              </h1>
+              </h3>
             );
           }
         })}
-        <h1>
+        <h3>
           https://out-of-character.netlify.app/gameroom/{gameContext.roomNumber}
           /{peeps.length}/{props.match.params.gameType}
-        </h1>
+        </h3>
         <button
           onClick={() => {
             props.history.push(

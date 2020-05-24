@@ -507,7 +507,6 @@ const GameRoom = (props) => {
       });
     }, newNum);
   };
-
   return (
     <>
       {props.match.params.playerNumber == 1 && (
@@ -569,7 +568,9 @@ const GameRoom = (props) => {
       {props.match.params.playerNumber == 2 && (
         <>
           <div className="card">
-            <h1>{task2[task2.length - 1].word}</h1>
+            <h1>
+              {task2[task2.length - 1].word || "Waiting for Host to Start Game"}
+            </h1>
             {player2Passes > 0 && (
               <div>
                 <button
@@ -625,7 +626,9 @@ const GameRoom = (props) => {
       {props.match.params.playerNumber == 3 && (
         <>
           <div className="card">
-            <h1>{task3[task3.length - 1].word}</h1>
+            <h1>
+              {task3[task3.length - 1].word || "Waiting for Host to Start Game"}
+            </h1>
             {player3Passes > 0 && (
               <div>
                 <button
@@ -680,7 +683,9 @@ const GameRoom = (props) => {
       {props.match.params.playerNumber == 4 && (
         <>
           <div className="card">
-            <h1>{task4[task4.length - 1].word}</h1>
+            <h1>
+              {task4[task4.length - 1].word || "Waiting for Host to Start Game"}
+            </h1>
             {player4Passes > 0 && (
               <div>
                 <button
@@ -735,7 +740,9 @@ const GameRoom = (props) => {
       {props.match.params.playerNumber == 5 && (
         <>
           <div>
-            <h1>{task5[task5.length - 1].word}</h1>
+            <h1>
+              {task5[task5.length - 1].word || "Waiting for host to start game"}
+            </h1>
             {player5Passes > 0 && (
               <div>
                 <button
@@ -790,7 +797,9 @@ const GameRoom = (props) => {
       {props.match.params.playerNumber == 6 && (
         <>
           <div className="card">
-            <h1>{task6[task6.length - 1].word}</h1>
+            <h1>
+              {task6[task6.length - 1].word || "Waiting for Host to Start Game"}
+            </h1>
             {player6Passes > 0 && (
               <div>
                 <button
@@ -845,7 +854,9 @@ const GameRoom = (props) => {
       {props.match.params.playerNumber == 7 && (
         <>
           <div className="card">
-            <h1>{task7[task7.length - 1].word}</h1>
+            <h1>
+              {task7[task7.length - 1].word || "Waiting for Host to Start Game"}
+            </h1>
             {player7Passes > 0 && (
               <div>
                 <button
@@ -900,7 +911,9 @@ const GameRoom = (props) => {
       {props.match.params.playerNumber == 8 && (
         <>
           <div className="card">
-            <h1>{task8[task8.length - 1].word}</h1>
+            <h1>
+              {task8[task8.length - 1].word || "Waiting for Host to Start Game"}
+            </h1>
             {player8Passes > 0 && (
               <div>
                 <button
@@ -957,7 +970,9 @@ const GameRoom = (props) => {
       {props.match.params.playerNumber == 9 && (
         <>
           <div className="card">
-            <h1>{task9[task9.length - 1].word}</h1>
+            <h1>
+              {task9[task9.length - 1].word || "Waiting for Host to Start Game"}
+            </h1>
             {player9Passes > 0 && (
               <div>
                 <button
@@ -1012,7 +1027,10 @@ const GameRoom = (props) => {
       {props.match.params.playerNumber == 10 && (
         <>
           <div className="card">
-            <h1>{task10[task10.length - 1].word}</h1>
+            <h1>
+              {task10[task10.length - 1].word ||
+                "Waiting for Host to Start Game"}
+            </h1>
             {player10Passes > 0 && (
               <div>
                 <button
