@@ -70,17 +70,27 @@ button {
   position: relative;
   z-index: 999999999999999;
   color: grey;
+  cursor: pointer;
 }
 .completed {
   margin-bottom: -10px;
 }
 .clickThis {
   font-style: italic;
-
   z-index: 999999999999999;
   color: grey;
   display: block;
   top: 60px;
+  cursor: pointer;
+}
+.clickThis:hover {
+  color: black;
+  font-weight: bold;
+}
+
+.whatIsThis:hover {
+  color: black;
+  font-weight: bold;
 }
 
 .negative {

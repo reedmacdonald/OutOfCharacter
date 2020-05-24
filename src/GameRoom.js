@@ -1102,12 +1102,17 @@ const GameRoom = (props) => {
             the end.
           </h3>
           <h3>
-            {" "}
             Click "pass" if you don't like your prompt. You only get two of
             these per conversation so use them wisely. Also, the timer doesn't
             restart when you do this, so if you decide you want to pass after
             like, 55 seconds then that's kind of a waste of a pass because then
-            the next prompt will only show for like five seconds
+            the next prompt will only show for like, five seconds.
+          </h3>
+          <h3>
+            The 'Just be yourself' prompt is the 'default' and is supposed to
+            help ground the conversation in some normalcy. You should see this
+            prompt many times and it won't show up in your list of prompts at
+            the end.
           </h3>
           <span className="clickThis">(Click this to close)</span>
         </div>

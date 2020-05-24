@@ -18,6 +18,11 @@ const EndRoom = (props) => {
   const [unveil, setUnveil] = React.useState(0);
   const [insanityLevel, setInsanityLevel] = React.useState(1);
   React.useEffect(() => {
+    var id = window.setTimeout(function () {}, 0);
+
+    while (id--) {
+      window.clearTimeout(id); // will do nothing if no timeout with id is present
+    }
     getDoc(props.match.params.roomNumber.toString(), (results) => {
       setPrompts(results.task);
       setPrompts2(results.taskPlayer2);
