@@ -42,8 +42,7 @@ const EndRoom = (props) => {
       }
     });
   }, []);
-  console.log(unveil, "<---unveil");
-  console.log(props.match.params.numberPlayers, "<----numberPlayers");
+
   return (
     <>
       <div className="endScreen">
@@ -372,13 +371,12 @@ const EndRoom = (props) => {
           <div
             style={{
               position: "absolute",
-              width: "20%",
-              height: "20%",
+              width: "35%",
+              height: "35%",
               backgroundColor: "whiteSmoke",
               position: "fixed",
               top: "50%",
               left: "50%",
-              /* bring your own prefixes */
               transform: "translate(-50%, -50%)",
               border: "5px solid black",
               borderRadius: "20px",

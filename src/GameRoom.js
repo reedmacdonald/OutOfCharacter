@@ -50,6 +50,7 @@ const GameRoom = (props) => {
   const [insanNumber, setInsanNumber] = React.useState(1);
   const [rotationSpeed, setRotationSpeed] = React.useState(10000);
   const [topic, setTopic] = React.useState(["Topic pending"]);
+  const [showModal, setShowModal] = React.useState(false);
 
   React.useEffect(() => {
     getSnapshot(props.match.params.roomNumber, (results) => {
@@ -212,7 +213,7 @@ const GameRoom = (props) => {
           word: categoryParam[randNum2],
         });
         updateRoom(props.match.params.roomNumber.toString(), {
-          taskPlayer3: idk,
+          taskPlayer2: idk,
         });
         setOnePlayerTwo(categoryParam);
       });
@@ -539,6 +540,7 @@ const GameRoom = (props) => {
               </div>
             )}
             <div>
+              <p className="completed">Completed?</p>
               <label className="container">
                 <input
                   type="checkbox"
@@ -553,6 +555,14 @@ const GameRoom = (props) => {
                 <span className="checkmark"></span>
               </label>
             </div>
+            <span
+              className="whatIsThis"
+              onClick={() => {
+                setShowModal(true);
+              }}
+            >
+              What is this?
+            </span>
           </div>
         </>
       )}
@@ -585,6 +595,7 @@ const GameRoom = (props) => {
               </div>
             )}
             <div>
+              <p className="completed">Completed?</p>
               <label className="container">
                 <input
                   type="checkbox"
@@ -600,6 +611,14 @@ const GameRoom = (props) => {
                 <span className="checkmark"></span>
               </label>
             </div>
+            <span
+              className="whatIsThis"
+              onClick={() => {
+                setShowModal(true);
+              }}
+            >
+              What is this?
+            </span>
           </div>
         </>
       )}
@@ -632,6 +651,7 @@ const GameRoom = (props) => {
               </div>
             )}
             <div>
+              <p className="completed">Completed?</p>
               <label className="container">
                 <input
                   type="checkbox"
@@ -646,6 +666,14 @@ const GameRoom = (props) => {
                 <span className="checkmark"></span>
               </label>
             </div>
+            <span
+              className="whatIsThis"
+              onClick={() => {
+                setShowModal(true);
+              }}
+            >
+              What is this?
+            </span>
           </div>
         </>
       )}
@@ -678,6 +706,7 @@ const GameRoom = (props) => {
               </div>
             )}
             <div>
+              <p className="completed">Completed?</p>
               <label className="container">
                 <input
                   type="checkbox"
@@ -692,6 +721,14 @@ const GameRoom = (props) => {
                 <span className="checkbox"></span>
               </label>
             </div>
+            <span
+              className="whatIsThis"
+              onClick={() => {
+                setShowModal(true);
+              }}
+            >
+              What is this?
+            </span>
           </div>
         </>
       )}
@@ -724,6 +761,7 @@ const GameRoom = (props) => {
               </div>
             )}
             <div>
+              <p className="completed">Completed?</p>
               <label className="container">
                 <input
                   type="checkbox"
@@ -738,6 +776,14 @@ const GameRoom = (props) => {
                 <span className="checkbox"></span>
               </label>
             </div>
+            <span
+              className="whatIsThis"
+              onClick={() => {
+                setShowModal(true);
+              }}
+            >
+              What is this?
+            </span>
           </div>
         </>
       )}
@@ -770,6 +816,7 @@ const GameRoom = (props) => {
               </div>
             )}
             <div>
+              <p className="completed">Completed?</p>
               <label className="container">
                 <input
                   type="checkbox"
@@ -784,6 +831,14 @@ const GameRoom = (props) => {
                 <span className="checkmark"></span>
               </label>
             </div>
+            <span
+              className="whatIsThis"
+              onClick={() => {
+                setShowModal(true);
+              }}
+            >
+              What is this?
+            </span>
           </div>
         </>
       )}
@@ -816,6 +871,7 @@ const GameRoom = (props) => {
               </div>
             )}
             <div>
+              <p className="completed">Completed?</p>
               <label className="container">
                 <input
                   type="checkbox"
@@ -830,6 +886,14 @@ const GameRoom = (props) => {
                 <span className="checkmark"></span>
               </label>
             </div>
+            <span
+              className="whatIsThis"
+              onClick={() => {
+                setShowModal(true);
+              }}
+            >
+              What is this?
+            </span>
           </div>
         </>
       )}
@@ -863,6 +927,7 @@ const GameRoom = (props) => {
             )}
             <div>
               <div>
+                <p className="completed">Completed?</p>
                 <label className="container">
                   <input
                     type="checkbox"
@@ -878,6 +943,14 @@ const GameRoom = (props) => {
                 </label>
               </div>
             </div>
+            <span
+              className="whatIsThis"
+              onClick={() => {
+                setShowModal(true);
+              }}
+            >
+              What is this?
+            </span>
           </div>
         </>
       )}
@@ -910,6 +983,7 @@ const GameRoom = (props) => {
               </div>
             )}
             <div>
+              <p className="completed">Completed?</p>
               <label className="container">
                 <input
                   type="checkbox"
@@ -924,6 +998,14 @@ const GameRoom = (props) => {
                 <span className="checkmark"></span>
               </label>
             </div>
+            <span
+              className="whatIsThis"
+              onClick={() => {
+                setShowModal(true);
+              }}
+            >
+              What is this?
+            </span>
           </div>
         </>
       )}
@@ -956,6 +1038,7 @@ const GameRoom = (props) => {
               </div>
             )}
             <div>
+              <p className="completed">Completed?</p>
               <label className="container">
                 <input
                   type="checkbox"
@@ -970,6 +1053,14 @@ const GameRoom = (props) => {
                 <span className="checkmark"></span>
               </label>
             </div>
+            <span
+              className="whatIsThis"
+              onClick={() => {
+                setShowModal(true);
+              }}
+            >
+              What is this?
+            </span>
           </div>
         </>
       )}
@@ -985,6 +1076,41 @@ const GameRoom = (props) => {
         >
           End Game
         </button>
+      )}
+      {showModal && (
+        <div
+          style={{
+            position: "absolute",
+            width: "50%",
+            //height: "50%",
+            backgroundColor: "whiteSmoke",
+            position: "fixed",
+            top: "50%",
+            left: "50%",
+            padding: "15px",
+            transform: "translate(-50%, -50%)",
+            border: "5px solid black",
+            borderRadius: "20px",
+          }}
+          onClick={() => {
+            setShowModal(false);
+          }}
+        >
+          <h3>
+            Click the checkbox when you have completed the prompt. This doesn't
+            really do anything but it'll make it show up as a completed task at
+            the end.
+          </h3>
+          <h3>
+            {" "}
+            Click "pass" if you don't like your prompt. You only get two of
+            these per conversation so use them wisely. Also, the timer doesn't
+            restart when you do this, so if you decide you want to pass after
+            like, 55 seconds then that's kind of a waste of a pass because then
+            the next prompt will only show for like five seconds
+          </h3>
+          <span className="clickThis">(Click this to close)</span>
+        </div>
       )}
     </>
   );

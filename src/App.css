@@ -64,6 +64,24 @@ button {
   outline: none;
   margin: 0 15px;
 }
+.whatIsThis {
+  bottom: 10%;
+  left: 40%;
+  position: relative;
+  z-index: 999999999999999;
+  color: grey;
+}
+.completed {
+  margin-bottom: -10px;
+}
+.clickThis {
+  font-style: italic;
+
+  z-index: 999999999999999;
+  color: grey;
+  display: block;
+  top: 60px;
+}
 
 .negative {
   background-color: lightcoral;
