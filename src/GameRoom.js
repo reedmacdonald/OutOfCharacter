@@ -214,7 +214,7 @@ const GameRoom = (props) => {
         updateRoom(props.match.params.roomNumber.toString(), {
           taskPlayer3: idk,
         });
-        setOnePlayerOne(categoryParam);
+        setOnePlayerTwo(categoryParam);
       });
     }, newNum);
   };
@@ -390,7 +390,7 @@ const GameRoom = (props) => {
         updateRoom(props.match.params.roomNumber.toString(), {
           taskPlayer7: idk,
         });
-        setTwoPlayerThree(categoryParam);
+        setTwoPlayerSeven(categoryParam);
       });
     }, newNum);
   };
@@ -511,349 +511,472 @@ const GameRoom = (props) => {
     <>
       {props.match.params.playerNumber == 1 && (
         <>
-          <h1>{task[task.length - 1].word || "error"}</h1>
-          {player1Passes > 0 && (
-            <button
-              onClick={() => {
-                getDoc(props.match.params.roomNumber.toString(), (results) => {
-                  console.log("here5");
-                  let idk = results.task;
-                  let randNum2 = Math.floor(Math.random() * topic.length);
-                  let newTask2 = idk.push({
-                    word: topic[randNum2],
-                  });
-                  updateRoom(props.match.params.roomNumber.toString(), {
-                    task: idk,
-                    player1Passes: player1Passes - 1,
-                  });
-                });
-              }}
-            >
-              Pass
-            </button>
-          )}
-          <input
-            type="checkbox"
-            checked={task[task.length - 1].completed}
-            onClick={() => {
-              task[task.length - 1].completed = true;
-              updateRoom(props.match.params.roomNumber.toString(), {
-                task,
-              });
-            }}
-          ></input>
+          <div className="card">
+            <h1>{task[task.length - 1].word || "error"}</h1>
+            {player1Passes > 0 && (
+              <div>
+                <button
+                  onClick={() => {
+                    getDoc(
+                      props.match.params.roomNumber.toString(),
+                      (results) => {
+                        console.log("here5");
+                        let idk = results.task;
+                        let randNum2 = Math.floor(Math.random() * topic.length);
+                        let newTask2 = idk.push({
+                          word: topic[randNum2],
+                        });
+                        updateRoom(props.match.params.roomNumber.toString(), {
+                          task: idk,
+                          player1Passes: player1Passes - 1,
+                        });
+                      }
+                    );
+                  }}
+                >
+                  Pass
+                </button>
+              </div>
+            )}
+            <div>
+              <label className="container">
+                <input
+                  type="checkbox"
+                  checked={task[task.length - 1].completed}
+                  onClick={() => {
+                    task[task.length - 1].completed = true;
+                    updateRoom(props.match.params.roomNumber.toString(), {
+                      task,
+                    });
+                  }}
+                ></input>
+                <span className="checkmark"></span>
+              </label>
+            </div>
+          </div>
         </>
       )}
       {props.match.params.playerNumber == 2 && (
         <>
-          <h1>{task2[task2.length - 1].word}</h1>
-          {player2Passes > 0 && (
-            <button
-              onClick={() => {
-                getDoc(props.match.params.roomNumber.toString(), (results) => {
-                  let idk = results.taskPlayer2;
-                  let randNum2 = Math.floor(Math.random() * topic.length);
-                  let newTask2 = idk.push({
-                    word: topic[randNum2],
-                  });
-                  updateRoom(props.match.params.roomNumber.toString(), {
-                    taskPlayer2: idk,
-                    player2Passes: player2Passes - 1,
-                  });
-                });
-              }}
-            >
-              Pass
-            </button>
-          )}
-          <input
-            type="checkbox"
-            checked={task2[task2.length - 1].completed}
-            onClick={() => {
-              task2[task2.length - 1].completed = true;
-              console.log("updating room via click");
-              updateRoom(props.match.params.roomNumber.toString(), {
-                taskPlayer2: task2,
-              });
-            }}
-          ></input>
+          <div className="card">
+            <h1>{task2[task2.length - 1].word}</h1>
+            {player2Passes > 0 && (
+              <div>
+                <button
+                  onClick={() => {
+                    getDoc(
+                      props.match.params.roomNumber.toString(),
+                      (results) => {
+                        let idk = results.taskPlayer2;
+                        let randNum2 = Math.floor(Math.random() * topic.length);
+                        let newTask2 = idk.push({
+                          word: topic[randNum2],
+                        });
+                        updateRoom(props.match.params.roomNumber.toString(), {
+                          taskPlayer2: idk,
+                          player2Passes: player2Passes - 1,
+                        });
+                      }
+                    );
+                  }}
+                >
+                  Pass
+                </button>
+              </div>
+            )}
+            <div>
+              <label className="container">
+                <input
+                  type="checkbox"
+                  checked={task2[task2.length - 1].completed}
+                  onClick={() => {
+                    task2[task2.length - 1].completed = true;
+                    console.log("updating room via click");
+                    updateRoom(props.match.params.roomNumber.toString(), {
+                      taskPlayer2: task2,
+                    });
+                  }}
+                ></input>
+                <span className="checkmark"></span>
+              </label>
+            </div>
+          </div>
         </>
       )}
       {props.match.params.playerNumber == 3 && (
         <>
-          <h1>{task3[task3.length - 1].word}</h1>
-          {player3Passes > 0 && (
-            <button
-              onClick={() => {
-                getDoc(props.match.params.roomNumber.toString(), (results) => {
-                  let idk = results.taskPlayer3;
-                  let randNum2 = Math.floor(Math.random() * topic.length);
-                  let newTask2 = idk.push({
-                    word: topic[randNum2],
-                  });
-                  updateRoom(props.match.params.roomNumber.toString(), {
-                    taskPlayer3: idk,
-                    player3Passes: player3Passes - 1,
-                  });
-                });
-              }}
-            >
-              Pass
-            </button>
-          )}
-          <input
-            type="checkbox"
-            checked={task3[task3.length - 1].completed}
-            onClick={() => {
-              task3[task3.length - 1].completed = true;
-              updateRoom(props.match.params.roomNumber.toString(), {
-                taskPlayer3: task3,
-              });
-            }}
-          ></input>
+          <div className="card">
+            <h1>{task3[task3.length - 1].word}</h1>
+            {player3Passes > 0 && (
+              <div>
+                <button
+                  onClick={() => {
+                    getDoc(
+                      props.match.params.roomNumber.toString(),
+                      (results) => {
+                        let idk = results.taskPlayer3;
+                        let randNum2 = Math.floor(Math.random() * topic.length);
+                        let newTask2 = idk.push({
+                          word: topic[randNum2],
+                        });
+                        updateRoom(props.match.params.roomNumber.toString(), {
+                          taskPlayer3: idk,
+                          player3Passes: player3Passes - 1,
+                        });
+                      }
+                    );
+                  }}
+                >
+                  Pass
+                </button>
+              </div>
+            )}
+            <div>
+              <label className="container">
+                <input
+                  type="checkbox"
+                  checked={task3[task3.length - 1].completed}
+                  onClick={() => {
+                    task3[task3.length - 1].completed = true;
+                    updateRoom(props.match.params.roomNumber.toString(), {
+                      taskPlayer3: task3,
+                    });
+                  }}
+                ></input>
+                <span className="checkmark"></span>
+              </label>
+            </div>
+          </div>
         </>
       )}
       {props.match.params.playerNumber == 4 && (
         <>
-          <h1>{task4[task4.length - 1].word}</h1>
-          {player4Passes > 0 && (
-            <button
-              onClick={() => {
-                getDoc(props.match.params.roomNumber.toString(), (results) => {
-                  let idk = results.taskPlayer4;
-                  let randNum2 = Math.floor(Math.random() * topic.length);
-                  let newTask2 = idk.push({
-                    word: topic[randNum2],
-                  });
-                  updateRoom(props.match.params.roomNumber.toString(), {
-                    taskPlayer4: idk,
-                    player4Passes: player1Passes - 1,
-                  });
-                });
-              }}
-            >
-              Pass
-            </button>
-          )}
-          <input
-            type="checkbox"
-            checked={task4[task4.length - 1].completed}
-            onClick={() => {
-              task4[task4.length - 1].completed = true;
-              updateRoom(props.match.params.roomNumber.toString(), {
-                taskPlayer4: task4,
-              });
-            }}
-          ></input>
+          <div>
+            <h1>{task4[task4.length - 1].word}</h1>
+            {player4Passes > 0 && (
+              <div>
+                <button
+                  onClick={() => {
+                    getDoc(
+                      props.match.params.roomNumber.toString(),
+                      (results) => {
+                        let idk = results.taskPlayer4;
+                        let randNum2 = Math.floor(Math.random() * topic.length);
+                        let newTask2 = idk.push({
+                          word: topic[randNum2],
+                        });
+                        updateRoom(props.match.params.roomNumber.toString(), {
+                          taskPlayer4: idk,
+                          player4Passes: player1Passes - 1,
+                        });
+                      }
+                    );
+                  }}
+                >
+                  Pass
+                </button>
+              </div>
+            )}
+            <div>
+              <label className="container">
+                <input
+                  type="checkbox"
+                  checked={task4[task4.length - 1].completed}
+                  onClick={() => {
+                    task4[task4.length - 1].completed = true;
+                    updateRoom(props.match.params.roomNumber.toString(), {
+                      taskPlayer4: task4,
+                    });
+                  }}
+                ></input>
+                <span className="checkbox"></span>
+              </label>
+            </div>
+          </div>
         </>
       )}
       {props.match.params.playerNumber == 5 && (
         <>
-          <h1>{task5[task5.length - 1].word}</h1>
-          {player5Passes > 0 && (
-            <button
-              onClick={() => {
-                getDoc(props.match.params.roomNumber.toString(), (results) => {
-                  let idk = results.taskPlayer5;
-                  let randNum2 = Math.floor(Math.random() * topic.length);
-                  let newTask2 = idk.push({
-                    word: topic[randNum2],
-                  });
-                  updateRoom(props.match.params.roomNumber.toString(), {
-                    taskPlayer5: idk,
-                    player5Passes: player5Passes - 1,
-                  });
-                });
-              }}
-            >
-              Pass
-            </button>
-          )}
-          <input
-            type="checkbox"
-            checked={task5[task5.length - 1].completed}
-            onClick={() => {
-              task5[task5.length - 1].completed = true;
-              updateRoom(props.match.params.roomNumber.toString(), {
-                taskPlayer5: task5,
-              });
-            }}
-          ></input>
+          <div>
+            <h1>{task5[task5.length - 1].word}</h1>
+            {player5Passes > 0 && (
+              <div>
+                <button
+                  onClick={() => {
+                    getDoc(
+                      props.match.params.roomNumber.toString(),
+                      (results) => {
+                        let idk = results.taskPlayer5;
+                        let randNum2 = Math.floor(Math.random() * topic.length);
+                        let newTask2 = idk.push({
+                          word: topic[randNum2],
+                        });
+                        updateRoom(props.match.params.roomNumber.toString(), {
+                          taskPlayer5: idk,
+                          player5Passes: player5Passes - 1,
+                        });
+                      }
+                    );
+                  }}
+                >
+                  Pass
+                </button>
+              </div>
+            )}
+            <div>
+              <label className="container">
+                <input
+                  type="checkbox"
+                  checked={task5[task5.length - 1].completed}
+                  onClick={() => {
+                    task5[task5.length - 1].completed = true;
+                    updateRoom(props.match.params.roomNumber.toString(), {
+                      taskPlayer5: task5,
+                    });
+                  }}
+                ></input>
+                <span className="checkbox"></span>
+              </label>
+            </div>
+          </div>
         </>
       )}
       {props.match.params.playerNumber == 6 && (
         <>
-          <h1>{task6[task6.length - 1].word}</h1>
-          {player6Passes > 0 && (
-            <button
-              onClick={() => {
-                getDoc(props.match.params.roomNumber.toString(), (results) => {
-                  let idk = results.taskPlayer6;
-                  let randNum2 = Math.floor(Math.random() * topic.length);
-                  let newTask2 = idk.push({
-                    word: topic[randNum2],
-                  });
-                  updateRoom(props.match.params.roomNumber.toString(), {
-                    taskPlayer1: idk,
-                    player6Passes: player6Passes - 1,
-                  });
-                });
-              }}
-            >
-              Pass
-            </button>
-          )}
-          <input
-            type="checkbox"
-            checked={task6[task6.length - 1].completed}
-            onClick={() => {
-              task6[task6.length - 1].completed = true;
-              updateRoom(props.match.params.roomNumber.toString(), {
-                taskPlayer6: task6,
-              });
-            }}
-          ></input>
+          <div className="card">
+            <h1>{task6[task6.length - 1].word}</h1>
+            {player6Passes > 0 && (
+              <div>
+                <button
+                  onClick={() => {
+                    getDoc(
+                      props.match.params.roomNumber.toString(),
+                      (results) => {
+                        let idk = results.taskPlayer6;
+                        let randNum2 = Math.floor(Math.random() * topic.length);
+                        let newTask2 = idk.push({
+                          word: topic[randNum2],
+                        });
+                        updateRoom(props.match.params.roomNumber.toString(), {
+                          taskPlayer1: idk,
+                          player6Passes: player6Passes - 1,
+                        });
+                      }
+                    );
+                  }}
+                >
+                  Pass
+                </button>
+              </div>
+            )}
+            <div>
+              <label className="container">
+                <input
+                  type="checkbox"
+                  checked={task6[task6.length - 1].completed}
+                  onClick={() => {
+                    task6[task6.length - 1].completed = true;
+                    updateRoom(props.match.params.roomNumber.toString(), {
+                      taskPlayer6: task6,
+                    });
+                  }}
+                ></input>
+                <span className="checkmark"></span>
+              </label>
+            </div>
+          </div>
         </>
       )}
       {props.match.params.playerNumber == 7 && (
         <>
-          <h1>{task7[task7.length - 1].word}</h1>
-          {player7Passes > 0 && (
-            <button
-              onClick={() => {
-                getDoc(props.match.params.roomNumber.toString(), (results) => {
-                  let idk = results.taskPlayer7;
-                  let randNum2 = Math.floor(Math.random() * topic.length);
-                  let newTask2 = idk.push({
-                    word: topic[randNum2],
-                  });
-                  updateRoom(props.match.params.roomNumber.toString(), {
-                    taskPlayer7: idk,
-                    player7Passes: player7Passes - 1,
-                  });
-                });
-              }}
-            >
-              Pass
-            </button>
-          )}
-          <input
-            type="checkbox"
-            checked={task7[task7.length - 1].completed}
-            onClick={() => {
-              task7[task7.length - 1].completed = true;
-              updateRoom(props.match.params.roomNumber.toString(), {
-                taskPlayer7: task7,
-              });
-            }}
-          ></input>
+          <div className="card">
+            <h1>{task7[task7.length - 1].word}</h1>
+            {player7Passes > 0 && (
+              <div>
+                <button
+                  onClick={() => {
+                    getDoc(
+                      props.match.params.roomNumber.toString(),
+                      (results) => {
+                        let idk = results.taskPlayer7;
+                        let randNum2 = Math.floor(Math.random() * topic.length);
+                        let newTask2 = idk.push({
+                          word: topic[randNum2],
+                        });
+                        updateRoom(props.match.params.roomNumber.toString(), {
+                          taskPlayer7: idk,
+                          player7Passes: player7Passes - 1,
+                        });
+                      }
+                    );
+                  }}
+                >
+                  Pass
+                </button>
+              </div>
+            )}
+            <div>
+              <label className="container">
+                <input
+                  type="checkbox"
+                  checked={task7[task7.length - 1].completed}
+                  onClick={() => {
+                    task7[task7.length - 1].completed = true;
+                    updateRoom(props.match.params.roomNumber.toString(), {
+                      taskPlayer7: task7,
+                    });
+                  }}
+                ></input>
+                <span className="checkmark"></span>
+              </label>
+            </div>
+          </div>
         </>
       )}
       {props.match.params.playerNumber == 8 && (
         <>
-          <h1>{task8[task8.length - 1].word}</h1>
-          {player8Passes > 0 && (
-            <button
-              onClick={() => {
-                getDoc(props.match.params.roomNumber.toString(), (results) => {
-                  let idk = results.taskPlayer8;
-                  let randNum2 = Math.floor(Math.random() * topic.length);
-                  let newTask2 = idk.push({
-                    word: topic[randNum2],
-                  });
-                  updateRoom(props.match.params.roomNumber.toString(), {
-                    taskPlayer8: idk,
-                    player8Passes: player8Passes - 1,
-                  });
-                });
-              }}
-            >
-              Pass
-            </button>
-          )}
-          <input
-            type="checkbox"
-            checked={task8[task8.length - 1].completed}
-            onClick={() => {
-              task8[task8.length - 1].completed = true;
-              updateRoom(props.match.params.roomNumber.toString(), {
-                taskPlayer8: task8,
-              });
-            }}
-          ></input>
+          <div className="card">
+            <h1>{task8[task8.length - 1].word}</h1>
+            {player8Passes > 0 && (
+              <div>
+                <button
+                  onClick={() => {
+                    getDoc(
+                      props.match.params.roomNumber.toString(),
+                      (results) => {
+                        let idk = results.taskPlayer8;
+                        let randNum2 = Math.floor(Math.random() * topic.length);
+                        let newTask2 = idk.push({
+                          word: topic[randNum2],
+                        });
+                        updateRoom(props.match.params.roomNumber.toString(), {
+                          taskPlayer8: idk,
+                          player8Passes: player8Passes - 1,
+                        });
+                      }
+                    );
+                  }}
+                >
+                  Pass
+                </button>
+              </div>
+            )}
+            <div>
+              <div>
+                <label className="container">
+                  <input
+                    type="checkbox"
+                    checked={task8[task8.length - 1].completed}
+                    onClick={() => {
+                      task8[task8.length - 1].completed = true;
+                      updateRoom(props.match.params.roomNumber.toString(), {
+                        taskPlayer8: task8,
+                      });
+                    }}
+                  ></input>
+                  <span className="checkbox"></span>
+                </label>
+              </div>
+            </div>
+          </div>
         </>
       )}
       {props.match.params.playerNumber == 9 && (
         <>
-          <h1>{task9[task9.length - 1].word}</h1>
-          {player9Passes > 0 && (
-            <button
-              onClick={() => {
-                getDoc(props.match.params.roomNumber.toString(), (results) => {
-                  let idk = results.taskPlayer9;
-                  let randNum2 = Math.floor(Math.random() * topic.length);
-                  let newTask2 = idk.push({
-                    word: topic[randNum2],
-                  });
-                  updateRoom(props.match.params.roomNumber.toString(), {
-                    taskPlayer9: idk,
-                    player9Passes: player1Passes - 1,
-                  });
-                });
-              }}
-            >
-              Pass
-            </button>
-          )}
-          <input
-            type="checkbox"
-            checked={task9[task9.length - 1].completed}
-            onClick={() => {
-              task9[task9.length - 1].completed = true;
-              updateRoom(props.match.params.roomNumber.toString(), {
-                taskPlayer9: task9,
-              });
-            }}
-          ></input>
+          <div className="card">
+            <h1>{task9[task9.length - 1].word}</h1>
+            {player9Passes > 0 && (
+              <div>
+                <button
+                  onClick={() => {
+                    getDoc(
+                      props.match.params.roomNumber.toString(),
+                      (results) => {
+                        let idk = results.taskPlayer9;
+                        let randNum2 = Math.floor(Math.random() * topic.length);
+                        let newTask2 = idk.push({
+                          word: topic[randNum2],
+                        });
+                        updateRoom(props.match.params.roomNumber.toString(), {
+                          taskPlayer9: idk,
+                          player9Passes: player1Passes - 1,
+                        });
+                      }
+                    );
+                  }}
+                >
+                  Pass
+                </button>
+              </div>
+            )}
+            <div>
+              <label className="container">
+                <input
+                  type="checkbox"
+                  checked={task9[task9.length - 1].completed}
+                  onClick={() => {
+                    task9[task9.length - 1].completed = true;
+                    updateRoom(props.match.params.roomNumber.toString(), {
+                      taskPlayer9: task9,
+                    });
+                  }}
+                ></input>
+                <span className="checkmark"></span>
+              </label>
+            </div>
+          </div>
         </>
       )}
       {props.match.params.playerNumber == 10 && (
         <>
-          <h1>{task10[task10.length - 1].word}</h1>
-          {player10Passes > 0 && (
-            <button
-              onClick={() => {
-                getDoc(props.match.params.roomNumber.toString(), (results) => {
-                  let idk = results.taskPlayer10;
-                  let randNum2 = Math.floor(Math.random() * topic.length);
-                  let newTask2 = idk.push({
-                    word: topic[randNum2],
-                  });
-                  updateRoom(props.match.params.roomNumber.toString(), {
-                    taskPlayer10: idk,
-                    player10Passes: player10Passes - 1,
-                  });
-                });
-              }}
-            >
-              Pass
-            </button>
-          )}
-          <input
-            type="checkbox"
-            checked={task10[task10.length - 1].completed}
-            onClick={() => {
-              task10[task10.length - 1].completed = true;
-              updateRoom(props.match.params.roomNumber.toString(), {
-                taskPlayer10: task10,
-              });
-            }}
-          ></input>
+          <div className="card">
+            <h1>{task10[task10.length - 1].word}</h1>
+            {player10Passes > 0 && (
+              <div>
+                <button
+                  onClick={() => {
+                    getDoc(
+                      props.match.params.roomNumber.toString(),
+                      (results) => {
+                        let idk = results.taskPlayer10;
+                        let randNum2 = Math.floor(Math.random() * topic.length);
+                        let newTask2 = idk.push({
+                          word: topic[randNum2],
+                        });
+                        updateRoom(props.match.params.roomNumber.toString(), {
+                          taskPlayer10: idk,
+                          player10Passes: player10Passes - 1,
+                        });
+                      }
+                    );
+                  }}
+                >
+                  Pass
+                </button>
+              </div>
+            )}
+            <div>
+              <label className="container">
+                <input
+                  type="checkbox"
+                  checked={task10[task10.length - 1].completed}
+                  onClick={() => {
+                    task10[task10.length - 1].completed = true;
+                    updateRoom(props.match.params.roomNumber.toString(), {
+                      taskPlayer10: task10,
+                    });
+                  }}
+                ></input>
+                <span className="checkmark"></span>
+              </label>
+            </div>
+          </div>
         </>
       )}
 
       {props.match.params.playerNumber == 1 && (
         <button
+          className="negative"
           onClick={() => {
             updateRoom(props.match.params.roomNumber.toString(), {
               gameOver: true,

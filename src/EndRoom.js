@@ -32,343 +32,392 @@ const EndRoom = (props) => {
     });
     getSnapshot(props.match.params.roomNumber.toString(), (results) => {
       setUnveil(results.unveil);
+      if (results.gameOver == false) {
+        props.history.push(
+          `/gameroom/${props.match.params.roomNumber}/${props.match.params.playerNumber}/${results.insanityLevel}`
+        );
+      }
     });
   }, []);
   console.log(unveil, "<---unveil");
   console.log(props.match.params.numberPlayers, "<----numberPlayers");
   return (
     <>
-      <div>
-        <h1>The game has ended, but that was fun! </h1>
-      </div>
-      <h2>Here were your prompts:</h2>
-      {props.match.params.numberPlayers > 0 && unveil > 0 && (
-        <>
-          <h1>Player 1:</h1>
-          {prompts.map((value, index) => {
-            console.log(value, "<---value");
-            return (
-              <div>
-                {index !== 0 &&
-                value.word !==
-                  "Just be yourself. That's good enough for me :)" ? (
-                  <>
-                    <h2
-                      style={{
-                        textDecoration: value.completed
-                          ? "line-through"
-                          : undefined,
-                      }}
-                    >
-                      {value.word}
-                    </h2>
-                  </>
-                ) : (
-                  ""
-                )}
-              </div>
-            );
-          })}
-        </>
-      )}
-      {props.match.params.numberPlayers > 1 && unveil > 1 && (
-        <>
-          <h1>Player 2:</h1>
-          {prompts2.map((value, index) => {
-            return (
-              <div>
-                {index !== 0 &&
-                value.word !==
-                  "Just be yourself. That's good enough for me :)" ? (
-                  <>
-                    <h2
-                      style={{
-                        textDecoration: value.completed
-                          ? "line-through"
-                          : undefined,
-                      }}
-                    >
-                      {value.word}
-                    </h2>
-                  </>
-                ) : (
-                  ""
-                )}
-              </div>
-            );
-          })}
-        </>
-      )}
-      {props.match.params.numberPlayers > 2 && unveil > 2 && (
-        <>
-          <h1>Player 3:</h1>
-          {prompts3.map((value, index) => {
-            return (
-              <div>
-                {index !== 0 &&
-                value.word !==
-                  "Just be yourself. That's good enough for me :)" ? (
-                  <>
-                    <h2
-                      style={{
-                        textDecoration: value.completed
-                          ? "line-through"
-                          : undefined,
-                      }}
-                    >
-                      {value.word}
-                    </h2>
-                  </>
-                ) : (
-                  ""
-                )}
-              </div>
-            );
-          })}
-        </>
-      )}
-      {props.match.params.numberPlayers > 3 && unveil > 3 && (
-        <>
-          <h1>Player 4:</h1>
-          {prompts4.map((value, index) => {
-            return (
-              <div>
-                {index !== 0 &&
-                value.word !==
-                  "Just be yourself. That's good enough for me :)" ? (
-                  <>
-                    <h2
-                      style={{
-                        textDecoration: value.completed
-                          ? "line-through"
-                          : undefined,
-                      }}
-                    >
-                      {value.word}
-                    </h2>
-                  </>
-                ) : (
-                  ""
-                )}
-              </div>
-            );
-          })}
-        </>
-      )}
-      {props.match.params.numberPlayers > 4 && unveil > 4 && (
-        <>
-          <h1>Player 5:</h1>
-          {prompts5.map((value, index) => {
-            return (
-              <div>
-                {index !== 0 &&
-                value.word !==
-                  "Just be yourself. That's good enough for me :)" ? (
-                  <>
-                    <h2
-                      style={{
-                        textDecoration: value.completed
-                          ? "line-through"
-                          : undefined,
-                      }}
-                    >
-                      {value.word}
-                    </h2>
-                  </>
-                ) : (
-                  ""
-                )}
-              </div>
-            );
-          })}
-        </>
-      )}
-      {props.match.params.numberPlayers > 5 && unveil > 5 && (
-        <>
-          <h1>Player 6:</h1>
-          {prompts6.map((value, index) => {
-            return (
-              <div>
-                {index !== 0 &&
-                value.word !==
-                  "Just be yourself. That's good enough for me :)" ? (
-                  <>
-                    <h2
-                      style={{
-                        textDecoration: value.completed
-                          ? "line-through"
-                          : undefined,
-                      }}
-                    >
-                      {value.word}
-                    </h2>
-                  </>
-                ) : (
-                  ""
-                )}
-              </div>
-            );
-          })}
-        </>
-      )}
-      {props.match.params.numberPlayers > 6 && unveil > 6 && (
-        <>
-          <h1>Player 7:</h1>
-          {prompts7.map((value, index) => {
-            return (
-              <div>
-                {index !== 0 &&
-                value.word !==
-                  "Just be yourself. That's good enough for me :)" ? (
-                  <>
-                    <h2
-                      style={{
-                        textDecoration: value.completed
-                          ? "line-through"
-                          : undefined,
-                      }}
-                    >
-                      {value.word}
-                    </h2>
-                  </>
-                ) : (
-                  ""
-                )}
-              </div>
-            );
-          })}
-        </>
-      )}
-      {props.match.params.numberPlayers > 7 && unveil > 7 && (
-        <>
-          <h1>Player 8:</h1>
-          {prompts8.map((value, index) => {
-            return (
-              <div>
-                {index !== 0 &&
-                value.word !==
-                  "Just be yourself. That's good enough for me :)" ? (
-                  <>
-                    <h2
-                      style={{
-                        textDecoration: value.completed
-                          ? "line-through"
-                          : undefined,
-                      }}
-                    >
-                      {value.word}
-                    </h2>
-                  </>
-                ) : (
-                  ""
-                )}
-              </div>
-            );
-          })}
-        </>
-      )}
-      {props.match.params.numberPlayers > 8 && unveil > 8 && (
-        <>
-          <h1>Player 9:</h1>
-          {prompts9.map((value, index) => {
-            return (
-              <div>
-                {index !== 0 &&
-                value.word !==
-                  "Just be yourself. That's good enough for me :)" ? (
-                  <>
-                    <h2
-                      style={{
-                        textDecoration: value.completed
-                          ? "line-through"
-                          : undefined,
-                      }}
-                    >
-                      {value.word}
-                    </h2>
-                  </>
-                ) : (
-                  ""
-                )}
-              </div>
-            );
-          })}
-        </>
-      )}
-      {props.match.params.numberPlayers > 9 && unveil > 9 && (
-        <>
-          <h1>Player 10:</h1>
-          {prompts10.map((value, index) => {
-            return (
-              <div>
-                {index !== 0 &&
-                value.word !==
-                  "Just be yourself. That's good enough for me :)" ? (
-                  <>
-                    <h2
-                      style={{
-                        textDecoration: value.completed
-                          ? "line-through"
-                          : undefined,
-                      }}
-                    >
-                      {value.word}
-                    </h2>
-                  </>
-                ) : (
-                  ""
-                )}
-              </div>
-            );
-          })}
-        </>
-      )}
-      {unveil !== props.match.params.numberPlayers && (
-        <button
-          onClick={() => {
-            updateRoom(props.match.params.roomNumber.toString(), {
-              unveil: unveil + 1,
-            });
-          }}
-        >
-          See next person
-        </button>
-      )}
-      {props.match.params.numberPlayers == unveil && (
-        <>
-          {props.match.params.playerNumber == 1 && <button>End Game</button>}
-          {props.match.params.playerNumber == 1 && (
+      <div className="endScreen">
+        <div>
+          <h1>The game has ended, but that was fun! </h1>
+        </div>
+        <h2>Here were your prompts:</h2>
+        {props.match.params.numberPlayers > 0 && unveil > 0 && (
+          <>
+            <h1>Player 1:</h1>
+            {prompts.map((value, index) => {
+              console.log(value, "<---value");
+              return (
+                <div>
+                  {index !== 0 &&
+                  value.word !==
+                    "Just be yourself. That's good enough for me :)" ? (
+                    <>
+                      <h2
+                        style={{
+                          textDecoration: value.completed
+                            ? "line-through"
+                            : undefined,
+                        }}
+                      >
+                        {value.word}
+                      </h2>
+                    </>
+                  ) : (
+                    ""
+                  )}
+                </div>
+              );
+            })}
+          </>
+        )}
+        {props.match.params.numberPlayers > 1 && unveil > 1 && (
+          <>
+            <h1>Player 2:</h1>
+            {prompts2.map((value, index) => {
+              return (
+                <div>
+                  {index !== 0 &&
+                  value.word !==
+                    "Just be yourself. That's good enough for me :)" ? (
+                    <>
+                      <h2
+                        style={{
+                          textDecoration: value.completed
+                            ? "line-through"
+                            : undefined,
+                        }}
+                      >
+                        {value.word}
+                      </h2>
+                    </>
+                  ) : (
+                    ""
+                  )}
+                </div>
+              );
+            })}
+          </>
+        )}
+        {props.match.params.numberPlayers > 2 && unveil > 2 && (
+          <>
+            <h1>Player 3:</h1>
+            {prompts3.map((value, index) => {
+              return (
+                <div>
+                  {index !== 0 &&
+                  value.word !==
+                    "Just be yourself. That's good enough for me :)" ? (
+                    <>
+                      <h2
+                        style={{
+                          textDecoration: value.completed
+                            ? "line-through"
+                            : undefined,
+                        }}
+                      >
+                        {value.word}
+                      </h2>
+                    </>
+                  ) : (
+                    ""
+                  )}
+                </div>
+              );
+            })}
+          </>
+        )}
+        {props.match.params.numberPlayers > 3 && unveil > 3 && (
+          <>
+            <h1>Player 4:</h1>
+            {prompts4.map((value, index) => {
+              return (
+                <div>
+                  {index !== 0 &&
+                  value.word !==
+                    "Just be yourself. That's good enough for me :)" ? (
+                    <>
+                      <h2
+                        style={{
+                          textDecoration: value.completed
+                            ? "line-through"
+                            : undefined,
+                        }}
+                      >
+                        {value.word}
+                      </h2>
+                    </>
+                  ) : (
+                    ""
+                  )}
+                </div>
+              );
+            })}
+          </>
+        )}
+        {props.match.params.numberPlayers > 4 && unveil > 4 && (
+          <>
+            <h1>Player 5:</h1>
+            {prompts5.map((value, index) => {
+              return (
+                <div>
+                  {index !== 0 &&
+                  value.word !==
+                    "Just be yourself. That's good enough for me :)" ? (
+                    <>
+                      <h2
+                        style={{
+                          textDecoration: value.completed
+                            ? "line-through"
+                            : undefined,
+                        }}
+                      >
+                        {value.word}
+                      </h2>
+                    </>
+                  ) : (
+                    ""
+                  )}
+                </div>
+              );
+            })}
+          </>
+        )}
+        {props.match.params.numberPlayers > 5 && unveil > 5 && (
+          <>
+            <h1>Player 6:</h1>
+            {prompts6.map((value, index) => {
+              return (
+                <div>
+                  {index !== 0 &&
+                  value.word !==
+                    "Just be yourself. That's good enough for me :)" ? (
+                    <>
+                      <h2
+                        style={{
+                          textDecoration: value.completed
+                            ? "line-through"
+                            : undefined,
+                        }}
+                      >
+                        {value.word}
+                      </h2>
+                    </>
+                  ) : (
+                    ""
+                  )}
+                </div>
+              );
+            })}
+          </>
+        )}
+        {props.match.params.numberPlayers > 6 && unveil > 6 && (
+          <>
+            <h1>Player 7:</h1>
+            {prompts7.map((value, index) => {
+              return (
+                <div>
+                  {index !== 0 &&
+                  value.word !==
+                    "Just be yourself. That's good enough for me :)" ? (
+                    <>
+                      <h2
+                        style={{
+                          textDecoration: value.completed
+                            ? "line-through"
+                            : undefined,
+                        }}
+                      >
+                        {value.word}
+                      </h2>
+                    </>
+                  ) : (
+                    ""
+                  )}
+                </div>
+              );
+            })}
+          </>
+        )}
+        {props.match.params.numberPlayers > 7 && unveil > 7 && (
+          <>
+            <h1>Player 8:</h1>
+            {prompts8.map((value, index) => {
+              return (
+                <div>
+                  {index !== 0 &&
+                  value.word !==
+                    "Just be yourself. That's good enough for me :)" ? (
+                    <>
+                      <h2
+                        style={{
+                          textDecoration: value.completed
+                            ? "line-through"
+                            : undefined,
+                        }}
+                      >
+                        {value.word}
+                      </h2>
+                    </>
+                  ) : (
+                    ""
+                  )}
+                </div>
+              );
+            })}
+          </>
+        )}
+        {props.match.params.numberPlayers > 8 && unveil > 8 && (
+          <>
+            <h1>Player 9:</h1>
+            {prompts9.map((value, index) => {
+              return (
+                <div>
+                  {index !== 0 &&
+                  value.word !==
+                    "Just be yourself. That's good enough for me :)" ? (
+                    <>
+                      <h2
+                        style={{
+                          textDecoration: value.completed
+                            ? "line-through"
+                            : undefined,
+                        }}
+                      >
+                        {value.word}
+                      </h2>
+                    </>
+                  ) : (
+                    ""
+                  )}
+                </div>
+              );
+            })}
+          </>
+        )}
+        {props.match.params.numberPlayers > 9 && unveil > 9 && (
+          <>
+            <h1>Player 10:</h1>
+            {prompts10.map((value, index) => {
+              return (
+                <div>
+                  {index !== 0 &&
+                  value.word !==
+                    "Just be yourself. That's good enough for me :)" ? (
+                    <>
+                      <h2
+                        style={{
+                          textDecoration: value.completed
+                            ? "line-through"
+                            : undefined,
+                        }}
+                      >
+                        {value.word}
+                      </h2>
+                    </>
+                  ) : (
+                    ""
+                  )}
+                </div>
+              );
+            })}
+          </>
+        )}
+        {unveil !== props.match.params.numberPlayers && (
+          <button
+            onClick={() => {
+              updateRoom(props.match.params.roomNumber.toString(), {
+                unveil: unveil + 1,
+              });
+            }}
+          >
+            See next person
+          </button>
+        )}
+        {props.match.params.numberPlayers <= unveil && (
+          <>
+            {props.match.params.playerNumber == 1 && (
+              <button className="negative">End Game</button>
+            )}
+            {props.match.params.playerNumber == 1 && (
+              <button
+                onClick={() => {
+                  setShowModal(true);
+                }}
+              >
+                New Game
+              </button>
+            )}
+          </>
+        )}
+        {showModal && (
+          <div
+            style={{
+              position: "absolute",
+              width: "50%",
+              height: "50%",
+              backgroundColor: "skyBlue",
+              top: "25vh",
+              marginBottom: "25%",
+              marginLeft: "25%",
+              marginRight: "25%",
+            }}
+          >
+            <h1>Game Type:</h1>{" "}
+            <div>
+              <select onChange={(e) => setInsanityLevel(e.target.value)}>
+                <option value={1}>Absurdity Level 1</option>
+                <option value={2}>Absurdity Level 2</option>
+                <option value={3}>Absurdity Level 3</option>
+                <option value={"characterBased"}>Character Based</option>
+                <option value={"politics"}>Politics</option>
+              </select>
+            </div>
             <button
               onClick={() => {
-                setShowModal(true);
+                updateRoom(props.match.params.roomNumber.toString(), {
+                  numPeople: props.match.params.numberPlayers,
+                  rotationSpeed: "slow",
+                  insanityLevel,
+                  randThing: 5,
+                  player1Passes: 2,
+                  player2Passes: 2,
+                  player3Passes: 2,
+                  player4Passes: 2,
+                  player5Passes: 2,
+                  player6Passes: 2,
+                  player7Passes: 2,
+                  player8Passes: 2,
+                  player9Passes: 2,
+                  player10Passes: 2,
+                  task: ["Make some small-talk to get things going"],
+                  taskPlayer2: ["Make some small-talk to get things going"],
+                  taskPlayer3: ["Make some small-talk to get things going"],
+                  taskPlayer4: ["Make some small-talk to get things going"],
+                  taskPlayer5: ["Make some small-talk to get things going"],
+                  taskPlayer6: ["Make some small-talk to get things going"],
+                  taskPlayer7: ["Make some small-talk to get things going"],
+                  taskPlayer8: ["Make some small-talk to get things going"],
+                  taskPlayer9: ["Make some small-talk to get things going"],
+                  taskPlayer10: ["Make some small-talk to get things going"],
+                  turnNumber: 1,
+                  gameOver: false,
+                  unveil: 0,
+                  topic: "Calibrating",
+                });
               }}
             >
-              New Game
+              Start
             </button>
-          )}
-        </>
-      )}
-      {showModal && (
-        <div
-          style={{
-            position: "absolute",
-            width: "90%",
-            height: "90%",
-            backgroundColor: "red",
-            top: 0,
-          }}
-        >
-          <h1>Game Type:</h1>{" "}
-          <select onChange={(e) => setInsanityLevel(e.target.value)}>
-            <option value={1}>Absurdity Level 1</option>
-            <option value={2}>Absurdity Level 2</option>
-            <option value={3}>Absurdity Level 3</option>
-            <option value={"characterBased"}>Character Based</option>
-            <option value={"politics"}>Politics</option>
-          </select>
-          <button onClick={() => {}}>Start</button>
-        </div>
-      )}
+          </div>
+        )}
+      </div>
     </>
   );
 };

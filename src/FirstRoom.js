@@ -17,9 +17,7 @@ function FirstRoom(props) {
       <h1 id="title" style={{ color: "red" }}>
         Out of Character
       </h1>
-      <h2 style={{ color: "blue" }}>
-        A Conversational Companion for Video Conferences
-      </h2>
+      <h2 style={{ color: "blue" }}>Giving Video-Call Conversations a Kick</h2>
       <h3>How many people? (2-10)</h3>
       <input
         onChange={(e) => {
@@ -72,7 +70,7 @@ function FirstRoom(props) {
             unveil: 0,
             topic: "Calibrating",
           });
-          sessionStorage.setItem("yourRoom", gameContext.roomNumber);
+          //sessionStorage.setItem("yourRoom", gameContext.roomNumber);
           props.history.push(
             `/waitingroom/${gameContext.roomNumber}/${insanityLevel}`
           );
