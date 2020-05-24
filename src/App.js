@@ -43,11 +43,7 @@ function App() {
       {" "}
       <Switch>
         <Route exact path={routes.HOME} render={() => <FirstRoom />} />
-        <Route
-          exact
-          path={`${routes.ROOM}/:roomNumber`}
-          render={() => <SecondRoom />}
-        />
+        <Route exact path={`${routes.ROOM}/`} render={() => <SecondRoom />} />
         <Route
           exact
           path={`${routes.WAIT}/:roomNumber/:gameType`}

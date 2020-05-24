@@ -37,6 +37,9 @@ const EndRoom = (props) => {
           `/gameroom/${props.match.params.roomNumber}/${props.match.params.playerNumber}/${results.insanityLevel}`
         );
       }
+      if (results.endGame == true) {
+        props.history.push(`/room`);
+      }
     });
   }, []);
   console.log(unveil, "<---unveil");
@@ -343,7 +346,16 @@ const EndRoom = (props) => {
         {props.match.params.numberPlayers <= unveil && (
           <>
             {props.match.params.playerNumber == 1 && (
-              <button className="negative">End Game</button>
+              <button
+                className="negative"
+                onClick={() => {
+                  updateRoom(props.match.params.roomNumber.toString(), {
+                    endGame: true,
+                  });
+                }}
+              >
+                End Game
+              </button>
             )}
             {props.match.params.playerNumber == 1 && (
               <button
@@ -410,6 +422,7 @@ const EndRoom = (props) => {
                   gameOver: false,
                   unveil: 0,
                   topic: "Calibrating",
+                  endGame: false,
                 });
               }}
             >

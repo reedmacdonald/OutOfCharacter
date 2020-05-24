@@ -69,6 +69,7 @@ function FirstRoom(props) {
             gameOver: false,
             unveil: 0,
             topic: "Calibrating",
+            endGame: false,
           });
           //sessionStorage.setItem("yourRoom", gameContext.roomNumber);
           props.history.push(
