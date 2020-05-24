@@ -679,7 +679,7 @@ const GameRoom = (props) => {
       )}
       {props.match.params.playerNumber == 4 && (
         <>
-          <div>
+          <div className="card">
             <h1>{task4[task4.length - 1].word}</h1>
             {player4Passes > 0 && (
               <div>
@@ -718,7 +718,7 @@ const GameRoom = (props) => {
                     });
                   }}
                 ></input>
-                <span className="checkbox"></span>
+                <span className="checkmark"></span>
               </label>
             </div>
             <span
@@ -773,7 +773,7 @@ const GameRoom = (props) => {
                     });
                   }}
                 ></input>
-                <span className="checkbox"></span>
+                <span className="checkmark"></span>
               </label>
             </div>
             <span
@@ -939,7 +939,7 @@ const GameRoom = (props) => {
                       });
                     }}
                   ></input>
-                  <span className="checkbox"></span>
+                  <span className="checkmark"></span>
                 </label>
               </div>
             </div>
