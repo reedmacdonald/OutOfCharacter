@@ -109,6 +109,13 @@ export const level2 = [
 ];
 
 export const level3 = [
+  "Say something that someone basically just said",
+  "Yell Mom, meatloaf!",
+  "Make a refernce to something that you hate but don't mention it in the context of you hating it",
+  "Start walking around your room for no reason. Bring your laptop/camera with you",
+  "Start playing the airdrums. Get really into it but try to keep conversating",
+  "Quote a Beatles song",
+  "Say something really mean about a friend who is not in the groupchat",
   "Next time you would laugh naturally, laugh hysterically. Be unable to calm down for an embarrassing period of time.",
   "Mute yourself and address someone offscreen, but seem LIVID. Bonus points for mouthing `Just cleanup your shit!` Calm down before it is addressed",
   "Next time you talk, pretend to have the hiccups. Drink water in a weird way to try to cure it.",

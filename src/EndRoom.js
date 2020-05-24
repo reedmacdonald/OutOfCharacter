@@ -372,13 +372,16 @@ const EndRoom = (props) => {
           <div
             style={{
               position: "absolute",
-              width: "50%",
-              height: "50%",
-              backgroundColor: "skyBlue",
-              top: "25vh",
-              marginBottom: "25%",
-              marginLeft: "25%",
-              marginRight: "25%",
+              width: "20%",
+              height: "20%",
+              backgroundColor: "whiteSmoke",
+              position: "fixed",
+              top: "50%",
+              left: "50%",
+              /* bring your own prefixes */
+              transform: "translate(-50%, -50%)",
+              border: "5px solid black",
+              borderRadius: "20px",
             }}
           >
             <h1>Game Type:</h1>{" "}

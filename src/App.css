@@ -59,6 +59,8 @@ button {
   border-radius: 30px;
   background-color: lightskyblue;
   box-shadow: 2px 4px lightgray;
+  outline: none;
+  margin: 0 15px;
 }
 
 .negative {
@@ -100,6 +102,7 @@ select {
   height: 25px;
   width: 25px;
   background-color: #eee;
+  border: 2px solid black;
 }
 
 /* On mouse-over, add a grey background color */
