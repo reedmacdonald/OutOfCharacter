@@ -189,6 +189,7 @@ const GameRoom = (props) => {
   }, []);
   const setOnePlayerTwo = (categoryParam) => {
     let newNum = Math.floor(Math.random() * 40000) + 55000;
+
     setTimeout(() => {
       getDoc(props.match.params.roomNumber.toString(), (results) => {
         let idk = results.taskPlayer2;
