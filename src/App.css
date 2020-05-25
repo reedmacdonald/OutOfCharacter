@@ -99,6 +99,11 @@ button {
   color: black;
   font-weight: bold;
 }
+#homepageDiv {
+  bottom: 10%;
+  left: 40%;
+  position: relative;
+}
 
 .negative {
   background-color: lightcoral;
@@ -106,6 +111,9 @@ button {
 select {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+#otherSelect {
+  margin-bottom: -10px;
 }
 .container {
   display: inline-block;
