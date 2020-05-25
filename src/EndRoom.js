@@ -1,6 +1,6 @@
 import React from "react";
 import { Switch, Route, Redirect, withRouter } from "react-router-dom";
-import { getDoc, getSnapshot, updateRoom } from "./Functions";
+import { getDoc, getSnapshot, updateRoom, deleteDoc } from "./Functions";
 import "./App.css";
 
 const EndRoom = (props) => {
@@ -44,6 +44,9 @@ const EndRoom = (props) => {
       }
       if (results.endGame == true) {
         props.history.push(`/room`);
+        setTimeout(() => {
+          deleteDoc(props.match.params.roomNumber.toString());
+        }, 3000);
       }
     });
   }, []);

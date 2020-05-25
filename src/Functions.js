@@ -36,3 +36,15 @@ export const getDoc = (room, callback) => {
       //console.log("Error getting document:", error);
     });
 };
+
+export const deleteDoc = (room) => {
+  db.collection("word")
+    .doc(room)
+    .delete()
+    .then(function () {
+      console.log("Document successfully deleted!");
+    })
+    .catch(function (error) {
+      console.error("Error removing document: ", error);
+    });
+};
