@@ -6,33 +6,35 @@ import { level1, level2, level3, Politics, Character } from "./Tasks";
 import { Topics } from "./Topics";
 
 const GameRoom = (props) => {
-  const [task, setTask] = React.useState([{ word: "Make ", completed: false }]);
+  const [task, setTask] = React.useState([
+    { word: "Loading...", completed: false },
+  ]);
   const [task2, setTask2] = React.useState([
-    { word: "Make ", completed: false },
+    { word: "Loading...", completed: false },
   ]);
   const [task3, setTask3] = React.useState([
-    { word: "Make ", completed: false },
+    { word: "Loading...", completed: false },
   ]);
   const [task4, setTask4] = React.useState([
-    { word: "Make ", completed: false },
+    { word: "Loading...", completed: false },
   ]);
   const [task5, setTask5] = React.useState([
-    { word: "Make ", completed: false },
+    { word: "Loading...", completed: false },
   ]);
   const [task6, setTask6] = React.useState([
-    { word: "Make ", completed: false },
+    { word: "Loading...", completed: false },
   ]);
   const [task7, setTask7] = React.useState([
-    { word: "Make ", completed: false },
+    { word: "Loading...", completed: false },
   ]);
   const [task8, setTask8] = React.useState([
-    { word: "Make ", completed: false },
+    { word: "Loading...", completed: false },
   ]);
   const [task9, setTask9] = React.useState([
-    { word: "Make ", completed: false },
+    { word: "Loading...", completed: false },
   ]);
   const [task10, setTask10] = React.useState([
-    { word: "Make ", completed: false },
+    { word: "Loading...", completed: false },
   ]);
   const [player1Passes, setPlayer1Passes] = React.useState(2);
   const [player2Passes, setPlayer2Passes] = React.useState(2);
@@ -740,7 +742,7 @@ const GameRoom = (props) => {
       )}
       {props.match.params.playerNumber == 5 && (
         <>
-          <div>
+          <div className="card">
             <h1>
               {task5[task5.length - 1].word || "Waiting for host to start game"}
             </h1>
