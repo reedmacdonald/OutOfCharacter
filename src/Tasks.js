@@ -164,7 +164,7 @@ export const level3 = [
   "Address the elephant in the room",
   "Offer your help to someone",
   "Give a genuine compliment to the person in the video chat that you've known the longest",
-  "React to something in a way that you image one of your parents probably would",
+  "React to something in a way that you imagien one of your parents probably would",
   "Make a comparison that's waaaaaaaaaaaaaaayyyy off",
   "Maybe be quiet for a bit. Gather your thoughts",
   "Next time you get angry or annoyed storm off",

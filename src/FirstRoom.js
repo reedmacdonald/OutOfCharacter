@@ -193,7 +193,12 @@ function FirstRoom(props) {
             Instructions
           </span>
           <br />
-          <span>Demo</span>
+          <a
+            href="https://www.youtube.com/watch?v=gFdyNPL5z3w&feature=youtu.be"
+            target="_blank"
+          >
+            <span>Watch Demo</span>
+          </a>
           <br />
           <span
             onClick={() => {
