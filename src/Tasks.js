@@ -108,7 +108,7 @@ export const level2 = [
   "Next time you agree with something say 'Yeah, no, definitely'",
   "Say something kind of sarcastic",
   "Bob your head a little bit like you`re listening to a cool song",
-  "Next time you talk, use the phrase 'Having said that' to completely negate what you previously said.",
+
   "Respond to someone with a comment that is pretty irrelevant",
   "Make a dumb joke. This shouldn't be hard for you.",
   "You are Academy-Award winner Matthew McCanaughey. Say 'Alright, alright, alright' next time you talk",
@@ -235,7 +235,7 @@ export const level3 = [
   "Just be yourself. That's good enough for me :)",
   "Just be yourself. That's good enough for me :)",
   "Bob your head a little bit like you`re listening to a cool song",
-  "Next time you talk, use the phrase 'Having said that' to completely negate what you previously said.",
+
   "Respond to someone with a comment that is pretty irrelevant to what they were saying",
   "Make a dumb joke. This shouldn't be hard for you.",
   "You are Academy-Award winner Matthew McCanaughey. Say 'Alright, alright, alright' next time you talk",
