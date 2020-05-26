@@ -33,6 +33,9 @@ function FirstRoom(props) {
             padding: "15px",
             zIndex: "1000000000",
           }}
+          onClick={() => {
+            setShowInstructions(false);
+          }}
         >
           <h3>
             The goal of this web-app is to create lively conversation on video
@@ -97,6 +100,9 @@ function FirstRoom(props) {
             overflow: "scroll",
             padding: "15px",
             zIndex: "1000000000",
+          }}
+          onClick={() => {
+            setShowAbout(false);
           }}
         >
           <h3>
