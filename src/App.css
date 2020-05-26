@@ -129,6 +129,14 @@ select {
   -ms-user-select: none;
   user-select: none;
 }
+@media only screen and (max-width: 600px) {
+  #homepageDiv {
+    bottom: 0;
+    left: 0;
+    position: relative;
+    top: 10px;
+  }
+}
 
 /* Hide the browser's default checkbox */
 .container input {

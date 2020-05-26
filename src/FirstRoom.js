@@ -31,16 +31,20 @@ function FirstRoom(props) {
             borderRadius: "20px",
             overflow: "scroll",
             padding: "15px",
+            zIndex: "1000000000",
           }}
         >
           <h3>
             The goal of this web-app is to create lively conversation on video
             chats by giving the participants "prompts" which contain things to
-            do during them. In Absurdity Levels 1 & 2, the "prompts" are pretty
-            mild so you could probably play this in most settings without anyone
-            noticing anything weird. Absurdity Level 3 and other game types get
-            pretty wild and are recommended to be played in settings where
-            everyone is playing.
+            do during them. When a user wants to set up a game, they are given
+            links to send to the other people video-chatting with them. These
+            links will be lead them to a page that contains a prompt that
+            rotates every minute or so. In Absurdity Levels 1 & 2, the "prompts"
+            are pretty mild so you could probably play this in most settings
+            without anyone noticing anything weird. Absurdity Level 3 and other
+            game types get pretty wild and are recommended to be played in
+            settings where everyone is playing.
           </h3>
           <h3>
             Prompts will rotate randomly every minute to a minute and a half.
@@ -55,7 +59,7 @@ function FirstRoom(props) {
             The game is over when Player One chooses to end it. Player one is
             the player who started the game and sent everyone the links. They
             are the only one who sees the button to end it. Though it is not
-            required, it is recommended for games to be ended on a good note.
+            required, it is recommended that games be ended on a good note.
           </h3>
           <h3>
             After the game is ended, everyone should see a new screen. Click
@@ -92,6 +96,7 @@ function FirstRoom(props) {
             borderRadius: "20px",
             overflow: "scroll",
             padding: "15px",
+            zIndex: "1000000000",
           }}
         >
           <h3>
@@ -101,8 +106,8 @@ function FirstRoom(props) {
           <h3>
             The app was coded by Reed MacDonald (myself) and the prompts were
             written by me and my cousin. I am not currently looking for a job
-            but you can email me about any business inquiries regarding the game
-            at reedpmacdonald@gmail.com.
+            but you can email me about any inquiries regarding the game at
+            reedpmacdonald@gmail.com.
           </h3>
           <span
             className="clickThis"
