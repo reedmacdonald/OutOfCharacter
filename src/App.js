@@ -39,7 +39,6 @@ function App() {
   return (
     <GameContext.Provider
       value={{ roomNumber, numPeople, insanityLevel, rotationSpeed }}
-      style={{ backgroundColor: "yellow" }}
     >
       {" "}
       <Switch>

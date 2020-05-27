@@ -193,7 +193,6 @@ select {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-
 .homeScreen {
   background-color: lavender;
   border: 5px solid black;
@@ -201,6 +200,7 @@ select {
   width: 80%;
   margin: 0 auto;
   margin-top: 10vh;
+  margin-bottom: 10vh;
 }
 .titleHeader {
   margin-top: 20px;
@@ -231,6 +231,7 @@ select {
   margin: 0 auto;
   width: 60%;
   margin-top: 120px;
+  margin-bottom: 120px;
 }
 
 .box3 {
@@ -238,4 +239,45 @@ select {
 }
 .box4 {
   grid-area: 1 / 2 / 2 / 3;
+}
+.enderDiv {
+  width: 60%;
+  margin: 0 auto;
+}
+.listDiv {
+  width: 30%;
+  margin: 0 auto;
+}
+.box2 {
+  margin-left: null;
+}
+.box3 {
+  margin-left: null;
+}
+@media only screen and (max-width: 600px) {
+  .homeScreen {
+    width: 100%;
+  }
+  .enderDiv {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 300px;
+  }
+  .parent {
+    display: block;
+  }
+  .parent2 {
+    display: block;
+  }
+  .listDiv {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .box2 {
+    margin-left: -40px;
+  }
+  .box3 {
+    margin-left: -40px;
+  }
 }
