@@ -668,3 +668,26 @@ export const Personal = [
   "Just be yourself. That's good enough for me :)",
   "Mention something about the last relationship you've been in",
 ];
+
+//This one is for very personal stuff
+export const Dates = [
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Just be yourself. That's good enough for me :)",
+  "Mention something about the last relationship you've been in",
+];

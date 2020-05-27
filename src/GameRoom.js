@@ -2,7 +2,17 @@ import React from "react";
 import "./App.css";
 import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 import { getSnapshot, updateRoom, getDoc } from "./Functions";
-import { level1, level2, level3, Politics, Character } from "./Tasks";
+import {
+  level1,
+  level2,
+  level3,
+  Politics,
+  Character,
+  Dates,
+  Family,
+  Personal,
+  Office,
+} from "./Tasks";
 import { Topics } from "./Topics";
 
 const GameRoom = (props) => {
@@ -95,6 +105,10 @@ const GameRoom = (props) => {
     if (Number(props.match.params.gameType) == 3) category = level3;
     if (props.match.params.gameType == "characterBased") category = Character;
     if (props.match.params.gameType == "politics") category = Politics;
+    if (props.match.params.gameType == "officeBanter") category = Office;
+    if (props.match.params.gameType == "date") category = Dates;
+    if (props.match.params.gameType == "family") category = Family;
+    if (props.match.params.gameType == "personal") category = Personal;
     setTopic(category);
     if (props.match.params.playerNumber == 1) {
       let newNum = Math.floor(Math.random() * 40000) + 55000;
@@ -196,9 +210,13 @@ const GameRoom = (props) => {
       getDoc(props.match.params.roomNumber.toString(), (results) => {
         let idk = results.taskPlayer2;
         let randNum2 = Math.floor(Math.random() * categoryParam.length);
+        //console.log("here7");
         let newTask2 = idk.push({
           word: categoryParam[randNum2],
         });
+        var msg = new SpeechSynthesisUtterance(`${categoryParam[randNum2]}`);
+        //props.match.params.playerNumber == 1 &&
+        // window.speechSynthesis.speak(msg);
         updateRoom(props.match.params.roomNumber.toString(), {
           taskPlayer2: idk,
         });

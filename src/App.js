@@ -10,6 +10,7 @@ import { getSnapshot } from "./Functions";
 import WaitingRoom from "./WaitingRoom";
 import GameRoom from "./GameRoom";
 import EndRoom from "./EndRoom";
+import HomeScreen from "./HomeScreen";
 function App() {
   const [roomNumber, setRoomNumber] = React.useState(0);
   const [numPeople, setNumPeople] = React.useState(0);
@@ -38,6 +39,7 @@ function App() {
   return (
     <GameContext.Provider
       value={{ roomNumber, numPeople, insanityLevel, rotationSpeed }}
+      style={{ backgroundColor: "yellow" }}
     >
       {" "}
       <Switch>
@@ -58,6 +60,7 @@ function App() {
           path={`${routes.ENDROOM}/:roomNumber/:numberPlayers/:playerNumber`}
           render={() => <EndRoom />}
         />
+        <Route exact path={routes.HOMESCREEN} render={() => <HomeScreen />} />
       </Switch>
     </GameContext.Provider>
   );
