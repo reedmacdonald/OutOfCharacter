@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import Firebase from "./Firebase";
 import { Switch, Route, Redirect, withRouter } from "react-router-dom";
