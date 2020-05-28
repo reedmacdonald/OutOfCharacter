@@ -65,9 +65,7 @@ const EndRoom = (props) => {
               console.log(value, "<---value");
               return (
                 <div>
-                  {index !== 0 &&
-                  value.word !==
-                    "Just be yourself. That's good enough for me :)" ? (
+                  {index !== 0 && value.word !== "Just be yourself :)" ? (
                     <>
                       <h2
                         style={{
@@ -93,9 +91,7 @@ const EndRoom = (props) => {
             {prompts2.map((value, index) => {
               return (
                 <div>
-                  {index !== 0 &&
-                  value.word !==
-                    "Just be yourself. That's good enough for me :)" ? (
+                  {index !== 0 && value.word !== "Just be yourself :)" ? (
                     <>
                       <h2
                         style={{
@@ -121,9 +117,7 @@ const EndRoom = (props) => {
             {prompts3.map((value, index) => {
               return (
                 <div>
-                  {index !== 0 &&
-                  value.word !==
-                    "Just be yourself. That's good enough for me :)" ? (
+                  {index !== 0 && value.word !== "Just be yourself :)" ? (
                     <>
                       <h2
                         style={{
@@ -149,9 +143,7 @@ const EndRoom = (props) => {
             {prompts4.map((value, index) => {
               return (
                 <div>
-                  {index !== 0 &&
-                  value.word !==
-                    "Just be yourself. That's good enough for me :)" ? (
+                  {index !== 0 && value.word !== "Just be yourself :)" ? (
                     <>
                       <h2
                         style={{
@@ -177,9 +169,7 @@ const EndRoom = (props) => {
             {prompts5.map((value, index) => {
               return (
                 <div>
-                  {index !== 0 &&
-                  value.word !==
-                    "Just be yourself. That's good enough for me :)" ? (
+                  {index !== 0 && value.word !== "Just be yourself :)" ? (
                     <>
                       <h2
                         style={{
@@ -205,9 +195,7 @@ const EndRoom = (props) => {
             {prompts6.map((value, index) => {
               return (
                 <div>
-                  {index !== 0 &&
-                  value.word !==
-                    "Just be yourself. That's good enough for me :)" ? (
+                  {index !== 0 && value.word !== "Just be yourself :)" ? (
                     <>
                       <h2
                         style={{
@@ -233,9 +221,7 @@ const EndRoom = (props) => {
             {prompts7.map((value, index) => {
               return (
                 <div>
-                  {index !== 0 &&
-                  value.word !==
-                    "Just be yourself. That's good enough for me :)" ? (
+                  {index !== 0 && value.word !== "Just be yourself :)" ? (
                     <>
                       <h2
                         style={{
@@ -261,9 +247,7 @@ const EndRoom = (props) => {
             {prompts8.map((value, index) => {
               return (
                 <div>
-                  {index !== 0 &&
-                  value.word !==
-                    "Just be yourself. That's good enough for me :)" ? (
+                  {index !== 0 && value.word !== "Just be yourself :)" ? (
                     <>
                       <h2
                         style={{
@@ -289,9 +273,7 @@ const EndRoom = (props) => {
             {prompts9.map((value, index) => {
               return (
                 <div>
-                  {index !== 0 &&
-                  value.word !==
-                    "Just be yourself. That's good enough for me :)" ? (
+                  {index !== 0 && value.word !== "Just be yourself :)" ? (
                     <>
                       <h2
                         style={{
@@ -317,9 +299,7 @@ const EndRoom = (props) => {
             {prompts10.map((value, index) => {
               return (
                 <div>
-                  {index !== 0 &&
-                  value.word !==
-                    "Just be yourself. That's good enough for me :)" ? (
+                  {index !== 0 && value.word !== "Just be yourself :)" ? (
                     <>
                       <h2
                         style={{
