@@ -50,6 +50,8 @@ const EndRoom = (props) => {
       }
     });
   }, []);
+  console.log(unveil, "<---unveil");
+  console.log(props.match.params.numberPlayers, "<---props numPlayers");
 
   return (
     <>
@@ -319,7 +321,7 @@ const EndRoom = (props) => {
             })}
           </>
         )}
-        {unveil !== props.match.params.numberPlayers && (
+        {unveil !== Number(props.match.params.numberPlayers) && (
           <button
             onClick={() => {
               updateRoom(props.match.params.roomNumber.toString(), {
