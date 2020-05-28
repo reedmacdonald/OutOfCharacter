@@ -22,13 +22,13 @@ function FirstRoom(props) {
             position: "absolute",
             width: "35%",
             height: "35%",
-            backgroundColor: "whiteSmoke",
+            backgroundColor: "white",
             position: "fixed",
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
             border: "5px solid black",
-            borderRadius: "20px",
+
             overflow: "scroll",
             padding: "15px",
             zIndex: "1000000000",
@@ -90,13 +90,13 @@ function FirstRoom(props) {
             position: "absolute",
             width: "35%",
             height: "35%",
-            backgroundColor: "whiteSmoke",
+            backgroundColor: "white",
             position: "fixed",
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
             border: "5px solid black",
-            borderRadius: "20px",
+
             overflow: "scroll",
             padding: "15px",
             zIndex: "1000000000",
@@ -127,7 +127,7 @@ function FirstRoom(props) {
       )}
       <div className="App">
         <h1 id="title">Out of Character</h1>
-        <h2 className="subTitle" style={{ color: "blue" }}>
+        <h2 className="subTitle" style={{ color: "navy" }}>
           Giving Video-Call Conversations a Kick
         </h2>
         <h3>How many people? (2-10)</h3>

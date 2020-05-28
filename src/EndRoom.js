@@ -381,13 +381,12 @@ const EndRoom = (props) => {
               position: "absolute",
               width: "35%",
               height: "35%",
-              backgroundColor: "whiteSmoke",
+              backgroundColor: "white",
               position: "fixed",
               top: "50%",
               left: "50%",
               transform: "translate(-50%, -50%)",
               border: "5px solid black",
-              borderRadius: "20px",
             }}
           >
             <h1>Game Type:</h1>{" "}
@@ -400,6 +399,8 @@ const EndRoom = (props) => {
                 <option value={"politics"}>Politics</option>
               </select>
             </div>
+            <br />
+            <br />
             <button
               onClick={() => {
                 updateRoom(props.match.params.roomNumber.toString(), {

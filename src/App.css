@@ -6,11 +6,12 @@
   position: relative;
   margin: 0 auto;
   font-family: Marker Felt, fantasy;
-  color: red;
+  color: #fc4445;
 }
 
 .subTitle {
   font-family: Marker Felt;
+  color: black;
 }
 @keyframes changeColor {
   from {
@@ -26,20 +27,19 @@
 }
 .App {
   margin-top: 20%;
-  background-color: lavender;
-  border-radius: 20px;
+  background-color: #97caef;
   width: 80%;
   margin: 0 auto;
   margin-bottom: 100px;
   padding-top: 30px;
   padding-bottom: 30px;
   margin-top: 5%;
-  box-shadow: 5px 10px lightgray;
+  border: 5px solid #3feee6;
 }
 .endScreen {
   margin-top: 20%;
-  background-color: lavender;
-  border-radius: 20px;
+  background-color: #97caef;
+  border: 5px solid #3feee6;
   width: 80%;
   margin: 0 auto;
   margin-bottom: 100px;
@@ -48,11 +48,9 @@
   padding-left: 15px;
   padding-right: 15px;
   margin-top: 5%;
-  box-shadow: 5px 10px lightgray;
 }
 .card {
-  background-color: lavender;
-  border-radius: 20px;
+  background-color: #97caef;
   width: 80%;
   margin: 0 auto;
   margin-bottom: 100px;
@@ -61,17 +59,22 @@
   padding-left: 15px;
   padding-right: 15px;
   margin-top: 20%;
-  box-shadow: 5px 10px lightgray;
+  border: 5px solid #3feee6;
+  display: block;
+  height: 100%;
 }
 button {
   padding: 10px 40px;
   border-radius: 30px;
-  background-color: lightskyblue;
-  box-shadow: 2px 4px lightgray;
+  background-color: #55bcc9;
   outline: none;
   margin: 0 15px;
-  font-family: Lato;
   font-weight: bold;
+  border: none;
+  transition-duration: 0.5s;
+}
+button:hover {
+  padding: 15px 50px;
 }
 .whatIsThis {
   bottom: 10%;
@@ -108,7 +111,7 @@ button {
 }
 
 .negative {
-  background-color: lightcoral;
+  background-color: #fc4445;
 }
 select {
   margin-top: 10px;
@@ -157,7 +160,7 @@ select {
   height: 25px;
   width: 25px;
   background-color: #eee;
-  border: 2px solid black;
+  border: 2px solid #fc4445;
 }
 
 /* On mouse-over, add a grey background color */
@@ -167,7 +170,7 @@ select {
 
 /* When the checkbox is checked, add a blue background */
 .container input:checked ~ .checkmark {
-  background-color: #2196f3;
+  background-color: #55bcc9;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -195,16 +198,17 @@ select {
   transform: rotate(45deg);
 }
 .homeScreen {
-  background-color: lavender;
-  border: 5px solid black;
-  border-radius: 30px;
+  background-color: #97caef;
   width: 80%;
   margin: 0 auto;
   margin-top: 10vh;
   margin-bottom: 10vh;
+  border: 5px solid #3feee6;
 }
 .titleHeader {
-  margin-top: 20px;
+  margin-top: 90px;
+  position: relative;
+  border: 1px solid #97caef;
 }
 .parent {
   display: grid;
@@ -214,7 +218,7 @@ select {
   grid-row-gap: 0px;
   margin: 0 auto;
   width: 60%;
-  margin-top: 120px;
+  margin-top: 30px;
 }
 
 .div1 {
@@ -246,14 +250,28 @@ select {
   margin: 0 auto;
 }
 .listDiv {
-  width: 30%;
+  width: 90%;
   margin: 0 auto;
 }
 .box2 {
   margin-left: null;
+  margin-top: 20px;
 }
 .box3 {
   margin-left: null;
+}
+#bigWords {
+  color: #fc4445;
+}
+#bestOf {
+  color: #fc4445;
+}
+li {
+  margin-top: 10px;
+}
+.lastDiv {
+  margin-bottom: 30px;
+  border: 1px solid #97caef;
 }
 @media only screen and (max-width: 600px) {
   .homeScreen {
