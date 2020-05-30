@@ -150,10 +150,10 @@ function FirstRoom(props) {
           <option value={3}>Absurdity Level 3</option>
           <option value={"characterBased"}>Character Based</option>
           <option value={"politics"}>Politics</option>
-          <option value={"date"}>First Date Icebreaker</option>
+          {/*<option value={"date"}>First Date Icebreaker</option>
           <option value={"officeBanter"}>Office Banter</option>
           <option value={"family"}>Family Reunion</option>
-          <option value={"personal"}>Deeply Personal</option>
+          <option value={"personal"}>Deeply Personal</option>*/}
         </select>
         <br />
         <button
