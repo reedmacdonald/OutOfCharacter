@@ -244,7 +244,7 @@ const GameRoom = (props) => {
     let newNum = Math.floor(Math.random() * 40000) + 55000;
     setTimeout(() => {
       getDoc(props.match.params.roomNumber.toString(), (results) => {
-        let idk = results.task;
+        let idk = results.taskPlayer1;
         let randNum2 = Math.floor(Math.random() * categoryParam.length);
         let newTask2 = idk.push({
           word: categoryParam[randNum2],
@@ -260,7 +260,7 @@ const GameRoom = (props) => {
     let newNum = Math.floor(Math.random() * 40000) + 55000;
     setTimeout(() => {
       getDoc(props.match.params.roomNumber.toString(), (results) => {
-        let idk = results.task;
+        let idk = results.taskPlayer1;
         let randNum2 = Math.floor(Math.random() * categoryParam.length);
         let newTask2 = idk.push({
           word: categoryParam[randNum2],
