@@ -150,9 +150,10 @@ function FirstRoom(props) {
           <option value={3}>Absurdity Level 3</option>
           <option value={"characterBased"}>Character Based</option>
           <option value={"politics"}>Politics</option>
-          {/*<option value={"date"}>First Date Icebreaker</option>
-          <option value={"officeBanter"}>Office Banter</option>
+          <option value={"date"}>First Date Icebreaker</option>
           <option value={"family"}>Family Reunion</option>
+          {/*<option value={"officeBanter"}>Office Banter</option>
+          
           <option value={"personal"}>Deeply Personal</option>*/}
         </select>
         <br />
@@ -174,7 +175,7 @@ function FirstRoom(props) {
               player8Passes: 2,
               player9Passes: 2,
               player10Passes: 2,
-              task: ["Make some small-talk to get things going"],
+              taskPlayer1: ["Make some small-talk to get things going"],
               taskPlayer2: ["Make some small-talk to get things going"],
               taskPlayer3: ["Make some small-talk to get things going"],
               taskPlayer4: ["Make some small-talk to get things going"],

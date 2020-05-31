@@ -16,7 +16,7 @@ import {
 import { Topics } from "./Topics";
 
 const GameRoom = (props) => {
-  const [task, setTask] = React.useState([
+  const [task1, setTask1] = React.useState([
     { word: "Loading...", completed: false },
   ]);
   const [task2, setTask2] = React.useState([
@@ -68,7 +68,7 @@ const GameRoom = (props) => {
     getSnapshot(props.match.params.roomNumber, (results) => {
       console.log(results, "<---results");
       setNumPeople(results.numPeople);
-      task !== results.task && setTask(results.task);
+      task1 !== results.taskPlayer1 && setTask1(results.taskPlayer1);
       task2 !== results.taskPlayer2 && setTask2(results.taskPlayer2);
       task3 !== results.taskPlayer3 && setTask3(results.taskPlayer3);
       task4 !== results.taskPlayer4 && setTask4(results.taskPlayer4);
@@ -113,9 +113,9 @@ const GameRoom = (props) => {
     if (props.match.params.playerNumber == 1) {
       let newNum = Math.floor(Math.random() * 40000) + 55000;
       let randNum = Math.floor(Math.random() * category.length);
-      let newTask = task.push({ word: category[randNum], completed: false });
+      let newTask = task1.push({ word: category[randNum], completed: false });
       updateRoom(props.match.params.roomNumber.toString(), {
-        task,
+        taskPlayer1: task1,
       });
       setOnePlayerOne(category);
     }
@@ -250,7 +250,7 @@ const GameRoom = (props) => {
           word: categoryParam[randNum2],
         });
         updateRoom(props.match.params.roomNumber.toString(), {
-          task: idk,
+          taskPlayer1: idk,
         });
         setTwoPlayerOne(categoryParam);
       });
@@ -266,7 +266,7 @@ const GameRoom = (props) => {
           word: categoryParam[randNum2],
         });
         updateRoom(props.match.params.roomNumber.toString(), {
-          task: idk,
+          taskPlayer1: idk,
         });
         setOnePlayerOne(categoryParam);
       });
@@ -533,7 +533,7 @@ const GameRoom = (props) => {
       {props.match.params.playerNumber == 1 && (
         <>
           <div className="card">
-            <h1>{task[task.length - 1].word || "error"}</h1>
+            <h1>{task1[task1.length - 1].word || "error"}</h1>
             {player1Passes > 0 && (
               <div>
                 <button
@@ -542,13 +542,13 @@ const GameRoom = (props) => {
                       props.match.params.roomNumber.toString(),
                       (results) => {
                         console.log("here5");
-                        let idk = results.task;
+                        let idk = results.taskPlayer1;
                         let randNum2 = Math.floor(Math.random() * topic.length);
                         let newTask2 = idk.push({
                           word: topic[randNum2],
                         });
                         updateRoom(props.match.params.roomNumber.toString(), {
-                          task: idk,
+                          taskPlayer1: idk,
                           player1Passes: player1Passes - 1,
                         });
                       }
@@ -564,11 +564,11 @@ const GameRoom = (props) => {
               <label className="container">
                 <input
                   type="checkbox"
-                  checked={task[task.length - 1].completed}
+                  checked={task1[task1.length - 1].completed}
                   onClick={() => {
-                    task[task.length - 1].completed = true;
+                    task1[task1.length - 1].completed = true;
                     updateRoom(props.match.params.roomNumber.toString(), {
-                      task,
+                      taskPlayer1: task1,
                     });
                   }}
                 ></input>

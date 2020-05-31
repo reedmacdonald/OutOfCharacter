@@ -24,7 +24,7 @@ const EndRoom = (props) => {
       window.clearTimeout(id); // will do nothing if no timeout with id is present
     }
     getDoc(props.match.params.roomNumber.toString(), (results) => {
-      setPrompts(results.task);
+      setPrompts(results.taskPlayer1);
       setPrompts2(results.taskPlayer2);
       setPrompts3(results.taskPlayer3);
       setPrompts4(results.taskPlayer4);
@@ -400,7 +400,7 @@ const EndRoom = (props) => {
                   player8Passes: 2,
                   player9Passes: 2,
                   player10Passes: 2,
-                  task: ["Make some small-talk to get things going"],
+                  taskPlayer1: ["Make some small-talk to get things going"],
                   taskPlayer2: ["Make some small-talk to get things going"],
                   taskPlayer3: ["Make some small-talk to get things going"],
                   taskPlayer4: ["Make some small-talk to get things going"],
