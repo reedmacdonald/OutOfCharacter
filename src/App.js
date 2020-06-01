@@ -11,6 +11,7 @@ import WaitingRoom from "./WaitingRoom";
 import GameRoom from "./GameRoom";
 import EndRoom from "./EndRoom";
 import HomeScreen from "./HomeScreen";
+import Navbar from "./Navbar";
 function App() {
   const [roomNumber, setRoomNumber] = React.useState(0);
   const [numPeople, setNumPeople] = React.useState(0);
@@ -41,6 +42,7 @@ function App() {
       value={{ roomNumber, numPeople, insanityLevel, rotationSpeed }}
     >
       {" "}
+      <Navbar></Navbar>
       <Switch>
         <Route exact path={routes.HOME} render={() => <FirstRoom />} />
         <Route exact path={`${routes.ROOM}/`} render={() => <SecondRoom />} />

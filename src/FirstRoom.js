@@ -14,6 +14,9 @@ function FirstRoom(props) {
   const [insanityLevel, setInsanityLevel] = React.useState(1);
   const [showInstructions, setShowInstructions] = React.useState(false);
   const [showAbout, setShowAbout] = React.useState(false);
+  React.useEffect(() => {
+    document.body.style = "background: #210f63;";
+  }, []);
   return (
     <>
       {showInstructions && (
@@ -126,38 +129,47 @@ function FirstRoom(props) {
         </div>
       )}
       <div className="App">
-        <h1 id="title">Out of Character</h1>
-        <h2 className="subTitle" style={{ color: "navy" }}>
+        <h1 id="title" className="titleMarginTop">
+          Out of Character
+        </h1>
+        <h2 className="subTitle" id="subtitleMarginTop">
           Giving Video-Call Conversations a Kick
         </h2>
-        <h3>How many people? (2-10)</h3>
-        <input
-          onChange={(e) => {
-            setNumPeople(e.target.value);
-          }}
-          type="number"
-          min="2"
-          max="10"
-        ></input>
-
-        <h3>Game Type:</h3>
-        <select
-          id="otherSelect"
-          onChange={(e) => setInsanityLevel(e.target.value)}
-        >
-          <option value={1}>Absurdity Level 1</option>
-          <option value={2}>Absurdity Level 2</option>
-          <option value={3}>Absurdity Level 3</option>
-          <option value={"characterBased"}>Character Based</option>
-          <option value={"politics"}>Politics</option>
-          <option value={"date"}>First Date Icebreaker</option>
-          <option value={"family"}>Family Reunion</option>
-          {/*<option value={"officeBanter"}>Office Banter</option>
+        <div id="firstPageHolder">
+          <div id="thing1">
+            <span>How many people? (2-10)</span>
+            <br />
+            <input
+              onChange={(e) => {
+                setNumPeople(e.target.value);
+              }}
+              type="number"
+              min="2"
+              max="10"
+            ></input>
+          </div>
+          <div id="thing2">
+            <span>Game Type:</span>
+            <br />
+            <select
+              id="otherSelect"
+              onChange={(e) => setInsanityLevel(e.target.value)}
+            >
+              <option value={1}>Absurdity Level 1</option>
+              <option value={2}>Absurdity Level 2</option>
+              <option value={3}>Absurdity Level 3</option>
+              <option value={"characterBased"}>Character Based</option>
+              <option value={"politics"}>Politics</option>
+              <option value={"date"}>First Date Icebreaker</option>
+              <option value={"family"}>Family Reunion</option>
+              {/*<option value={"officeBanter"}>Office Banter</option>
           
           <option value={"personal"}>Deeply Personal</option>*/}
-        </select>
-        <br />
+            </select>
+          </div>
+        </div>
         <button
+          className="firstPageButton"
           onClick={() => {
             let randThing = Math.floor(Math.random() * 11);
             createRoom(gameContext.roomNumber.toString(), {
@@ -199,32 +211,6 @@ function FirstRoom(props) {
         >
           Start Game
         </button>
-        <div id="homepageDiv">
-          <span
-            onClick={() => {
-              setShowInstructions(true);
-            }}
-            style={{ cursor: "pointer" }}
-          >
-            Instructions
-          </span>
-          <br />
-          <a
-            href="https://www.youtube.com/watch?v=gFdyNPL5z3w&feature=youtu.be"
-            target="_blank"
-          >
-            <span>Watch Demo</span>
-          </a>
-          <br />
-          <span
-            onClick={() => {
-              setShowAbout(true);
-            }}
-            style={{ cursor: "pointer" }}
-          >
-            About
-          </span>
-        </div>
       </div>
     </>
   );

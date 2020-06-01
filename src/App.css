@@ -1,17 +1,23 @@
 #title {
   transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transform-origin: top left;
-  animation: changeColor;
+
   animation-duration: 4s;
   position: relative;
   margin: 0 auto;
-  font-family: Marker Felt, fantasy;
-  color: #fc4445;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont;
+  color: #00b3c1;
+  font-size: 72px;
+  line-height: 86px;
+  font-weight: 600;
 }
 
 .subTitle {
-  font-family: Marker Felt;
-  color: black;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont;
+  color: white;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 36px;
 }
 @keyframes changeColor {
   from {
@@ -26,19 +32,17 @@
   word-wrap: break-word;
 }
 .App {
-  margin-top: 20%;
-  background-color: #97caef;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   margin-bottom: 100px;
   padding-top: 30px;
   padding-bottom: 30px;
-  margin-top: 5%;
-  border: 5px solid #3feee6;
+
+  background-color: #210f63;
 }
 .endScreen {
   margin-top: 20%;
-  background-color: #97caef;
+  background-color: #99d6f2;
   border: 5px solid #3feee6;
   width: 80%;
   margin: 0 auto;
@@ -50,7 +54,7 @@
   margin-top: 5%;
 }
 .card {
-  background-color: #97caef;
+  background-color: #99d6f2;
   width: 80%;
   margin: 0 auto;
   margin-bottom: 100px;
@@ -65,8 +69,7 @@
 }
 button {
   padding: 10px 40px;
-  border-radius: 30px;
-  background-color: #55bcc9;
+
   outline: none;
   margin: 0 15px;
   font-weight: bold;
@@ -198,18 +201,8 @@ select {
   transform: rotate(45deg);
 }
 .homeScreen {
-  background-color: #97caef;
-  width: 80%;
-  margin: 0 auto;
-  margin-top: 10vh;
-  margin-bottom: 10vh;
-  border: 5px solid #3feee6;
 }
-.titleHeader {
-  margin-top: 90px;
-  position: relative;
-  border: 1px solid #97caef;
-}
+
 .parent {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -219,6 +212,7 @@ select {
   margin: 0 auto;
   width: 60%;
   margin-top: 30px;
+  align-items: center;
 }
 
 .div1 {
@@ -245,10 +239,7 @@ select {
 .box4 {
   grid-area: 1 / 2 / 2 / 3;
 }
-.enderDiv {
-  width: 60%;
-  margin: 0 auto;
-}
+
 .listDiv {
   width: 90%;
   margin: 0 auto;
@@ -256,6 +247,7 @@ select {
 .box2 {
   margin-left: null;
   margin-top: 20px;
+  align-items: center;
 }
 .box3 {
   margin-left: null;
@@ -270,8 +262,9 @@ li {
   margin-top: 10px;
 }
 .lastDiv {
-  margin-bottom: 30px;
-  border: 1px solid #97caef;
+  padding-bottom: 30px;
+  width: 60%;
+  margin: 0 auto;
 }
 @media only screen and (max-width: 600px) {
   .homeScreen {
@@ -284,6 +277,7 @@ li {
   }
   .parent {
     display: block;
+    background-color: #99d6f2 !important;
   }
   .parent2 {
     display: block;
@@ -295,8 +289,163 @@ li {
 
   .box2 {
     margin-left: -40px;
+    align-items: center !important;
   }
   .box3 {
     margin-left: -40px;
   }
+}
+.navbar {
+  background-color: #210f63;
+  color: white;
+  text-align: right;
+  padding-right: 15%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.navbar span {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+#section1 {
+  background-color: #210f63;
+  padding: 60px 0;
+}
+.buttonOne {
+  background-color: #e63946;
+  color: white;
+}
+.section2 {
+  background-color: white;
+  margin-top: 0 !important;
+  padding: 60px 0;
+}
+.section2 p {
+  margin-top: 0 !important;
+  text-align: left;
+}
+.sections2 h3 {
+  text-align: left !important;
+}
+#section3words {
+  text-align: left !important;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  color: #210f63;
+}
+#section3Text {
+  text-align: left !important;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 54px;
+  font-style: normal;
+  color: #210f63;
+}
+#section4 {
+  background-color: #99d6f2;
+  padding: 60px 0;
+}
+#section4 sup {
+  text-align: left;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 54px;
+}
+
+#section5 {
+  background-color: white;
+  padding: 60px 0;
+}
+#section5 h3 {
+  color: #210f63;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 54px;
+}
+#section5 h2 {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 54px;
+}
+#section7 {
+  background-color: #210f63;
+}
+#section7 h2 {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont;
+  color: white;
+  text-align: left;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 54px;
+}
+#section7 sup {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont;
+  color: white;
+  text-align: left;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 54px;
+}
+#section7 h5 {
+  color: white;
+  text-align: left;
+}
+.section4List {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 54px;
+}
+#firstPageHolder {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 68px;
+}
+#firstPageHolder span {
+  color: white;
+}
+#firstPageHolder input {
+  position: relative;
+  margin-top: 20px;
+}
+#firstPageHolder select {
+  height: 20px;
+  margin-top: 20px;
+}
+
+#thing1 {
+  grid-area: 1 / 1 / 2 / 2;
+}
+#thing2 {
+  grid-area: 1 / 2 / 2 / 3;
+}
+#subtitleMarginTop {
+  margin-top: 72px;
+}
+.titleMarginTop {
+  position: relative;
+  margin-top: 100px !important;
+}
+.firstPageButton {
+  background-color: #210f63;
+  border: 1px solid #e63946;
+  color: white;
+  margin-top: 68px;
 }
