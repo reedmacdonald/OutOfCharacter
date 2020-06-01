@@ -23,6 +23,7 @@ const EndRoom = (props) => {
     while (id--) {
       window.clearTimeout(id); // will do nothing if no timeout with id is present
     }
+    document.body.style = "background: #210f63;";
     getDoc(props.match.params.roomNumber.toString(), (results) => {
       setPrompts(results.taskPlayer1);
       setPrompts2(results.taskPlayer2);
@@ -50,15 +51,13 @@ const EndRoom = (props) => {
       }
     });
   }, []);
-  console.log(unveil, "<---unveil");
-  console.log(props.match.params.numberPlayers, "<---props numPlayers");
 
   return (
     <>
       <div className="endScreen">
-        <div>
-          <h1>The game has ended, but that was fun! </h1>
-        </div>
+        <h1 id="title">Out of Character</h1>
+        <h1>The game has ended, but that was fun! </h1>
+
         <h2>Here were your prompts:</h2>
         {props.match.params.numberPlayers > 0 && unveil > 0 && (
           <>
@@ -328,6 +327,7 @@ const EndRoom = (props) => {
                 unveil: unveil + 1,
               });
             }}
+            className="seeThrough"
           >
             See next person
           </button>
@@ -336,7 +336,7 @@ const EndRoom = (props) => {
           <>
             {props.match.params.playerNumber == 1 && (
               <button
-                className="negative"
+                className="buttonOne"
                 onClick={() => {
                   updateRoom(props.match.params.roomNumber.toString(), {
                     endGame: true,
@@ -348,6 +348,7 @@ const EndRoom = (props) => {
             )}
             {props.match.params.playerNumber == 1 && (
               <button
+                className="yellowButton"
                 onClick={() => {
                   setShowModal(true);
                 }}

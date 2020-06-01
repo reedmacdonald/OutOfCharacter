@@ -4,7 +4,9 @@ import {} from "./Functions";
 import "./App.css";
 
 const HomeScreen = (props) => {
-  React.useEffect(() => {}, []);
+  React.useEffect(() => {
+    document.body.style = "background:#99d6f2";
+  }, []);
 
   return (
     <>
@@ -43,7 +45,7 @@ const HomeScreen = (props) => {
               <sup>1</sup> Open up a video chat with your friends
             </h3>
             <h3 className="section4List" style={{ textAlign: "left" }}>
-              <sup>2</sup> Create the game
+              <sup>2</sup> Start a game
             </h3>
             <h3 className="section4List" style={{ textAlign: "left" }}>
               <sup>3</sup> Send the links to the game

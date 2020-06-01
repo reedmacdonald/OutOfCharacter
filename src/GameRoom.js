@@ -63,7 +63,7 @@ const GameRoom = (props) => {
   const [rotationSpeed, setRotationSpeed] = React.useState(10000);
   const [topic, setTopic] = React.useState(["Topic pending"]);
   const [showModal, setShowModal] = React.useState(false);
-
+  document.body.style = "background: #210f63;";
   React.useEffect(() => {
     getSnapshot(props.match.params.roomNumber, (results) => {
       console.log(results, "<---results");
@@ -530,6 +530,9 @@ const GameRoom = (props) => {
   };
   return (
     <>
+      <h1 id="title" className="titleMarginTop">
+        Out of Character
+      </h1>
       {props.match.params.playerNumber == 1 && (
         <>
           <div className="card">

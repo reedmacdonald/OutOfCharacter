@@ -41,9 +41,6 @@
   background-color: #210f63;
 }
 .endScreen {
-  margin-top: 20%;
-  background-color: #99d6f2;
-  border: 5px solid #3feee6;
   width: 80%;
   margin: 0 auto;
   margin-bottom: 100px;
@@ -52,9 +49,9 @@
   padding-left: 15px;
   padding-right: 15px;
   margin-top: 5%;
+  color: white;
 }
 .card {
-  background-color: #99d6f2;
   width: 80%;
   margin: 0 auto;
   margin-bottom: 100px;
@@ -62,10 +59,33 @@
   padding-bottom: 30px;
   padding-left: 15px;
   padding-right: 15px;
-  margin-top: 20%;
-  border: 5px solid #3feee6;
   display: block;
   height: 100%;
+}
+.card h1 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 36px;
+  color: white;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont;
+}
+.card p {
+  font-style: normal;
+
+  color: white;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont;
+}
+.card button {
+  background-color: #210f63;
+  border: 1px solid #e63946;
+  color: white;
+  margin: 30px 0;
+}
+.seeThrough {
+  background-color: #210f63;
+  border: 1px solid #e63946;
+  color: white;
 }
 button {
   padding: 10px 40px;
@@ -114,7 +134,7 @@ button:hover {
 }
 
 .negative {
-  background-color: #fc4445;
+  background-color: #e63946;
 }
 select {
   margin-top: 10px;
@@ -163,7 +183,6 @@ select {
   height: 25px;
   width: 25px;
   background-color: #eee;
-  border: 2px solid #fc4445;
 }
 
 /* On mouse-over, add a grey background color */
@@ -253,10 +272,10 @@ select {
   margin-left: null;
 }
 #bigWords {
-  color: #fc4445;
+  color: #e63946;
 }
 #bestOf {
-  color: #fc4445;
+  color: #e63946;
 }
 li {
   margin-top: 10px;
@@ -448,4 +467,8 @@ li {
   border: 1px solid #e63946;
   color: white;
   margin-top: 68px;
+}
+.yellowButton {
+  color: white;
+  background-color: #ffbb3c;
 }
