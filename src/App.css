@@ -164,6 +164,9 @@ select {
     position: relative;
     top: 10px;
   }
+  #moose {
+    display: none;
+  }
 }
 
 /* Hide the browser's default checkbox */
