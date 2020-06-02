@@ -2,6 +2,7 @@ import React from "react";
 import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 import {} from "./Functions";
 import "./App.css";
+import Moose from "./Object.svg";
 
 const HomeScreen = (props) => {
   React.useEffect(() => {
@@ -103,16 +104,21 @@ const HomeScreen = (props) => {
         </button>
         <div className="lastDiv">
           {" "}
-          <h5>Great for:</h5>
-          <h2>
-            <sup>01</sup> Happy Hours with Friends
-          </h2>
-          <h2>
-            <sup>02</sup> Lunches with your coworkers
-          </h2>
-          <h2>
-            <sup>03</sup> Video calls with Family
-          </h2>{" "}
+          <div id="oppositeMoose">
+            <h5>Great for:</h5>
+            <h2>
+              <sup>01</sup> Happy Hours with Friends
+            </h2>
+            <h2>
+              <sup>02</sup> Lunches with your coworkers
+            </h2>
+            <h2>
+              <sup>03</sup> Video calls with Family
+            </h2>{" "}
+          </div>
+          <div id="moose">
+            <img src={Moose} alt="moose" />
+          </div>
         </div>
       </div>
     </>

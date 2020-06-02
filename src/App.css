@@ -113,13 +113,13 @@ button:hover {
 .clickThis {
   font-style: italic;
   z-index: 999999999999999;
-  color: grey;
+  color: #e63946;
   display: block;
   top: 60px;
   cursor: pointer;
 }
 .clickThis:hover {
-  color: black;
+  color: white;
   font-weight: bold;
 }
 
@@ -355,6 +355,14 @@ li {
   line-height: 17px;
   color: #210f63;
 }
+.navbar span {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont;
+  font-size: 14px;
+  transition-duration: 1s;
+}
+.navbar span:hover {
+  font-size: 18px;
+}
 #section3Text {
   text-align: left !important;
   font-family: -apple-system, system-ui, BlinkMacSystemFont;
@@ -471,4 +479,19 @@ li {
 .yellowButton {
   color: white;
   background-color: #ffbb3c;
+}
+
+.lastDiv {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+#oppositeMoose {
+  grid-area: 1 / 1 / 2 / 2;
+}
+#moose {
+  grid-area: 1 / 2 / 2 / 3;
 }
