@@ -1109,31 +1109,20 @@ const GameRoom = (props) => {
 
       {props.match.params.playerNumber == 1 && (
         <button
-          className="negative"
+          className="negative buttonOne"
           onClick={() => {
             updateRoom(props.match.params.roomNumber.toString(), {
               gameOver: true,
             });
           }}
+          style={{ marginBottom: "20px" }}
         >
           End Game
         </button>
       )}
       {showModal && (
         <div
-          style={{
-            position: "absolute",
-            width: "50%",
-            //height: "50%",
-            backgroundColor: "whiteSmoke",
-            position: "fixed",
-            top: "50%",
-            left: "50%",
-            padding: "15px",
-            transform: "translate(-50%, -50%)",
-            border: "5px solid black",
-            borderRadius: "20px",
-          }}
+          className="gameroomModal"
           onClick={() => {
             setShowModal(false);
           }}

@@ -12,21 +12,8 @@ const Navbar = () => {
     <div className="navbar">
       {showInstructions && (
         <div
-          style={{
-            position: "absolute",
-            width: "35%",
-            height: "35%",
-            backgroundColor: "#210f63",
-            position: "fixed",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            border: "1px solid #e63946",
-            color: "white",
-            overflow: "scroll",
-            padding: "15px",
-            zIndex: "1000000000",
-          }}
+          id="navbarModal"
+          style={{}}
           onClick={() => {
             setShowInstructions(!showInstructions);
           }}
@@ -80,21 +67,8 @@ const Navbar = () => {
       )}
       {showAbout && (
         <div
-          style={{
-            position: "absolute",
-            width: "35%",
-            height: "35%",
-            backgroundColor: "#210f63",
-            position: "fixed",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            border: "1px solid #e63946",
-            color: "white",
-            overflow: "scroll",
-            padding: "15px",
-            zIndex: "1000000000",
-          }}
+          id="navbarModal"
+          style={{}}
           onClick={() => {
             setShowAbout(!showAbout);
           }}
@@ -119,30 +93,32 @@ const Navbar = () => {
           </span>
         </div>
       )}
-      <span
-        onClick={() => {
-          setShowInstructions(!showInstructions);
-        }}
-      >
-        Instructions
-      </span>
-      <span>
-        {" "}
-        <a
-          href="https://www.youtube.com/watch?v=gFdyNPL5z3w"
-          target="_blank"
-          style={{ textDecoration: "none", color: "white" }}
+      <div>
+        <span
+          onClick={() => {
+            setShowInstructions(!showInstructions);
+          }}
         >
-          Watch Demo
-        </a>
-      </span>
-      <span
-        onClick={() => {
-          setShowAbout(!showAbout);
-        }}
-      >
-        About
-      </span>
+          Instructions
+        </span>
+        <span>
+          {" "}
+          <a
+            href="https://www.youtube.com/watch?v=gFdyNPL5z3w"
+            target="_blank"
+            style={{ textDecoration: "none", color: "white" }}
+          >
+            Watch Demo
+          </a>
+        </span>
+        <span
+          onClick={() => {
+            setShowAbout(!showAbout);
+          }}
+        >
+          About
+        </span>
+      </div>
     </div>
   );
 };

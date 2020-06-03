@@ -13,7 +13,7 @@ const WaitingRoom = (props) => {
   }, [gameContext]);
   return (
     <>
-      <div className="App" style={{ color: "white" }}>
+      <div id="waitingRoom" className="App" style={{ color: "white" }}>
         <h1>Send these links to your friends</h1>
         <h2>
           These are all slightly different so be careful to send a different one
@@ -39,6 +39,7 @@ const WaitingRoom = (props) => {
               `/gameroom/${gameContext.roomNumber}/1/${props.match.params.gameType}`
             );
           }}
+          className="buttonOne"
         >
           Start Game
         </button>

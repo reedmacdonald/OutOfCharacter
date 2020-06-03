@@ -352,6 +352,7 @@ const EndRoom = (props) => {
                 onClick={() => {
                   setShowModal(true);
                 }}
+                id="buttonEndScreen"
               >
                 New Game
               </button>
@@ -359,22 +360,13 @@ const EndRoom = (props) => {
           </>
         )}
         {showModal && (
-          <div
-            style={{
-              position: "absolute",
-              width: "35%",
-              height: "35%",
-              backgroundColor: "white",
-              position: "fixed",
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%, -50%)",
-              border: "5px solid black",
-            }}
-          >
+          <div id="endroomModal">
             <h1>Game Type:</h1>{" "}
             <div>
-              <select onChange={(e) => setInsanityLevel(e.target.value)}>
+              <select
+                style={{ outline: "none" }}
+                onChange={(e) => setInsanityLevel(e.target.value)}
+              >
                 <option value={1}>Absurdity Level 1</option>
                 <option value={2}>Absurdity Level 2</option>
                 <option value={3}>Absurdity Level 3</option>
@@ -387,6 +379,7 @@ const EndRoom = (props) => {
             <br />
             <br />
             <button
+              className="buttonOne"
               onClick={() => {
                 updateRoom(props.match.params.roomNumber.toString(), {
                   numPeople: props.match.params.numberPlayers,
