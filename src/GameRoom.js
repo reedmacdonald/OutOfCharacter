@@ -724,7 +724,7 @@ const GameRoom = (props) => {
                         });
                         updateRoom(props.match.params.roomNumber.toString(), {
                           taskPlayer4: idk,
-                          player4Passes: player1Passes - 1,
+                          player4Passes: player4Passes - 1,
                         });
                       }
                     );
