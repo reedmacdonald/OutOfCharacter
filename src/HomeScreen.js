@@ -62,8 +62,8 @@ const HomeScreen = (props) => {
 
         <div className="box2">
           <iframe
-            width="560"
-            height="380"
+            width="448"
+            height="304"
             src="https://www.youtube.com/embed/gFdyNPL5z3w"
             frameborder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -79,12 +79,11 @@ const HomeScreen = (props) => {
           }}
         >
           <h3 style={{ textAlign: "left" }}>
-            These days, more people are living and working remotely and living
-            their lives online, and there's nothing wrong with that. We still
-            talk to our friends, our bosses, and our significant others. We
-            still have meetings and happy hours. We still talk quite a bit it
-            seems. However, people are starting to notice what has always been
-            true:{" "}
+            These days, more people are working remotely and living their lives
+            online, and there's nothing wrong with that. We still talk to our
+            friends, our bosses, and our significant others. We still have
+            meetings and happy hours. We still talk quite a bit. However, people
+            are starting to notice what has always been true:{" "}
           </h3>
           <h2 id="bigWords" style={{ textAlign: "left", marginBottom: 0 }}>
             Sometimes conversations can be boring. Even when it's with people we

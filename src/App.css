@@ -203,6 +203,9 @@ select {
   #endroomModal {
     width: 75vw;
   }
+  .box2 {
+    display: none;
+  }
   #moose {
     display: none;
   }
