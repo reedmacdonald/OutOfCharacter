@@ -11,6 +11,9 @@
   line-height: 86px;
   font-weight: 600;
 }
+input {
+  outline: none;
+}
 
 .subTitle {
   font-family: -apple-system, system-ui, BlinkMacSystemFont;
@@ -176,7 +179,7 @@ select {
 #navbarModal {
   position: absolute;
   width: 35%;
-  height: 35%;
+  height: 40%;
   background-color: #210f63;
   position: fixed;
   top: 50%;

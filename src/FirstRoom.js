@@ -1,5 +1,5 @@
 import React from "react";
-import Firebase from "./Firebase";
+import Firebase, { auth } from "./Firebase";
 import "./App.css";
 import { GameContext } from "./GameContext";
 import { sayHi } from "./Functions";
@@ -14,8 +14,21 @@ function FirstRoom(props) {
   const [insanityLevel, setInsanityLevel] = React.useState(1);
   const [showInstructions, setShowInstructions] = React.useState(false);
   const [showAbout, setShowAbout] = React.useState(false);
+  const [currentUser, setCurrentUser] = React.useState(null);
   React.useEffect(() => {
     document.body.style = "background: #210f63;";
+    auth.onAuthStateChanged(function (user) {
+      if (user) {
+        // User is signed in.
+        console.log(user.email, "<---user");
+        setCurrentUser(user.email);
+        //setShowLogin(false);
+      } else {
+        // No user is signed in.
+        console.log("No user SignedIn");
+        setCurrentUser(null);
+      }
+    });
   }, []);
   return (
     <>
@@ -162,9 +175,14 @@ function FirstRoom(props) {
               <option value={"politics"}>Politics</option>
               <option value={"date"}>First Date Icebreaker</option>
               <option value={"family"}>Family Reunion</option>
-              {/*<option value={"officeBanter"}>Office Banter</option>
-          
-          <option value={"personal"}>Deeply Personal</option>*/}
+              {currentUser && (
+                <>
+                  <option value={"officeBanter"}>Office Banter</option>
+                  <option value={"personal"}>Deeply Personal</option>
+                  <option value={"ocean"}>Ocean, Fish, Etc</option>
+                  <option value={"greece"}>Ancient Greece</option>
+                </>
+              )}
             </select>
           </div>
         </div>

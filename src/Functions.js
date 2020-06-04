@@ -1,5 +1,5 @@
 import React from "react";
-import Firebase from "./Firebase";
+import Firebase, { auth } from "./Firebase";
 const db = Firebase.firestore();
 
 export const createRoom = (room, info) => {
@@ -46,5 +46,20 @@ export const deleteDoc = (room) => {
     })
     .catch(function (error) {
       console.error("Error removing document: ", error);
+    });
+};
+export const SignUp = (email, password, callback, errorCallback) => {
+  auth
+    .createUserWithEmailAndPassword(email, password)
+    .then((authUser) => {
+      //this.setState({ ...INITIAL_STATE });
+      //this.props.history.push(ROUTES.HOME);
+      console.log(authUser, "<---authUser");
+      console.log("here");
+    })
+    .catch((error) => {
+      //this.setState({ error });
+      console.log("here2");
+      console.log(error, "<---error");
     });
 };

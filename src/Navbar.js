@@ -1,19 +1,132 @@
 import React from "react";
-import Firebase from "./Firebase";
+import Firebase, { auth } from "./Firebase";
 import "./App.css";
 import { GameContext } from "./GameContext";
-import { sayHi } from "./Functions";
+import { sayHi, SignUp } from "./Functions";
 import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 
 const Navbar = () => {
   const [showInstructions, setShowInstructions] = React.useState(false);
   const [showAbout, setShowAbout] = React.useState(false);
+  const [showSignIn, setShowSignIn] = React.useState(false);
+  const [password, setPasssword] = React.useState("");
+  const [username, setUsername] = React.useState("");
+  const [currentUser, setCurrentUser] = React.useState(null);
+  const [showLogin, setShowLogin] = React.useState(false);
+  React.useState(() => {
+    auth.onAuthStateChanged(function (user) {
+      if (user) {
+        // User is signed in.
+        console.log(user.email, "<---user");
+        setCurrentUser(user.email);
+        setShowLogin(false);
+      } else {
+        // No user is signed in.
+        console.log("No user SignedIn");
+        setCurrentUser(null);
+      }
+    });
+  }, []);
   return (
     <div className="navbar">
+      {showLogin && (
+        <div id="navbarModal">
+          {!showSignIn && (
+            <>
+              <h3>Email</h3>
+              <div style={{ textAlign: "center" }}>
+                <input
+                  onChange={(e) => {
+                    setUsername(e.target.value);
+                  }}
+                ></input>
+              </div>
+              <h2>Password</h2>
+              <div style={{ textAlign: "center" }}>
+                <input
+                  onChange={(e) => {
+                    setPasssword(e.target.value);
+                  }}
+                ></input>
+              </div>
+              <br />
+
+              <div style={{ textAlign: "center" }}>
+                <button
+                  className="buttonOne"
+                  onClick={() => {
+                    auth
+                      .signInWithEmailAndPassword(username, password)
+                      .then((user) => {
+                        console.log(user, "<------user");
+                      })
+                      .catch((err) => {
+                        console.log(err, "<---err");
+                      });
+                  }}
+                >
+                  Submit
+                </button>
+                <h5>Don't have an account?</h5>
+              </div>
+            </>
+          )}
+          {showSignIn && (
+            <>
+              <h3>Email</h3>
+
+              <div style={{ textAlign: "center" }}>
+                <input
+                  onChange={(e) => {
+                    setUsername(e.target.value);
+                  }}
+                ></input>
+              </div>
+              <h2>Password</h2>
+              <div style={{ textAlign: "center" }}>
+                <input
+                  onChange={(e) => {
+                    setPasssword(e.target.value);
+                  }}
+                ></input>
+              </div>
+              <br />
+              <div style={{ textAlign: "center" }}>
+                <button
+                  className="buttonOne"
+                  onClick={() => {
+                    SignUp(
+                      username,
+                      password,
+                      () => {
+                        console.log("hi1");
+                      },
+                      () => {
+                        console.log("hi1");
+                      }
+                    );
+                  }}
+                >
+                  Submit
+                </button>
+              </div>
+              <br />
+            </>
+          )}
+
+          <div style={{ textAlign: "center" }}>
+            <button
+              className="seeThrough"
+              onClick={() => setShowSignIn(!showSignIn)}
+            >
+              {showSignIn ? "Back to Login" : "Sign Up"}
+            </button>
+          </div>
+        </div>
+      )}
       {showInstructions && (
         <div
           id="navbarModal"
-          style={{}}
           onClick={() => {
             setShowInstructions(!showInstructions);
           }}
@@ -94,6 +207,31 @@ const Navbar = () => {
         </div>
       )}
       <div>
+        {currentUser && (
+          <span
+            onClick={() => {
+              auth
+                .signOut()
+                .then((idk) => {
+                  console.log(idk, "<---idk");
+                })
+                .catch((err) => {
+                  console.log(err, "<---err");
+                });
+            }}
+          >
+            Sign Out
+          </span>
+        )}
+        {!currentUser && (
+          <span
+            onClick={() => {
+              setShowLogin(!showLogin);
+            }}
+          >
+            Log In
+          </span>
+        )}
         <span
           onClick={() => {
             setShowInstructions(!showInstructions);

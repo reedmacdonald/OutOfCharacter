@@ -1,6 +1,7 @@
 import React from "react";
 import firebase from "firebase";
 import * as SECRETS from "./secrets";
+import "firebase/auth";
 const config = {
   apiKey: SECRETS.API,
   authDomain: "out-of-character-reed-2.firebaseapp.com",
@@ -12,4 +13,5 @@ const config = {
   measurementId: "G-FVTW65YL5W",
 };
 firebase.initializeApp(config);
+export const auth = firebase.auth();
 export default firebase;
