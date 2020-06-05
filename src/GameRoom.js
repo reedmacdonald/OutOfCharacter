@@ -12,6 +12,7 @@ import {
   Family,
   Personal,
   Office,
+  Greek,
 } from "./Tasks";
 import { Topics } from "./Topics";
 
@@ -109,6 +110,7 @@ const GameRoom = (props) => {
     if (props.match.params.gameType == "date") category = Dates;
     if (props.match.params.gameType == "family") category = Family;
     if (props.match.params.gameType == "personal") category = Personal;
+    if (props.match.params.gameType == "greece") category = Greek;
     setTopic(category);
     if (props.match.params.playerNumber == 1) {
       let newNum = Math.floor(Math.random() * 40000) + 55000;

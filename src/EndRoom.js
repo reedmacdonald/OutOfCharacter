@@ -1,6 +1,7 @@
 import React from "react";
 import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 import { getDoc, getSnapshot, updateRoom, deleteDoc } from "./Functions";
+import Firebase, { auth } from "./Firebase";
 import "./App.css";
 
 const EndRoom = (props) => {
@@ -17,12 +18,25 @@ const EndRoom = (props) => {
   const [showModal, setShowModal] = React.useState(false);
   const [unveil, setUnveil] = React.useState(0);
   const [insanityLevel, setInsanityLevel] = React.useState(1);
+  const [currentUser, setCurrentUser] = React.useState(null);
   React.useEffect(() => {
     var id = window.setTimeout(function () {}, 0);
 
     while (id--) {
       window.clearTimeout(id); // will do nothing if no timeout with id is present
     }
+    auth.onAuthStateChanged(function (user) {
+      if (user) {
+        // User is signed in.
+        console.log(user.email, "<---user");
+        setCurrentUser(user.email);
+        //setShowLogin(false);
+      } else {
+        // No user is signed in.
+        console.log("No user SignedIn");
+        setCurrentUser(null);
+      }
+    });
     document.body.style = "background: #210f63;";
     getDoc(props.match.params.roomNumber.toString(), (results) => {
       setPrompts(results.taskPlayer1);
@@ -374,6 +388,14 @@ const EndRoom = (props) => {
                 <option value={"politics"}>Politics</option>
                 <option value={"date"}>First Date Icebreaker</option>
                 <option value={"family"}>Family Reunion</option>
+                {currentUser && (
+                  <>
+                    {/*<option value={"officeBanter"}>Office Banter</option>
+                  <option value={"personal"}>Deeply Personal</option>
+                  <option value={"ocean"}>Ocean, Fish, Etc</option>*/}
+                    <option value={"greece"}>Greek Mythology</option>
+                  </>
+                )}
               </select>
             </div>
             <br />

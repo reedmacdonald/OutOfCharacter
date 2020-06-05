@@ -177,10 +177,10 @@ function FirstRoom(props) {
               <option value={"family"}>Family Reunion</option>
               {currentUser && (
                 <>
-                  <option value={"officeBanter"}>Office Banter</option>
+                  {/*<option value={"officeBanter"}>Office Banter</option>
                   <option value={"personal"}>Deeply Personal</option>
-                  <option value={"ocean"}>Ocean, Fish, Etc</option>
-                  <option value={"greece"}>Ancient Greece</option>
+                  <option value={"ocean"}>Ocean, Fish, Etc</option>*/}
+                  <option value={"greece"}>Greek Mythology</option>
                 </>
               )}
             </select>
