@@ -61,5 +61,6 @@ export const SignUp = (email, password, callback, errorCallback) => {
       //this.setState({ error });
       console.log("here2");
       console.log(error, "<---error");
+      errorCallback(error);
     });
 };

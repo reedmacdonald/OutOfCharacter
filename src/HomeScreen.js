@@ -30,11 +30,12 @@ const HomeScreen = (props) => {
           <p id="section3words">Is it a game?</p>
           <h4 id="section3Text"></h4>
           <h4 id="section3Text">
-            No. Well, kind of
-            <br /> The goal is to <b id="bestOf">gamify conversations</b>,
-            creating something with the natural flow and information exchange of
-            a conversation but with the levity of a game. It's not a game or a
-            conversation. <b id="bestOf">It's kind of the best of both.</b>
+            No. Well, kind of.
+            <br /> The goal is the{" "}
+            <b id="bestOf">gamification of conversations</b>, creating something
+            with the natural flow and information exchange of a conversation but
+            with the levity of a game. It's not a game or a conversation.{" "}
+            <b id="bestOf">It's kind of the best of both.</b>
           </h4>
         </div>
       </div>
@@ -109,7 +110,7 @@ const HomeScreen = (props) => {
               <sup>01</sup> Happy Hours with Friends
             </h2>
             <h2>
-              <sup>02</sup> Lunches with your coworkers
+              <sup>02</sup> Lunches with Coworkers
             </h2>
             <h2>
               <sup>03</sup> Video calls with Family

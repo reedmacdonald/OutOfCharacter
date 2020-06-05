@@ -13,6 +13,8 @@ const Navbar = () => {
   const [username, setUsername] = React.useState("");
   const [currentUser, setCurrentUser] = React.useState(null);
   const [showLogin, setShowLogin] = React.useState(false);
+  const [errorSignIn, setErrorSignIn] = React.useState("");
+  const [otherError, setOtherError] = React.useState("");
   React.useState(() => {
     auth.onAuthStateChanged(function (user) {
       if (user) {
@@ -47,6 +49,7 @@ const Navbar = () => {
                   onChange={(e) => {
                     setPasssword(e.target.value);
                   }}
+                  type="password"
                 ></input>
               </div>
               <br />
@@ -62,11 +65,14 @@ const Navbar = () => {
                       })
                       .catch((err) => {
                         console.log(err, "<---err");
+                        setOtherError(err.message);
                       });
                   }}
                 >
                   Submit
                 </button>
+                <p>{otherError}</p>
+
                 <h5>Don't have an account?</h5>
               </div>
             </>
@@ -88,6 +94,7 @@ const Navbar = () => {
                   onChange={(e) => {
                     setPasssword(e.target.value);
                   }}
+                  type="password"
                 ></input>
               </div>
               <br />
@@ -101,8 +108,10 @@ const Navbar = () => {
                       () => {
                         console.log("hi1");
                       },
-                      () => {
-                        console.log("hi1");
+                      (sumthin) => {
+                        console.log(sumthin, "<---error");
+                        console.log(sumthin.message, "<---sumthin.message");
+                        setErrorSignIn(sumthin.message);
                       }
                     );
                   }}
@@ -110,6 +119,7 @@ const Navbar = () => {
                   Submit
                 </button>
               </div>
+              <p>{errorSignIn}</p>
               <br />
             </>
           )}
