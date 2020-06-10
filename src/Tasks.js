@@ -410,7 +410,7 @@ export const Politics = [
   "Namedrop someone who you think may be President in the future, excluding Trump and Biden",
   "Someone is making a great point. Nod FURIOUSLY in agreement",
   "Someone is making a TERRIBLE point. Nod furiously in disagreement",
-  "Ask a question to someone who has been quite",
+  "Ask a question to someone who has been quiet",
   "Next time someone gets cut off, say 'Hey, let them finish their thought'",
   "You are a President in the 1800s",
   "Say what you would do if you were president",
