@@ -197,7 +197,7 @@ export const level3 = [
   "Address the elephant in the room",
   "Offer your help to someone",
   "Give a genuine compliment to the person in the video chat that you've known the longest",
-  "React to something in a way that you imagien one of your parents probably would",
+  "React to something in a way that you imagine one of your parents probably would",
   "Make a comparison that's waaaaaaaaaaaaaaayyyy off",
   "Take a joke or idea from someone else in the videochat and say it without citing your sources",
   "Maybe be quiet for a bit. Gather your thoughts",
@@ -259,7 +259,7 @@ export const level3 = [
   "Give a backhanded compliment to someone. Speaking of which, you look better than usual today.",
   "You get your news from YouTube. Bring up a current event but get the facts completely wrong.",
   "You are Rob Lowe's character from Parks and Rec. Use the word `literally` with emphasis. Bonus points if it's not the classical definition of `literally`.",
-  "You've been taken hostage but can't tell anyone explicitly. Say something that sounds normally but your closest friends would know is very much against your core beliefs (To show you're under duress)",
+
   "Plagiarism! Say something that you didn't come up with (a joke, quote, idea), but make it seem like it's your own.",
   "Life is a comedy for those who think! Say something super pretentious (such as that).",
   "Get offended by something. Preferably something not offensive.",
@@ -704,7 +704,6 @@ export const Dates = [
   "Just be yourself :)",
   "Just be yourself :)",
   "Just be yourself :)",
-
   "If you have a dog, lie about having a cat. If you have a cat, lie about having a dog. If you have no pets, lie about having a LOT of pets",
   "Say 'high-five' and make a gesture like you're high-fiving the screen",
   "Talk about how you really like a completely made-up TV show or a made-up band",
@@ -744,7 +743,7 @@ export const Dates = [
   "Say a terrible joke. Say 'thanks for laughing at that', if they laugh at it",
   "Do some humblebragging. You deserve it",
   "Mention Donald Trump",
-  "Say 'How do you feel about' something. That is actually just good conversation advice that you should use even when unprompted",
+  "Say 'How do you feel about' something. This is actually just good conversation advice that you should use even when unprompted",
   "Make a remark that is so self-depracating and cuts so deep that it kind of hurts to say",
   "Next time you talk, use a heavy accent on one word. Try not to be offensive and use an accent that could possibly come from someone of your race",
 ];
@@ -820,7 +819,7 @@ export const Greek = [
   "You are King Aegeus! Jump to a really bad and incorrect conclusion about something someone said!",
   "You got this, Perseus! While contributing to the conversation, don't look at the camera or at anyone else. Bonus points if you look at someone through a phone camera or cup or something.",
   "Fall madly in love with the next person you address to the point where you have difficulty completing your thought",
-  "Say something nice about your father or negative about your mother. Afterwards, close your eyes for a bit",
+  "Say something negative about your father or nice about your mother. Afterwards, close your eyes for a bit",
   "You are an incredibly talented musician, but have lots of doubts about things",
   "Try to do 12 very small things before getting the next prompt, Herculeus",
   "You are a cloud of mist",

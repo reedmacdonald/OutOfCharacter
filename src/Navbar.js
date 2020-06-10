@@ -252,7 +252,7 @@ const Navbar = () => {
         <span>
           {" "}
           <a
-            href="https://www.youtube.com/watch?v=gFdyNPL5z3w"
+            href="https://www.youtube.com/watch?v=nhNJlGzTHEQ"
             target="_blank"
             style={{ textDecoration: "none", color: "white" }}
           >
