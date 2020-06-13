@@ -1,5 +1,5 @@
 import React from "react";
-import Firebase, { auth } from "./Firebase";
+import Firebase, { auth, analytics } from "./Firebase";
 import "./App.css";
 import { GameContext } from "./GameContext";
 import { sayHi, SignUp } from "./Functions";
@@ -62,6 +62,7 @@ const Navbar = (props) => {
                       .signInWithEmailAndPassword(username, password)
                       .then((user) => {
                         console.log(user, "<------user");
+                        analytics.logEvent("Signed In", { who: "idk" });
                       })
                       .catch((err) => {
                         console.log(err, "<---err");
@@ -107,6 +108,7 @@ const Navbar = (props) => {
                       password,
                       () => {
                         console.log("hi1");
+                        analytics.logEvent("Signed Up", { who: "idk" });
                       },
                       (sumthin) => {
                         setErrorSignIn(sumthin.message);
@@ -137,6 +139,9 @@ const Navbar = (props) => {
           id="navbarModal"
           onClick={() => {
             setShowInstructions(!showInstructions);
+            analytics.logEvent("Clicked Show Instructions from NavBar", {
+              who: "idk",
+            });
           }}
         >
           <h3>
@@ -192,6 +197,9 @@ const Navbar = (props) => {
           style={{}}
           onClick={() => {
             setShowAbout(!showAbout);
+            analytics.logEvent("Clicked Show Aboiut from Navbar", {
+              who: "idk",
+            });
           }}
         >
           <h3>
@@ -222,6 +230,7 @@ const Navbar = (props) => {
                 .signOut()
                 .then((idk) => {
                   console.log(idk, "<---idk");
+                  analytics.logEvent("Logged Out", { who: "idk" });
                 })
                 .catch((err) => {
                   console.log(err, "<---err");
@@ -242,6 +251,7 @@ const Navbar = (props) => {
         )}
         <span
           onClick={() => {
+            analytics.logEvent("Clicked Show Instructions", { who: "idk" });
             setShowInstructions(!showInstructions);
           }}
         >
@@ -255,7 +265,13 @@ const Navbar = (props) => {
         >
           Home
         </span>
-        <span>
+        <span
+          onClick={() => {
+            analytics.logEvent("Clicked YouTube Demo from NavBar", {
+              who: "idk",
+            });
+          }}
+        >
           {" "}
           <a
             href="https://www.youtube.com/watch?v=nhNJlGzTHEQ"

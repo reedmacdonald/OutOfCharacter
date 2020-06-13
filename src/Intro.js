@@ -1,6 +1,6 @@
 import React from "react";
 import { Switch, Route, Redirect, withRouter } from "react-router-dom";
-import Firebase, { auth } from "./Firebase";
+import Firebase, { auth, analytics } from "./Firebase";
 const IntroRoom = (props) => {
   const [heading, setHeading] = React.useState("Team Building");
   const [description, setDescription] = React.useState(
@@ -8,6 +8,7 @@ const IntroRoom = (props) => {
   );
   const [examples, setExamples] = React.useState(["idk", "idk", "idk"]);
   const [currentUser, setCurrentUser] = React.useState(null);
+  const [errorMessage, setErrorMessage] = React.useState(null);
   React.useEffect(() => {
     setRoom(props.match.params.roomType);
     auth.onAuthStateChanged(function (user) {
@@ -19,6 +20,22 @@ const IntroRoom = (props) => {
     });
     document.body.style = "background: #210f63;";
   }, []);
+  const checkIfBlocked = () => {
+    if (
+      props.match.params.roomType == "characterBased" ||
+      props.match.params.roomType == "greece" ||
+      props.match.params.roomType == "family"
+    ) {
+      if (!currentUser) {
+        setErrorMessage("You have to log in to play that category");
+        return false;
+      } else {
+        return true;
+      }
+    } else {
+      return true;
+    }
+  };
 
   const setRoom = (something) => {
     if (something == "characterBased") {
@@ -80,6 +97,10 @@ const IntroRoom = (props) => {
     }
   };
   const seeNextTopic = () => {
+    analytics.logEvent("Clicked See Next Topic", {
+      who: "idk",
+    });
+    setErrorMessage(null);
     if (
       props.match.params.roomType == "characterBased" ||
       !!!props.match.params.roomType
@@ -158,11 +179,21 @@ const IntroRoom = (props) => {
         style={{ marginTop: "30px" }}
         className="buttonOne"
         onClick={() => {
-          props.history.push(`/starting/${props.match.params.roomType || ""}`);
+          analytics.logEvent("Clicked Start Intro", {
+            who: "idk",
+          });
+          if (!!checkIfBlocked()) {
+            props.history.push(
+              `/starting/${props.match.params.roomType || ""}`
+            );
+          }
         }}
       >
         Play Here
       </button>
+      <div>
+        <small id="errorIntro">{errorMessage}</small>
+      </div>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 import { getDoc, getSnapshot, updateRoom, deleteDoc } from "./Functions";
-import Firebase, { auth } from "./Firebase";
+import Firebase, { auth, analytics } from "./Firebase";
 import "./App.css";
 
 const EndRoom = (props) => {
@@ -351,6 +351,7 @@ const EndRoom = (props) => {
               <button
                 className="buttonOne"
                 onClick={() => {
+                  analytics.logEvent("Ended Game", { who: "idk" });
                   updateRoom(props.match.params.roomNumber.toString(), {
                     endGame: true,
                   });
@@ -404,6 +405,9 @@ const EndRoom = (props) => {
             <button
               className="buttonOne"
               onClick={() => {
+                analytics.logEvent("Finished Game Started a New One", {
+                  who: "idk",
+                });
                 updateRoom(props.match.params.roomNumber.toString(), {
                   numPeople: props.match.params.numberPlayers,
                   rotationSpeed: "slow",

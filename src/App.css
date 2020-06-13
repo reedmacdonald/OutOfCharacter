@@ -79,6 +79,10 @@ input {
   color: white;
   font-family: -apple-system, system-ui, BlinkMacSystemFont;
 }
+#errorIntro {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont;
+  color: #ffbb3c;
+}
 .card button {
   background-color: #210f63;
   border: 1px solid #e63946;

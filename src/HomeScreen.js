@@ -3,6 +3,7 @@ import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 import {} from "./Functions";
 import "./App.css";
 import Moose from "./Object.svg";
+import Firebase, { auth, analytics } from "./Firebase";
 
 const HomeScreen = (props) => {
   React.useEffect(() => {
@@ -19,6 +20,9 @@ const HomeScreen = (props) => {
         <button
           className="buttonOne"
           onClick={() => {
+            analytics.logEvent("Clicked Start Game Home Screen", {
+              who: "idk",
+            });
             props.history.push("/starting");
           }}
         >
@@ -76,6 +80,9 @@ const HomeScreen = (props) => {
           style={{ marginTop: "30px", marginBottom: "30px" }}
           className="yellowButton"
           onClick={() => {
+            analytics.logEvent("Clicked View Categories Home Screen", {
+              who: "idk",
+            });
             props.history.push("/intro");
           }}
         >
@@ -107,6 +114,9 @@ const HomeScreen = (props) => {
           className="buttonOne"
           style={{ marginTop: "30px" }}
           onClick={() => {
+            analytics.logEvent("Clicked Second Start Game Home Screen", {
+              who: "idk",
+            });
             props.history.push("/starting");
           }}
         >
@@ -135,6 +145,9 @@ const HomeScreen = (props) => {
             style={{ marginTop: "30px", marginBottom: "30px" }}
             className="yellowButton"
             onClick={() => {
+              analytics.logEvent("Clicked Second Categories Home Screen", {
+                who: "idk",
+              });
               props.history.push("/intro");
             }}
           >

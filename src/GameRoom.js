@@ -15,6 +15,7 @@ import {
   Greek,
 } from "./Tasks";
 import { Topics } from "./Topics";
+import Firebase, { auth, analytics } from "./Firebase";
 
 const GameRoom = (props) => {
   const [task1, setTask1] = React.useState([
@@ -542,6 +543,7 @@ const GameRoom = (props) => {
               <div>
                 <button
                   onClick={() => {
+                    analytics.logEvent("Clicked Pass", { who: "idk" });
                     getDoc(
                       props.match.params.roomNumber.toString(),
                       (results) => {
@@ -569,6 +571,7 @@ const GameRoom = (props) => {
                   type="checkbox"
                   checked={task1[task1.length - 1].completed}
                   onClick={() => {
+                    analytics.logEvent("Clicked Check", { who: "idk" });
                     task1[task1.length - 1].completed = true;
                     updateRoom(props.match.params.roomNumber.toString(), {
                       taskPlayer1: task1,
@@ -599,6 +602,7 @@ const GameRoom = (props) => {
               <div>
                 <button
                   onClick={() => {
+                    analytics.logEvent("Clicked Pass", { who: "idk" });
                     getDoc(
                       props.match.params.roomNumber.toString(),
                       (results) => {
@@ -626,6 +630,7 @@ const GameRoom = (props) => {
                   type="checkbox"
                   checked={task2[task2.length - 1].completed}
                   onClick={() => {
+                    analytics.logEvent("Clicked Check", { who: "idk" });
                     task2[task2.length - 1].completed = true;
                     updateRoom(props.match.params.roomNumber.toString(), {
                       taskPlayer2: task2,
@@ -656,6 +661,7 @@ const GameRoom = (props) => {
               <div>
                 <button
                   onClick={() => {
+                    analytics.logEvent("Clicked Pass", { who: "idk" });
                     getDoc(
                       props.match.params.roomNumber.toString(),
                       (results) => {
@@ -683,6 +689,7 @@ const GameRoom = (props) => {
                   type="checkbox"
                   checked={task3[task3.length - 1].completed}
                   onClick={() => {
+                    analytics.logEvent("Clicked Check", { who: "idk" });
                     task3[task3.length - 1].completed = true;
                     updateRoom(props.match.params.roomNumber.toString(), {
                       taskPlayer3: task3,
@@ -713,6 +720,7 @@ const GameRoom = (props) => {
               <div>
                 <button
                   onClick={() => {
+                    analytics.logEvent("Clicked Pass", { who: "idk" });
                     getDoc(
                       props.match.params.roomNumber.toString(),
                       (results) => {
@@ -740,6 +748,7 @@ const GameRoom = (props) => {
                   type="checkbox"
                   checked={task4[task4.length - 1].completed}
                   onClick={() => {
+                    analytics.logEvent("Clicked Check", { who: "idk" });
                     task4[task4.length - 1].completed = true;
                     updateRoom(props.match.params.roomNumber.toString(), {
                       taskPlayer4: task4,
@@ -770,6 +779,7 @@ const GameRoom = (props) => {
               <div>
                 <button
                   onClick={() => {
+                    analytics.logEvent("Clicked Pass", { who: "idk" });
                     getDoc(
                       props.match.params.roomNumber.toString(),
                       (results) => {
@@ -797,6 +807,7 @@ const GameRoom = (props) => {
                   type="checkbox"
                   checked={task5[task5.length - 1].completed}
                   onClick={() => {
+                    analytics.logEvent("Clicked Check", { who: "idk" });
                     task5[task5.length - 1].completed = true;
                     updateRoom(props.match.params.roomNumber.toString(), {
                       taskPlayer5: task5,
@@ -827,6 +838,7 @@ const GameRoom = (props) => {
               <div>
                 <button
                   onClick={() => {
+                    analytics.logEvent("Clicked Pass", { who: "idk" });
                     getDoc(
                       props.match.params.roomNumber.toString(),
                       (results) => {
@@ -854,6 +866,7 @@ const GameRoom = (props) => {
                   type="checkbox"
                   checked={task6[task6.length - 1].completed}
                   onClick={() => {
+                    analytics.logEvent("Clicked Check", { who: "idk" });
                     task6[task6.length - 1].completed = true;
                     updateRoom(props.match.params.roomNumber.toString(), {
                       taskPlayer6: task6,
@@ -884,6 +897,7 @@ const GameRoom = (props) => {
               <div>
                 <button
                   onClick={() => {
+                    analytics.logEvent("Clicked Pass", { who: "idk" });
                     getDoc(
                       props.match.params.roomNumber.toString(),
                       (results) => {
@@ -911,6 +925,7 @@ const GameRoom = (props) => {
                   type="checkbox"
                   checked={task7[task7.length - 1].completed}
                   onClick={() => {
+                    analytics.logEvent("Clicked Check", { who: "idk" });
                     task7[task7.length - 1].completed = true;
                     updateRoom(props.match.params.roomNumber.toString(), {
                       taskPlayer7: task7,
@@ -941,6 +956,7 @@ const GameRoom = (props) => {
               <div>
                 <button
                   onClick={() => {
+                    analytics.logEvent("Clicked Pass", { who: "idk" });
                     getDoc(
                       props.match.params.roomNumber.toString(),
                       (results) => {
@@ -969,6 +985,7 @@ const GameRoom = (props) => {
                     type="checkbox"
                     checked={task8[task8.length - 1].completed}
                     onClick={() => {
+                      analytics.logEvent("Clicked Check", { who: "idk" });
                       task8[task8.length - 1].completed = true;
                       updateRoom(props.match.params.roomNumber.toString(), {
                         taskPlayer8: task8,
@@ -1000,6 +1017,7 @@ const GameRoom = (props) => {
               <div>
                 <button
                   onClick={() => {
+                    analytics.logEvent("Clicked Pass", { who: "idk" });
                     getDoc(
                       props.match.params.roomNumber.toString(),
                       (results) => {
@@ -1027,6 +1045,7 @@ const GameRoom = (props) => {
                   type="checkbox"
                   checked={task9[task9.length - 1].completed}
                   onClick={() => {
+                    analytics.logEvent("Clicked Check", { who: "idk" });
                     task9[task9.length - 1].completed = true;
                     updateRoom(props.match.params.roomNumber.toString(), {
                       taskPlayer9: task9,
@@ -1058,6 +1077,7 @@ const GameRoom = (props) => {
               <div>
                 <button
                   onClick={() => {
+                    analytics.logEvent("Clicked Pass", { who: "idk" });
                     getDoc(
                       props.match.params.roomNumber.toString(),
                       (results) => {
@@ -1085,6 +1105,7 @@ const GameRoom = (props) => {
                   type="checkbox"
                   checked={task10[task10.length - 1].completed}
                   onClick={() => {
+                    analytics.logEvent("Clicked Check", { who: "idk" });
                     task10[task10.length - 1].completed = true;
                     updateRoom(props.match.params.roomNumber.toString(), {
                       taskPlayer10: task10,
@@ -1110,6 +1131,7 @@ const GameRoom = (props) => {
         <button
           className="negative buttonOne"
           onClick={() => {
+            analytics.logEvent("Ended Game from Game Room", { who: "idk" });
             updateRoom(props.match.params.roomNumber.toString(), {
               gameOver: true,
             });
