@@ -667,7 +667,7 @@ export const Dates = [
   "Have a blinking fit, like something is really bothering your eye, but don't mention it. If they mention it, stop doing it",
   "Play with your hair. A lot. More than is natural.",
   "Pretend to get emotional about something that you couldn't care less about",
-  "Mention a sibling that you don't have",
+  "Lie about a sibling that you don't have",
   "Laugh hysterically at something that you think is funny but is not thhhhaaaaattt funny",
   "You haven't been paying attention! Ask a question that has already been answered",
   "Pretend to swat a fly",

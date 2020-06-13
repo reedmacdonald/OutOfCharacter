@@ -172,6 +172,11 @@ const IntroRoom = (props) => {
 
       setRoom("officeBanter");
     }
+    if (props.match.params.roomType == "officeBanter") {
+      props.history.push("/intro/politics");
+
+      setRoom("politics");
+    }
   };
   return (
     <div id="section1">
