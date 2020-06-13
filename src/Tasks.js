@@ -601,6 +601,7 @@ export const Office = [
   "Just be yourself :)",
   "Just be yourself :)",
   "Shake your head at something that you absolutely agree with",
+  "Use the phrase 'It's like *popular company* for *service*",
   "Say 'One of the best pieces of advice I've ever heard was ...' followed by advice that is bad. Not like, absurdly bad, just slightly but genuinely bad.",
   "Next time you would laugh naturally, laugh hysterically. Be unable to calm down for an embarrassing period of time.",
   "Mute yourself and address someone offscreen, but seem LIVID. Bonus points for mouthing `Just cleanup your shit!` Calm down before it is addressed",
