@@ -77,7 +77,6 @@ const EndRoom = (props) => {
           <>
             <h1>Player 1:</h1>
             {prompts.map((value, index) => {
-              console.log(value, "<---value");
               return (
                 <div>
                   {index !== 0 && value.word !== "Just be yourself :)" ? (
@@ -381,18 +380,20 @@ const EndRoom = (props) => {
                 style={{ outline: "none" }}
                 onChange={(e) => setInsanityLevel(e.target.value)}
               >
-                <option value={1}>Absurdity Level 1</option>
-                <option value={2}>Absurdity Level 2</option>
-                <option value={3}>Absurdity Level 3</option>
-                <option value={"characterBased"}>Character Based</option>
+                {/*<option value={1}>Absurdity Level 1</option>
+                <option value={2}>Absurdity Level 2</option>*/}
+                <option value={3}>Absurd</option>
+
                 <option value={"politics"}>Politics</option>
                 <option value={"date"}>First Date Icebreaker</option>
-                <option value={"family"}>Family Reunion</option>
+
                 {currentUser && (
                   <>
                     {/*<option value={"officeBanter"}>Office Banter</option>
                   <option value={"personal"}>Deeply Personal</option>
                   <option value={"ocean"}>Ocean, Fish, Etc</option>*/}
+                    <option value={"characterBased"}>Character Based</option>
+                    <option value={"family"}>Family Reunion</option>
                     <option value={"greece"}>Greek Mythology</option>
                   </>
                 )}

@@ -52,15 +52,9 @@ export const SignUp = (email, password, callback, errorCallback) => {
   auth
     .createUserWithEmailAndPassword(email, password)
     .then((authUser) => {
-      //this.setState({ ...INITIAL_STATE });
-      //this.props.history.push(ROUTES.HOME);
       console.log(authUser, "<---authUser");
-      console.log("here");
     })
     .catch((error) => {
-      //this.setState({ error });
-      console.log("here2");
-      console.log(error, "<---error");
       errorCallback(error);
     });
 };

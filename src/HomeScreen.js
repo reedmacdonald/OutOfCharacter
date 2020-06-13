@@ -71,6 +71,17 @@ const HomeScreen = (props) => {
           ></iframe>
         </div>
       </div>
+      <div>
+        <button
+          style={{ marginTop: "30px", marginBottom: "30px" }}
+          className="yellowButton"
+          onClick={() => {
+            props.history.push("/intro");
+          }}
+        >
+          See Categories
+        </button>
+      </div>
       <div id="section5">
         <div
           style={{
@@ -106,18 +117,29 @@ const HomeScreen = (props) => {
           <div id="oppositeMoose">
             <h5>Great for:</h5>
             <h2>
-              <sup>01</sup> Happy Hours with Friends
+              <sup>1</sup> Happy Hours with Friends
             </h2>
             <h2>
-              <sup>02</sup> Lunches with Coworkers
+              <sup>2</sup> Lunches with Coworkers
             </h2>
             <h2>
-              <sup>03</sup> Video calls with Family
+              <sup>3</sup> Video calls with Family
             </h2>{" "}
           </div>
           <div id="moose">
             <img src={Moose} alt="moose" />
           </div>
+        </div>
+        <div>
+          <button
+            style={{ marginTop: "30px", marginBottom: "30px" }}
+            className="yellowButton"
+            onClick={() => {
+              props.history.push("/intro");
+            }}
+          >
+            See Categories
+          </button>
         </div>
       </div>
     </>

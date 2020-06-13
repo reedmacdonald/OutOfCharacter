@@ -67,7 +67,6 @@ const GameRoom = (props) => {
   document.body.style = "background: #210f63;";
   React.useEffect(() => {
     getSnapshot(props.match.params.roomNumber, (results) => {
-      console.log(results, "<---results");
       setNumPeople(results.numPeople);
       task1 !== results.taskPlayer1 && setTask1(results.taskPlayer1);
       task2 !== results.taskPlayer2 && setTask2(results.taskPlayer2);
@@ -546,7 +545,6 @@ const GameRoom = (props) => {
                     getDoc(
                       props.match.params.roomNumber.toString(),
                       (results) => {
-                        console.log("here5");
                         let idk = results.taskPlayer1;
                         let randNum2 = Math.floor(Math.random() * topic.length);
                         let newTask2 = idk.push({
@@ -629,7 +627,6 @@ const GameRoom = (props) => {
                   checked={task2[task2.length - 1].completed}
                   onClick={() => {
                     task2[task2.length - 1].completed = true;
-                    console.log("updating room via click");
                     updateRoom(props.match.params.roomNumber.toString(), {
                       taskPlayer2: task2,
                     });

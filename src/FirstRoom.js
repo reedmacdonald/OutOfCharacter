@@ -1,5 +1,5 @@
 import React from "react";
-import Firebase, { auth } from "./Firebase";
+import Firebase, { auth, analytics } from "./Firebase";
 import "./App.css";
 import { GameContext } from "./GameContext";
 import { sayHi } from "./Functions";
@@ -11,7 +11,7 @@ function FirstRoom(props) {
   let gameContext = React.useContext(GameContext);
   const [numPeople, setNumPeople] = React.useState(2);
   const [rotationSpeed, setRotationSpeed] = React.useState("slow");
-  const [insanityLevel, setInsanityLevel] = React.useState(1);
+  const [insanityLevel, setInsanityLevel] = React.useState(3);
   const [showInstructions, setShowInstructions] = React.useState(false);
   const [showAbout, setShowAbout] = React.useState(false);
   const [currentUser, setCurrentUser] = React.useState(null);
@@ -29,6 +29,11 @@ function FirstRoom(props) {
         setCurrentUser(null);
       }
     });
+    if (props.match.params.typeOfGame == "absurd") {
+      setInsanityLevel(3);
+    } else if (!!props.match.params.typeOfGame) {
+      setInsanityLevel(props.match.params.typeOfGame);
+    }
   }, []);
   return (
     <>
@@ -112,7 +117,6 @@ function FirstRoom(props) {
             left: "50%",
             transform: "translate(-50%, -50%)",
             border: "5px solid black",
-
             overflow: "scroll",
             padding: "15px",
             zIndex: "1000000000",
@@ -166,21 +170,66 @@ function FirstRoom(props) {
             <br />
             <select
               id="otherSelect"
-              onChange={(e) => setInsanityLevel(e.target.value)}
+              onChange={(e) => {
+                e.target.value !== "none" && setInsanityLevel(e.target.value);
+              }}
             >
-              <option value={1}>Absurdity Level 1</option>
-              <option value={2}>Absurdity Level 2</option>
-              <option value={3}>Absurdity Level 3</option>
-              <option value={"characterBased"}>Character Based</option>
-              <option value={"politics"}>Politics</option>
-              <option value={"date"}>First Date Icebreaker</option>
-              <option value={"family"}>Family Reunion</option>
+              {/*<option value={1}>Absurdity Level 1</option>
+              <option value={2}>Absurdity Level 2</option>*/}
+              <option
+                value={3}
+                selected={
+                  props.match.params.typeOfGame == "absurd" && "selected"
+                }
+              >
+                Absurd
+              </option>
+
+              <option
+                selected={
+                  props.match.params.typeOfGame == "politics" && "selected"
+                }
+                value={"politics"}
+              >
+                Politics
+              </option>
+              <option
+                selected={props.match.params.typeOfGame == "date" && "selected"}
+                value={"date"}
+              >
+                First Date Icebreaker
+              </option>
+
               {currentUser && (
                 <>
                   {/*<option value={"officeBanter"}>Office Banter</option>
                   <option value={"personal"}>Deeply Personal</option>
                   <option value={"ocean"}>Ocean, Fish, Etc</option>*/}
-                  <option value={"greece"}>Greek Mythology</option>
+                  <option
+                    selected={
+                      props.match.params.typeOfGame == "greece" && "selected"
+                    }
+                    value={"greece"}
+                  >
+                    Greek Mythology
+                  </option>
+                  <option
+                    selected={
+                      props.match.params.typeOfGame == "family" && "selected"
+                    }
+                    value={"family"}
+                  >
+                    Family Reunion
+                  </option>
+                  <option
+                    selected={
+                      props.match.params.typeOfGame == "characterBased" &&
+                      "selected"
+                    }
+                    value={"characterBased"}
+                  >
+                    Character Based
+                  </option>
                 </>
               )}
             </select>
@@ -225,10 +274,51 @@ function FirstRoom(props) {
             props.history.push(
               `/waitingroom/${gameContext.roomNumber}/${insanityLevel}`
             );
+            analytics.logEvent("Started Game", { who: "idk" });
           }}
         >
           Start Game
         </button>
+        <div className="underStart">
+          <div>
+            <h5 style={{ color: "white" }}>
+              For a more in-depth look at each game type, click{" "}
+              <u>
+                <span
+                  style={{ cursor: "pointer" }}
+                  onClick={() => {
+                    props.history.push("/intro");
+                  }}
+                >
+                  here
+                </span>
+              </u>
+            </h5>
+          </div>
+          {!currentUser && (
+            <div>
+              <h5 style={{ color: "white" }}>
+                Sign In to have access to more categories including Greek
+                Mythology, Character Based, and Family Reunion
+              </h5>
+            </div>
+          )}
+          <div>
+            <h5 style={{ color: "white" }}>
+              I'd love to hear your feedback, feel free to tweet me your
+              thoughts{" "}
+              <a
+                style={{ color: "white" }}
+                href="https://twitter.com/macdonald_reed"
+                target="_blank"
+              >
+                <u>
+                  <span>@macdonald_reed</span>
+                </u>
+              </a>
+            </h5>
+          </div>
+        </div>
       </div>
     </>
   );

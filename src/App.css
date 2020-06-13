@@ -202,11 +202,27 @@ select {
   transform: translate(-50%, -50%);
   border: 1px solid #e63946;
 }
+* {
+  outline: none;
+}
+.underStart {
+  margin-top: 150px;
+
+  font-family: -apple-system, system-ui, BlinkMacSystemFont;
+}
+.underStart h5 {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont;
+  font-weight: 600;
+}
+
 @media only screen and (max-width: 600px) {
   #endroomModal {
     width: 75vw;
   }
   .box2 {
+    display: none;
+  }
+  #homeNavBar {
     display: none;
   }
   #moose {

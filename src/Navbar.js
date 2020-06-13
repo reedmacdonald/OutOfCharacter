@@ -5,7 +5,7 @@ import { GameContext } from "./GameContext";
 import { sayHi, SignUp } from "./Functions";
 import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = (props) => {
   const [showInstructions, setShowInstructions] = React.useState(false);
   const [showAbout, setShowAbout] = React.useState(false);
   const [showSignIn, setShowSignIn] = React.useState(false);
@@ -109,8 +109,6 @@ const Navbar = () => {
                         console.log("hi1");
                       },
                       (sumthin) => {
-                        console.log(sumthin, "<---error");
-                        console.log(sumthin.message, "<---sumthin.message");
                         setErrorSignIn(sumthin.message);
                       }
                     );
@@ -248,6 +246,14 @@ const Navbar = () => {
           }}
         >
           Instructions
+        </span>
+        <span
+          id="homeNavBar"
+          onClick={() => {
+            props.history.push("/");
+          }}
+        >
+          Home
         </span>
         <span>
           {" "}
