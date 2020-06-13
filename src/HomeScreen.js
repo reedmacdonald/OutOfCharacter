@@ -28,7 +28,6 @@ const HomeScreen = (props) => {
       <div className="section2">
         <div className="enderDiv" style={{ width: "60%", margin: "0 auto" }}>
           <p id="section3words">Is it a game?</p>
-          <h4 id="section3Text"></h4>
           <h4 id="section3Text">
             No. Well, kind of.
             <br /> The goal is the{" "}

@@ -12,6 +12,7 @@ import GameRoom from "./GameRoom";
 import EndRoom from "./EndRoom";
 import HomeScreen from "./HomeScreen";
 import Navbar from "./Navbar";
+import IntroRoom from "./Intro";
 function App() {
   const [roomNumber, setRoomNumber] = React.useState(0);
   const [numPeople, setNumPeople] = React.useState(0);
@@ -60,6 +61,11 @@ function App() {
           exact
           path={`${routes.ENDROOM}/:roomNumber/:numberPlayers/:playerNumber`}
           render={() => <EndRoom />}
+        />
+        <Route
+          exact
+          path={`${routes.INTRO}/:roomType?`}
+          render={() => <IntroRoom />}
         />
         <Route exact path={routes.HOMESCREEN} render={() => <HomeScreen />} />
       </Switch>

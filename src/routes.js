@@ -4,3 +4,4 @@ export const WAIT = "/waitingroom";
 export const GAMEROOM = "/gameroom";
 export const ENDROOM = "/endroom";
 export const HOMESCREEN = "/";
+export const INTRO = "/intro";
