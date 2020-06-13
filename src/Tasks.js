@@ -237,7 +237,7 @@ export const level3 = [
   "Next time you talk, say something that rhymes. You have the option of saying 'Oh, that rhymes' afterward",
   "You do improv! Next time you talk, begin with 'Yes, and'. Extra points if you build off of a joke but make it less funny.",
   "This topic has gone on long enough! Say 'Moving on' to move the conversation forward",
-  "Unmute yourself, go to the bathroom and, don't pee, but just flush",
+
   "Mispronounce someone's name. Bonus points if its a common name that you have no business mispronouncing",
   "Say something in iambic pentameter, you goddamn Shakespearean poet. If you can't do it, then go thee to a nunnery, you wench!",
   "Give a backhanded compliment to someone. Speaking of which, you look better than usual today.",
@@ -247,7 +247,7 @@ export const level3 = [
   "Plagiarism! Say something that you didn't come up with (a joke, quote, idea), but make it seem like it's your own.",
   "Life is a comedy for those who think! Say something super pretentious (such as that).",
   "Get offended by something. Preferably something not offensive.",
-  "You are Hamlet! Mute yourself and then give a monologue to yourself as if you have to make an important decision",
+  "You are Hamlet! Start a rambling monologue about an important decision you have to make",
   "You don`t look like yourself today. Make a facial expression you`ve never made before",
   "Offer your help to someone",
   "Make up a name for a fake musician, and when you mention them, act really shocked that no one knows who that is",
@@ -255,7 +255,7 @@ export const level3 = [
   "Respond to something someone says with ‘sounds like my ex-wife’",
   "Say ‘I like the new look’ to someone whose appearance hasn’t changed recently",
   "Start eating something",
-  "Say ‘I’m going to the bathroom, I’ll be back in a couple minutes’ and return in less than 20 seconds",
+
   "Act suddenly concerned toward a specific person, and ask them if they’re okay",
   "Drop the line, `That's very on-brand of you!`",
   "Just be yourself :)",

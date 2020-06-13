@@ -73,7 +73,8 @@ const IntroRoom = (props) => {
       setExamples([
         "Say something that you heard about on a podcast",
         "Say something about Adam Driver or a movie that Adam Driver has been in. Bonus points if it's Lena Dunham's HBO show Girls",
-        "Say 'Hmmm, that's pretty interesting' while furrowing your brow",
+        "Say, 'I know this is our first time meeting and this will sound weird, but' followed by something that is not at all weird to say on a first date",
+        "Make a remark that is so self-depracating and cuts so deep that it kind of hurts to say",
       ]);
     }
 
@@ -95,8 +96,8 @@ const IntroRoom = (props) => {
         "This game's original category, Absurd intends to do it's name justice and create wild and fun conversation"
       );
       setExamples([
-        "Use the phrase 'I know a lot of people would argue about this' before saying something that no semi-intelligent person would argue about",
-        "A ghost has entered your room, but you cannot interact with the ghost. But its in your room and you`re fucking terrified, but no one else can know why",
+        "Make up a name for a fake musician, and when you mention them, act really shocked that no one knows who that is",
+        "A ghost has entered your room, but you cannot interact with the ghost. But its in your room and you're absolutely terrified, but no one else can know why",
         "We're back to the Bush administration! Make a reference that is soooooooo 2004.",
       ]);
     }
