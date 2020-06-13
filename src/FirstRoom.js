@@ -177,6 +177,14 @@ function FirstRoom(props) {
               {/*<option value={1}>Absurdity Level 1</option>
               <option value={2}>Absurdity Level 2</option>*/}
               <option
+                selected={
+                  props.match.params.typeOfGame == "officeBanter" && "selected"
+                }
+                value={"officeBanter"}
+              >
+                Team Building
+              </option>
+              <option
                 value={3}
                 selected={
                   props.match.params.typeOfGame == "absurd" && "selected"
