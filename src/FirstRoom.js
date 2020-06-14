@@ -11,7 +11,7 @@ function FirstRoom(props) {
   let gameContext = React.useContext(GameContext);
   const [numPeople, setNumPeople] = React.useState(2);
   const [rotationSpeed, setRotationSpeed] = React.useState("slow");
-  const [insanityLevel, setInsanityLevel] = React.useState(3);
+  const [insanityLevel, setInsanityLevel] = React.useState("officeBanter");
   const [showInstructions, setShowInstructions] = React.useState(false);
   const [showAbout, setShowAbout] = React.useState(false);
   const [currentUser, setCurrentUser] = React.useState(null);
