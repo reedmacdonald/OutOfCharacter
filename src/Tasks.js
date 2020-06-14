@@ -600,6 +600,11 @@ export const Office = [
   "Just be yourself :)",
   "Just be yourself :)",
   "Just be yourself :)",
+  "Pretend to be yourself from 10 years ago",
+  "You write for Pitchfork",
+  "You are a ghost",
+  "You are a statue that has just recently come to life",
+  "You are your favorite high school teacher",
   "Shake your head at something that you absolutely agree with",
   "Use the phrase 'It's like *popular company* for *service*",
   "Say 'One of the best pieces of advice I've ever heard was ...' followed by advice that is bad. Not like, absurdly bad, just slightly but genuinely bad.",
@@ -640,10 +645,11 @@ export const Office = [
   "You are a Tom Hardy character. Pick your favorite",
   "You've just become aware of your own mortality for the first time",
   "You are the manager of a professional baseball team. You enjoy chewing gum, being old, and looking bored.",
-
   "You are a genie",
   "Make a reference about pirates or piracy",
   "Ok Sisyphus, start an argument or say an opinion that you've said before, but you know will never convince anyone else",
+  "Say a terrible joke. Say 'thanks for laughing at that', if they laugh at it",
+  "Do some humblebragging. You deserve it",
 ];
 
 //This one is for very personal stuff

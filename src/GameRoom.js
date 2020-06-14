@@ -48,6 +48,12 @@ const GameRoom = (props) => {
   const [task10, setTask10] = React.useState([
     { word: "Loading...", completed: false },
   ]);
+  const [task11, setTask11] = React.useState([
+    { word: "Loading...", completed: false },
+  ]);
+  const [task12, setTask12] = React.useState([
+    { word: "Loading...", completed: false },
+  ]);
   const [player1Passes, setPlayer1Passes] = React.useState(2);
   const [player2Passes, setPlayer2Passes] = React.useState(2);
   const [player3Passes, setPlayer3Passes] = React.useState(2);
@@ -58,6 +64,8 @@ const GameRoom = (props) => {
   const [player8Passes, setPlayer8Passes] = React.useState(2);
   const [player9Passes, setPlayer9Passes] = React.useState(2);
   const [player10Passes, setPlayer10Passes] = React.useState(2);
+  const [player11Passes, setPlayer11Passes] = React.useState(2);
+  const [player12Passes, setPlayer12Passes] = React.useState(2);
   const [numPeople, setNumPeople] = React.useState(1);
   const [insanityLevel, setInsanityLevel] = React.useState(["idk"]);
   const [personTurn, setPersonTurn] = React.useState(1);
@@ -79,6 +87,8 @@ const GameRoom = (props) => {
       task8 !== results.taskPlayer8 && setTask8(results.taskPlayer8);
       task9 !== results.taskPlayer9 && setTask9(results.taskPlayer9);
       task10 !== results.taskPlayer10 && setTask10(results.taskPlayer10);
+      task11 !== results.taskPlayer11 && setTask11(results.taskPlayer11);
+      task12 !== results.taskPlayer12 && setTask12(results.taskPlayer12);
       setPlayer1Passes(results.player1Passes);
       setPlayer2Passes(results.player2Passes);
       setPlayer3Passes(results.player3Passes);
@@ -89,6 +99,8 @@ const GameRoom = (props) => {
       setPlayer8Passes(results.player8Passes);
       setPlayer9Passes(results.player9Passes);
       setPlayer10Passes(results.player10Passes);
+      setPlayer11Passes(results.player11Passes);
+      setPlayer12Passes(results.player12Passes);
       setNumPeople(results.numPeople);
       if (results.gameOver == true) {
         props.history.push(
@@ -203,6 +215,28 @@ const GameRoom = (props) => {
         taskPlayer10: task10,
       });
       setOnePlayerTen(category);
+    }
+    if (props.match.params.playerNumber == 1) {
+      let newNum = Math.floor(Math.random() * 40000) + 55000;
+      let randNum11 = Math.floor(Math.random() * category.length);
+      let newTask11 = task11.push({
+        word: category[randNum11],
+      });
+      updateRoom(props.match.params.roomNumber.toString(), {
+        taskPlayer11: task11,
+      });
+      setOnePlayerEleven(category);
+    }
+    if (props.match.params.playerNumber == 1) {
+      let newNum = Math.floor(Math.random() * 40000) + 55000;
+      let randNum12 = Math.floor(Math.random() * category.length);
+      let newTask12 = task12.push({
+        word: category[randNum12],
+      });
+      updateRoom(props.match.params.roomNumber.toString(), {
+        taskPlayer12: task12,
+      });
+      setOnePlayerTwelve(category);
     }
   }, []);
   const setOnePlayerTwo = (categoryParam) => {
@@ -530,6 +564,73 @@ const GameRoom = (props) => {
       });
     }, newNum);
   };
+
+  const setOnePlayerEleven = (categoryParam) => {
+    let newNum = Math.floor(Math.random() * 40000) + 55000;
+    setTimeout(() => {
+      getDoc(props.match.params.roomNumber.toString(), (results) => {
+        let idk = results.taskPlayer11;
+        let randNum2 = Math.floor(Math.random() * categoryParam.length);
+        let newTask2 = idk.push({
+          word: categoryParam[randNum2],
+        });
+        updateRoom(props.match.params.roomNumber.toString(), {
+          taskPlayer11: idk,
+        });
+        setTwoPlayerEleven(categoryParam);
+      });
+    }, newNum);
+  };
+  const setTwoPlayerEleven = (categoryParam) => {
+    let newNum = Math.floor(Math.random() * 40000) + 55000;
+    setTimeout(() => {
+      getDoc(props.match.params.roomNumber.toString(), (results) => {
+        let idk = results.taskPlayer11;
+        let randNum2 = Math.floor(Math.random() * categoryParam.length);
+        let newTask2 = idk.push({
+          word: categoryParam[randNum2],
+        });
+        updateRoom(props.match.params.roomNumber.toString(), {
+          taskPlayer11: idk,
+        });
+        setOnePlayerEleven(categoryParam);
+      });
+    }, newNum);
+  };
+
+  const setOnePlayerTwelve = (categoryParam) => {
+    let newNum = Math.floor(Math.random() * 40000) + 55000;
+    setTimeout(() => {
+      getDoc(props.match.params.roomNumber.toString(), (results) => {
+        let idk = results.taskPlayer12;
+        let randNum2 = Math.floor(Math.random() * categoryParam.length);
+        let newTask2 = idk.push({
+          word: categoryParam[randNum2],
+        });
+        updateRoom(props.match.params.roomNumber.toString(), {
+          taskPlayer12: idk,
+        });
+        setTwoPlayerEleven(categoryParam);
+      });
+    }, newNum);
+  };
+  const setTwoPlayerTwelve = (categoryParam) => {
+    let newNum = Math.floor(Math.random() * 40000) + 55000;
+    setTimeout(() => {
+      getDoc(props.match.params.roomNumber.toString(), (results) => {
+        let idk = results.taskPlayer12;
+        let randNum2 = Math.floor(Math.random() * categoryParam.length);
+        let newTask2 = idk.push({
+          word: categoryParam[randNum2],
+        });
+        updateRoom(props.match.params.roomNumber.toString(), {
+          taskPlayer12: idk,
+        });
+        setOnePlayerTwelve(categoryParam);
+      });
+    }, newNum);
+  };
+
   return (
     <>
       <h1 id="title" className="titleMarginTop">
@@ -1109,6 +1210,128 @@ const GameRoom = (props) => {
                     task10[task10.length - 1].completed = true;
                     updateRoom(props.match.params.roomNumber.toString(), {
                       taskPlayer10: task10,
+                    });
+                  }}
+                ></input>
+                <span className="checkmark"></span>
+              </label>
+            </div>
+            <span
+              className="whatIsThis"
+              onClick={() => {
+                setShowModal(true);
+              }}
+            >
+              What is this?
+            </span>
+          </div>
+        </>
+      )}
+
+      {props.match.params.playerNumber == 11 && (
+        <>
+          <div className="card">
+            <h1>
+              {task11[task11.length - 1].word ||
+                "Waiting for Host to Start Game"}
+            </h1>
+            {player11Passes > 0 && (
+              <div>
+                <button
+                  onClick={() => {
+                    analytics.logEvent("Clicked Pass", { who: "idk" });
+                    getDoc(
+                      props.match.params.roomNumber.toString(),
+                      (results) => {
+                        let idk = results.taskPlayer11;
+                        let randNum2 = Math.floor(Math.random() * topic.length);
+                        let newTask2 = idk.push({
+                          word: topic[randNum2],
+                        });
+                        updateRoom(props.match.params.roomNumber.toString(), {
+                          taskPlayer11: idk,
+                          player11Passes: player11Passes - 1,
+                        });
+                      }
+                    );
+                  }}
+                >
+                  Pass
+                </button>
+              </div>
+            )}
+            <div>
+              <p className="completed">Completed?</p>
+              <label className="container">
+                <input
+                  type="checkbox"
+                  checked={task11[task11.length - 1].completed}
+                  onClick={() => {
+                    analytics.logEvent("Clicked Check", { who: "idk" });
+                    task11[task11.length - 1].completed = true;
+                    updateRoom(props.match.params.roomNumber.toString(), {
+                      taskPlayer11: task11,
+                    });
+                  }}
+                ></input>
+                <span className="checkmark"></span>
+              </label>
+            </div>
+            <span
+              className="whatIsThis"
+              onClick={() => {
+                setShowModal(true);
+              }}
+            >
+              What is this?
+            </span>
+          </div>
+        </>
+      )}
+
+      {props.match.params.playerNumber == 12 && (
+        <>
+          <div className="card">
+            <h1>
+              {task12[task12.length - 1].word ||
+                "Waiting for Host to Start Game"}
+            </h1>
+            {player12Passes > 0 && (
+              <div>
+                <button
+                  onClick={() => {
+                    analytics.logEvent("Clicked Pass", { who: "idk" });
+                    getDoc(
+                      props.match.params.roomNumber.toString(),
+                      (results) => {
+                        let idk = results.taskPlayer12;
+                        let randNum2 = Math.floor(Math.random() * topic.length);
+                        let newTask2 = idk.push({
+                          word: topic[randNum2],
+                        });
+                        updateRoom(props.match.params.roomNumber.toString(), {
+                          taskPlayer12: idk,
+                          player12Passes: player12Passes - 1,
+                        });
+                      }
+                    );
+                  }}
+                >
+                  Pass
+                </button>
+              </div>
+            )}
+            <div>
+              <p className="completed">Completed?</p>
+              <label className="container">
+                <input
+                  type="checkbox"
+                  checked={task12[task12.length - 1].completed}
+                  onClick={() => {
+                    analytics.logEvent("Clicked Check", { who: "idk" });
+                    task12[task12.length - 1].completed = true;
+                    updateRoom(props.match.params.roomNumber.toString(), {
+                      taskPlayer12: task12,
                     });
                   }}
                 ></input>

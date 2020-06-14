@@ -47,7 +47,7 @@ const HomeScreen = (props) => {
           <h3 style={{ textAlign: "left" }}>How it works:</h3>
           <div className="listDiv" style={{ textAlign: "left" }}>
             <h3 className="section4List" style={{ textAlign: "left" }}>
-              <sup>1</sup> Open up a video chat with your friends
+              <sup>1</sup> Open up a video chat with others
             </h3>
             <h3 className="section4List" style={{ textAlign: "left" }}>
               <sup>2</sup> Start a game
@@ -97,11 +97,11 @@ const HomeScreen = (props) => {
           }}
         >
           <h3 style={{ textAlign: "left" }}>
-            These days, more people are working remotely and living their lives
-            online, and there's nothing wrong with that. We still talk to our
-            friends, our bosses, and our significant others. We still have
-            meetings and happy hours. We still talk quite a bit. However, people
-            are starting to notice what has always been true:{" "}
+            These days, more people are working remotely<span>*</span> and
+            living their lives online, and there's nothing wrong with that. We
+            still talk to our friends, our bosses, and our significant others.
+            We still have meetings and happy hours. We still talk quite a bit.
+            However, people are starting to notice what has always been true:{" "}
           </h3>
           <h2 id="bigWords" style={{ textAlign: "left", marginBottom: 0 }}>
             Sometimes conversations can be boring. Even when it's with people we
@@ -127,10 +127,21 @@ const HomeScreen = (props) => {
           <div id="oppositeMoose">
             <h5>Great for:</h5>
             <h2>
-              <sup>1</sup> Happy Hours with Friends
+              <sup>1</sup> Remote Team Building
+              <span
+                onClick={() => {
+                  analytics.logEvent("Clicked on the Asterisk", {
+                    who: "idk",
+                  });
+                  props.history.push("/intro/officeBanter");
+                }}
+                className="yellowSpan"
+              >
+                *
+              </span>
             </h2>
             <h2>
-              <sup>2</sup> Lunches with Coworkers
+              <sup>2</sup> Happy Hours with Friends
             </h2>
             <h2>
               <sup>3</sup> Video calls with Family

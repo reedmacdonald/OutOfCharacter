@@ -154,7 +154,7 @@ function FirstRoom(props) {
         </h2>
         <div id="firstPageHolder">
           <div id="thing1">
-            <span>How many people? (2-10)</span>
+            <span>How many people? (2-12)</span>
             <br />
             <input
               onChange={(e) => {
@@ -162,7 +162,7 @@ function FirstRoom(props) {
               }}
               type="number"
               min="2"
-              max="10"
+              max="12"
             ></input>
           </div>
           <div id="thing2">
@@ -262,6 +262,8 @@ function FirstRoom(props) {
               player8Passes: 2,
               player9Passes: 2,
               player10Passes: 2,
+              player11Passes: 2,
+              player12Passes: 2,
               taskPlayer1: ["Make some small-talk to get things going"],
               taskPlayer2: ["Make some small-talk to get things going"],
               taskPlayer3: ["Make some small-talk to get things going"],
@@ -272,6 +274,8 @@ function FirstRoom(props) {
               taskPlayer8: ["Make some small-talk to get things going"],
               taskPlayer9: ["Make some small-talk to get things going"],
               taskPlayer10: ["Make some small-talk to get things going"],
+              taskPlayer11: ["Make some small-talk to get things going"],
+              taskPlayer12: ["Make some small-talk to get things going"],
               turnNumber: 1,
               gameOver: false,
               unveil: 0,

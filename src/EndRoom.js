@@ -15,13 +15,14 @@ const EndRoom = (props) => {
   const [prompts8, setPrompts8] = React.useState(["some", "prompts"]);
   const [prompts9, setPrompts9] = React.useState(["some", "prompts"]);
   const [prompts10, setPrompts10] = React.useState(["some", "prompts"]);
+  const [prompts11, setPrompts11] = React.useState(["some", "prompts"]);
+  const [prompts12, setPrompts12] = React.useState(["some", "prompts"]);
   const [showModal, setShowModal] = React.useState(false);
   const [unveil, setUnveil] = React.useState(0);
   const [insanityLevel, setInsanityLevel] = React.useState(1);
   const [currentUser, setCurrentUser] = React.useState(null);
   React.useEffect(() => {
     var id = window.setTimeout(function () {}, 0);
-
     while (id--) {
       window.clearTimeout(id); // will do nothing if no timeout with id is present
     }
@@ -333,6 +334,58 @@ const EndRoom = (props) => {
             })}
           </>
         )}
+        {props.match.params.numberPlayers > 10 && unveil > 10 && (
+          <>
+            <h1>Player 11:</h1>
+            {prompts11.map((value, index) => {
+              return (
+                <div>
+                  {index !== 0 && value.word !== "Just be yourself :)" ? (
+                    <>
+                      <h2
+                        style={{
+                          textDecoration: value.completed
+                            ? "line-through"
+                            : undefined,
+                        }}
+                      >
+                        {value.word}
+                      </h2>
+                    </>
+                  ) : (
+                    ""
+                  )}
+                </div>
+              );
+            })}
+          </>
+        )}
+        {props.match.params.numberPlayers > 11 && unveil > 11 && (
+          <>
+            <h1>Player 12:</h1>
+            {prompts12.map((value, index) => {
+              return (
+                <div>
+                  {index !== 0 && value.word !== "Just be yourself :)" ? (
+                    <>
+                      <h2
+                        style={{
+                          textDecoration: value.completed
+                            ? "line-through"
+                            : undefined,
+                        }}
+                      >
+                        {value.word}
+                      </h2>
+                    </>
+                  ) : (
+                    ""
+                  )}
+                </div>
+              );
+            })}
+          </>
+        )}
         {unveil !== Number(props.match.params.numberPlayers) && (
           <button
             onClick={() => {
@@ -423,6 +476,8 @@ const EndRoom = (props) => {
                   player8Passes: 2,
                   player9Passes: 2,
                   player10Passes: 2,
+                  player11Passes: 2,
+                  player12Passes: 2,
                   taskPlayer1: ["Make some small-talk to get things going"],
                   taskPlayer2: ["Make some small-talk to get things going"],
                   taskPlayer3: ["Make some small-talk to get things going"],
@@ -433,6 +488,8 @@ const EndRoom = (props) => {
                   taskPlayer8: ["Make some small-talk to get things going"],
                   taskPlayer9: ["Make some small-talk to get things going"],
                   taskPlayer10: ["Make some small-talk to get things going"],
+                  taskPlayer11: ["Make some small-talk to get things going"],
+                  taskPlayer12: ["Make some small-talk to get things going"],
                   turnNumber: 1,
                   gameOver: false,
                   unveil: 0,
