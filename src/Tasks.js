@@ -609,7 +609,6 @@ export const Office = [
   "Use the phrase 'It's like *popular company* for *service*",
   "Say 'One of the best pieces of advice I've ever heard was ...' followed by advice that is bad. Not like, absurdly bad, just slightly but genuinely bad.",
   "Next time you would laugh naturally, laugh hysterically. Be unable to calm down for an embarrassing period of time.",
-  "Mute yourself and address someone offscreen, but seem LIVID. Bonus points for mouthing `Just cleanup your shit!` Calm down before it is addressed",
   "Next time you talk, pretend to have the hiccups. Drink water in a weird way to try to cure it.",
   "You haven't been listening! Ask a question about something that has already been answered",
   "The next time you speak, use the phrase ‘I’m just thinking of the big picture here’",
