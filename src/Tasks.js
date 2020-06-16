@@ -243,7 +243,6 @@ export const level3 = [
   "Give a backhanded compliment to someone. Speaking of which, you look better than usual today.",
   "You get your news from YouTube. Bring up a current event but get the facts completely wrong.",
   "You are Rob Lowe's character from Parks and Rec. Use the word `literally` with emphasis. Bonus points if it's not the classical definition of `literally`.",
-
   "Plagiarism! Say something that you didn't come up with (a joke, quote, idea), but make it seem like it's your own.",
   "Life is a comedy for those who think! Say something super pretentious (such as that).",
   "Get offended by something. Preferably something not offensive.",
@@ -484,7 +483,6 @@ export const Character = [
   "You are a statue that has just recently come to life",
   "You are your favorite high school teacher",
   "You are Father John Misty",
-
   "You are a chess grandmaster still thinking about possible moves you could’ve made in your last game",
   "You are Canadian",
   "You are Dave Chappelle's Tyrone Biggums character from The Chappelle Show. He was a crackhead.",
@@ -648,6 +646,16 @@ export const Office = [
   "Ok Sisyphus, start an argument or say an opinion that you've said before, but you know will never convince anyone else",
   "Say a terrible joke. Say 'thanks for laughing at that', if they laugh at it",
   "Do some humblebragging. You deserve it",
+  "You are a film enthusiast who uses the term ‘visual storytelling’ to sound smart",
+  "You are a wealthy celebrity who says things like ‘Do you know who I am?’",
+  "You are an NPR radio host. Introduce yourself by name, talk really softly and play some really funky transition music",
+  "You get your news from YouTube. Bring up a current event but get the facts completely wrong.",
+  "Plagiarism! Say something that you didn't come up with (a joke, quote, idea), but make it seem like it's your own.",
+  "You are Hamlet! Start a rambling monologue about an important decision you have to make",
+  "You don`t look like yourself today. Make a facial expression you`ve never made before",
+  "Offer your help to someone",
+  "Start putting on more layers without explanation",
+  "Start eating something. Bonus points if you eat it in a way that it is not supposed to be eaten",
 ];
 
 //This one is for very personal stuff
